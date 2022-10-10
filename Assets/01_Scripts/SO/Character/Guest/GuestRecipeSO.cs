@@ -6,7 +6,7 @@ using UnityEngine;
 public class GuestRecipeSO : ScriptableObject
 {
     [Header("단계")]
-    public float level; // 맵기 단계
+    public float[] level; // 맵기 단계
 
     [Header("고기")]
     public int sheepMeat; // 양고기

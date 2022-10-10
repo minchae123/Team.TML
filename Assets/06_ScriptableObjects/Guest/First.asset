@@ -12,41 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2688c955ff30ebe44bd3de8add8a123b, type: 3}
   m_Name: First
   m_EditorClassIdentifier: 
-  level: 0
-  sheepMeat: 0
+  level: 1.5
+  sheepMeat: 1
   cowMeat: 0
   cabbage: 0
   pakChoi: 0
   enokiMushroom: 0
   oysterMushroom: 0
-  blackMushroom: 0
+  blackMushroom: 1
   beanSprout: 0
-  mungSporout: 0
+  mungSporout: 2
   sweetPoatao: 0
-  poatao: 0
-  cilantro: 0
+  poatao: 1
+  cilantro: 1
   crownDaisy: 0
-  bamboo: 0
+  bamboo: 1
   rotusRoot: 0
-  corn: 0
+  corn: 1
   oriDang: 0
   wideDang: 0
   boonMoJa: 0
   raMeon: 0
   shrimp: 0
-  octopus: 0
-  squid: 0
+  octopus: 1
+  squid: 2
   meatBall: 0
   dryTofu: 0
-  froTofu: 0
-  firedTofu: 0
+  froTofu: 1
+  firedTofu: 1
   puju: 0
-  doupi: 0
-  cheezeTt: 0
-  sweetTt: 0
+  doupi: 2
+  cheezeTt: 1
+  sweetTt: 1
   tteok: 0
-  crabStick: 0
-  sujebi: 0
+  crabStick: 1
+  sujebi: 1
   fishCake: 0
-  quailEgg: 0
-  sausage: 0
+  quailEgg: 2
+  sausage: 3
