@@ -280,12 +280,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9528a17e50952d4092b549b0e13f3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeSO:
-  - {fileID: 11400000, guid: bd58525d88667f84bb7390b932791dea, type: 2}
-  - {fileID: 11400000, guid: 18ff51a2bb198ab408d7d3b779f64c46, type: 2}
-  - {fileID: 11400000, guid: 640c31e4abfbc954282a63aac0ce3193, type: 2}
-  - {fileID: 11400000, guid: a61492c7345745342b9583e6c4b2a8d0, type: 2}
-  reSO:
-  - {fileID: 11400000, guid: e8d19a98dd7293d4da61a7178193c072, type: 2}
-  - {fileID: 11400000, guid: 3834327d9b0fd0643865e237d04113de, type: 2}
-  - {fileID: 11400000, guid: 2b910584f9ae80f42860f0b633a45e73, type: 2}
+  recipeSO: []
+  reSO: []

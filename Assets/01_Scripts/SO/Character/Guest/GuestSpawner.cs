@@ -10,7 +10,7 @@ public class GuestSpawner : MonoBehaviour
     IEnumerator GetRecipe()
     {
         int r = Random.Range(0, reSO.Length);
-        for(int i =0;i < 39; i++)
+        for(int i = 0;i < 39; i++)
         {
 
         }

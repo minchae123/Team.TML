@@ -14,20 +14,22 @@ public class RecipeSO : ScriptableObject
     public int[] meat = new int[] { sheep, cow };
 
     [Header("채소")]
+    public Dictionary<string, int> vegitables;
     public static int cabbage; // 배추
-    public static int pakChoi; // 청경채
-    public static int enokiMushroom; // 팽이버섯
-    public static int oysterMushroom; // 느타리버섯
-    public static int blackMushroom; // 목이버섯
-    public static int beanSprout; // 콩나물
-    public static int mungSporout; // 숙주
-    public static int sweetPoatao; // 고구마
+    public static int pakchoi; // 청경채
+    public static int enokimushroom; // 팽이버섯
+    public static int oystermushroom; // 느타리버섯
+    public static int blackmushroom; // 목이버섯
+    public static int beansprout; // 콩나물
+    public static int mungsporout; // 숙주
+    public static int sweetpoatao; // 고구마
     public static int poatao; // 감자
     public static int cilantro; // 고수
-    public static int crownDaisy; // 쑥갓
+    public static int crowndaisy; // 쑥갓
     public static int bamboo; // 죽순
-    public static int rotusRoot; // 연근
-    public int[] ve = new int[] { cabbage, pakChoi, enokiMushroom, oysterMushroom, blackMushroom, beanSprout, mungSporout, sweetPoatao, poatao, cilantro, crownDaisy, rotusRoot };
+    public static int rotusroot; // 연근
+    public int[] ve = new int[] { cabbage, pakchoi, enokimushroom, oystermushroom, blackmushroom,
+        beansprout, mungsporout, sweetpoatao, poatao, cilantro, crowndaisy, rotusroot };
 
     [Header("면")]
     public static int corn; // 옥수수면
@@ -35,14 +37,14 @@ public class RecipeSO : ScriptableObject
     public static int wideDang; // 넓적 당면
     public static int boonMoJa; // 분모자 당면
     public static int raMeon; // 라면사리
-    public static int[] noodle = new int[] { corn, oriDang, wideDang, boonMoJa, raMeon};
+    public int[] noodle = new int[5] { corn, oriDang, wideDang, boonMoJa, raMeon};
 
     [Header("꼬치")]
     public static int shrimp; // 새우꼬치
     public static int octopus; // 문어꼬치
     public static int squid; // 오징어꼬치
     public static int meatBall; // 완자
-    public int[] stick = new int[] { };
+    public int[] stick = new int[] { shrimp, octopus, squid, meatBall};
 
     [Header("기타")]
     public static int dryTofu; // 건두부
@@ -58,5 +60,6 @@ public class RecipeSO : ScriptableObject
     public static int fishCake; // 어묵
     public static int quailEgg; // 메추리알
     public static int sausage; // 소세지
-    public int[] etc = new int[] { dryTofu, froTofu, froTofu, puju, doupi, cheezeTt, sweetTt, tteok, crabStick, sujebi, fishCake, quailEgg, sausage };
+    public int[] etc = new int[] { dryTofu, froTofu, froTofu, puju, doupi, cheezeTt, 
+        sweetTt, tteok, crabStick, sujebi, fishCake, quailEgg, sausage };
 }
