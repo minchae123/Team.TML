@@ -14,11 +14,12 @@ public class RecipeSO : ScriptableObject
     public int[] meat = new int[] { sheep, cow };
 
     [Header("Ã¤¼Ò")]
-    public Dictionary<string, int> vegitables;
     public static int cabbage; // ¹èÃß
     public static int pakchoi; // Ã»°æÃ¤
     public static int enokimushroom; // ÆØÀÌ¹ö¼¸
     public static int oystermushroom; // ´ÀÅ¸¸®¹ö¼¸
+    public static int pyomushroom; // Ç¥°í¹ö¼¸
+    public static int sasongmushroom; // »õ¼ÛÀÌ ¹ö¼¸
     public static int blackmushroom; // ¸ñÀÌ¹ö¼¸
     public static int beansprout; // Äá³ª¹°
     public static int mungsporout; // ¼÷ÁÖ
@@ -28,7 +29,7 @@ public class RecipeSO : ScriptableObject
     public static int crowndaisy; // ¾¦°«
     public static int bamboo; // Á×¼ø
     public static int rotusroot; // ¿¬±Ù
-    public int[] ve = new int[] { cabbage, pakchoi, enokimushroom, oystermushroom, blackmushroom,
+    public int[] vegetable = new int[] { cabbage, pakchoi, enokimushroom, oystermushroom, sasongmushroom, sasongmushroom, blackmushroom,
         beansprout, mungsporout, sweetpoatao, poatao, cilantro, crowndaisy, rotusroot };
 
     [Header("¸é")]
@@ -37,7 +38,7 @@ public class RecipeSO : ScriptableObject
     public static int wideDang; // ³ÐÀû ´ç¸é
     public static int boonMoJa; // ºÐ¸ðÀÚ ´ç¸é
     public static int raMeon; // ¶ó¸é»ç¸®
-    public int[] noodle = new int[5] { corn, oriDang, wideDang, boonMoJa, raMeon};
+    public int[] noodle = new int[] { corn, oriDang, wideDang, boonMoJa, raMeon};
 
     [Header("²¿Ä¡")]
     public static int shrimp; // »õ¿ì²¿Ä¡
