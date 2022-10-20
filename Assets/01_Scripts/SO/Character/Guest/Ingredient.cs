@@ -28,8 +28,8 @@ public class IngredientList
     public int blackMushroom; // 목이버섯
     public int beanSprout; // 콩나물
     public int mungSporout; // 숙주
-    public int sweetPoatao; // 고구마
-    public int poatao; // 감자
+    public int sweetPotato; // 고구마
+    public int potato; // 감자
     public int cilantro; // 고수
 
     [Header("면")]

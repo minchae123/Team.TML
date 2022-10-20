@@ -280,6 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9528a17e50952d4092b549b0e13f3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeSO:
-  - {fileID: 0}
+  n: []
   comeDelay: 5
+  meat: 
