@@ -281,7 +281,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipeSO:
-  - {fileID: 11400000, guid: bd58525d88667f84bb7390b932791dea, type: 2}
-  - {fileID: 11400000, guid: 18ff51a2bb198ab408d7d3b779f64c46, type: 2}
-  - {fileID: 11400000, guid: 640c31e4abfbc954282a63aac0ce3193, type: 2}
-  - {fileID: 11400000, guid: a61492c7345745342b9583e6c4b2a8d0, type: 2}
+  - {fileID: 0}
+  comeDelay: 5
