@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class GuestSpawner : MonoBehaviour
 {
-    public RecipeSO[] recipeSO;
+    public Ingredient[] n = new Ingredient();
     public float comeDelay = 3f;
-    Ingredient ing;
+
+    public List<int> meat = new List<int>();
 
     private void Start()
     {
-        ing.i.level = 1;
+        meat.Add(n.i.sheepMeat);
     }
 
     IEnumerator GetRecipe()
     {
-        int r = Random.Range(0, recipeSO.Length);
+        int r = Random.Range(0, n.Length);
         for(int i = 0;i < 39; i++)
         {
 

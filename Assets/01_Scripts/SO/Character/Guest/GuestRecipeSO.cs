@@ -40,7 +40,6 @@ public class GuestRecipeSO : ScriptableObject
     public int squid; // 오징어꼬치
     public int meatBall; // 완자
 
-
     [Header("기타")]
     public int dryTofu; // 건두부
     public int froTofu; // 언두부
