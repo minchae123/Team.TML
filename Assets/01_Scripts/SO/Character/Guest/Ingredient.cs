@@ -33,7 +33,7 @@ public class IngredientList
     public int cilantro; // 고수
 
     [Header("면")]
-    public int corn; // 옥수수면
+    public int cornMeon; // 옥수수면
     public int oriDang; // 기본 당면
     public int wideDang; // 넓적 당면
     public int boonMoJa; // 분모자 당면

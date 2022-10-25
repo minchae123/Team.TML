@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717581525203aa34ab45be74a90e0ffb, type: 3}
+  m_Name: b
+  m_EditorClassIdentifier: 
+  i:
+    level: 1.5
+    sheepMeat: 0
+    cowMeat: 2
+    cabbage: 0
+    pakChoi: 0
+    pangiMushroom: 0
+    ntariMushroom: 0
+    pyogoMushroom: 2
+    sasongiMushroom: 0
+    blackMushroom: 0
+    beanSprout: 0
+    mungSporout: 0
+    sweetPotato: 0
+    potato: 0
+    cilantro: 0
+    cornMeon: 0
+    oriDang: 0
+    wideDang: 0
+    boonMoJa: 0
+    shrimp: 2
+    octopus: 0
+    squid: 0
+    meatBall: 0
+    dryTofu: 0
+    puju: 0
+    cheezeTt: 1
+    sweetTt: 0
+    sujebi: 0
+    fishCake: 1
+    quailEgg: 0
+    sausage: 0
