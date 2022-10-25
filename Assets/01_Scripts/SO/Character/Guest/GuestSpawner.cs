@@ -33,34 +33,21 @@ public class GuestSpawner : MonoBehaviour
 
     IEnumerator GetRecipe()
     {
-        for (int i = 0; i < meat.Length; i++)
-        {
-            if (meat[i] > 0)
-            {
-                ingredient.Add(meat[i]);
-            }
-        }
-        for(int i= 0;i< vegetable.Length; i++)
-        {
-            if (vegetable[i] > 0)
-            {
-                ingredient.Add(vegetable[i]);
-            }
-        }
-        for(int i = 0; i < noodle.Length; i++)
-        {
-            if(noodle[i] > 0)
-            {
-                ingredient.Add(noodle[i]);
-            }
-        }
-        for(int i= 0; i< etc.Length; i++)
-        {
-            if (etc[i] > 0)
-            {
-                ingredient.Add(etc[i]);
-            }
-        }
+        AddRecipe(meat);
+        AddRecipe(vegetable);
+        AddRecipe(noodle);
+        AddRecipe(etc);
         yield return new WaitForSeconds(comeDelay);
     }
+
+    public void AddRecipe(int[] a)
+    {
+        for (int i = 0; i < a.Length; i++)
+        {
+            if (a[i] > 0)
+            {
+                ingredient.Add(a[i]);
+            }
+        }
+    }   
 }
