@@ -15,7 +15,7 @@ public class GuestSpawner : MonoBehaviour
     public int[] etc;
 
     public List<int> ingredient;
-
+    
     private void Awake()
     {
         index = Random.Range(0, ingre.Length);
@@ -37,7 +37,7 @@ public class GuestSpawner : MonoBehaviour
         AddRecipe(vegetable);
         AddRecipe(noodle);
         AddRecipe(etc);
-        yield return new WaitForSeconds(comeDelay);
+        yield return new WaitForSeconds(0.2f);
     }
 
     public void AddRecipe(int[] a)
@@ -49,5 +49,5 @@ public class GuestSpawner : MonoBehaviour
                 ingredient.Add(a[i]);
             }
         }
-    }   
+    }
 }
