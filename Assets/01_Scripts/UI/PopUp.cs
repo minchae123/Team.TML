@@ -7,7 +7,8 @@ public class PopUp : MonoBehaviour
 {
     public GameObject panel;
     public GameObject startButton;
-    private Vector3 _panelTrm = new Vector3(0, -1080, 0);
+    private Vector3 _popDownTrm = new Vector3(0, -10, 0);
+    
     
     public void PopUpPanel(){
         CheckPanel();
@@ -18,8 +19,8 @@ public class PopUp : MonoBehaviour
 
     public void PopDownPanel(){
         CheckPanel();
-
-        panel.transform.DOMove(_panelTrm, 2);
+        
+        panel.transform.DOMove(_popDownTrm, 1);
         startButton.SetActive(true);
 
     }
