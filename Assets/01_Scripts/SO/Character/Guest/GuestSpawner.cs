@@ -20,10 +20,10 @@ public class GuestSpawner : MonoBehaviour
     {
         index = Random.Range(0, ingre.Length);
         meat = new int[] { ingre[index].i.cowMeat, ingre[index].i.sheepMeat};
-        vegetable = new int[] { ingre[index].i.cabbage, ingre[index].i.pakChoi, ingre[index].i.ntariMushroom, ingre[index].i.blackMushroom, ingre[index].i.pangiMushroom, ingre[index].i.pangiMushroom, 
-            ingre[index].i.pyogoMushroom, ingre[index].i.sasongiMushroom, ingre[index].i.beanSprout, ingre[index].i.mungSporout, ingre[index].i.sweetPotato, ingre[index].i.potato, ingre[index].i.cilantro };
+        vegetable = new int[] { ingre[index].i.cabbage, ingre[index].i.pakChoi, ingre[index].i.blackMushroom, ingre[index].i.pangiMushroom, ingre[index].i.pangiMushroom, 
+            ingre[index].i.pyogoMushroom, ingre[index].i.sasongiMushroom, ingre[index].i.mungSporout, ingre[index].i.sweetPotato, ingre[index].i.potato};
         noodle = new int[] { ingre[index].i.cornMeon, ingre[index].i.oriDang, ingre[index].i.wideDang, ingre[index].i.boonMoJa };
-        etc = new int[] { ingre[index].i.dryTofu, ingre[index].i.puju, ingre[index].i.cheezeTt, ingre[index].i.sweetTt, ingre[index].i.sujebi, ingre[index].i.fishCake, ingre[index].i.quailEgg, ingre[index].i.sausage };
+        etc = new int[] { ingre[index].i.dryTofu, ingre[index].i.puju, ingre[index].i.cheezeTt, ingre[index].i.sweetTt, ingre[index].i.quailEgg, ingre[index].i.sausage };
     }
 
     private void Start()
@@ -44,6 +44,7 @@ public class GuestSpawner : MonoBehaviour
     {
         for (int i = 0; i < a.Length; i++)
         {
+            if (a[i] > 0)
             if (a[i] > 0)
             {
                 ingredient.Add(a[i]);
