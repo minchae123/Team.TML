@@ -45,7 +45,6 @@ public class GuestSpawner : MonoBehaviour
         for (int i = 0; i < a.Length; i++)
         {
             if (a[i] > 0)
-            if (a[i] > 0)
             {
                 ingredient.Add(a[i]);
             }
