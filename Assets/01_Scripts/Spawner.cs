@@ -7,17 +7,15 @@ public class Spawner : MonoBehaviour
 {
     public DicIngredient dictionary;
 
-    float delay = 3f;
     public GameObject[] inList;
-
     public Text txt;
 
     private void Awake()
     {
-        StartCoroutine(Get());
+        Get();
     }
 
-    IEnumerator Get()
+    public void Get()
     {
         int r = Random.Range(0, inList.Length);
         dictionary = inList[r].GetComponent<DicIngredient>();
@@ -28,8 +26,6 @@ public class Spawner : MonoBehaviour
 
         foreach(var se in dictionary.sets)
         {
-            //Debug.Log(se.Key);
-
             foreach(var see in dictionary.names)
             {
                 if($"{se.Key}" == $"{see.Key}")
@@ -40,7 +36,5 @@ public class Spawner : MonoBehaviour
             }
 
         }
-        
-        yield return new WaitForSeconds(delay);
     }
 }
