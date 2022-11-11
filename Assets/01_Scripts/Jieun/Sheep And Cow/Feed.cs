@@ -10,7 +10,6 @@ public class Feed : MonoBehaviour
     float delay = 0.5f;
 
     IEnumerator ThrowFood(){
-
         while(true){
             if(Input.GetKey(KeyCode.Mouse0)){
                 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);            }

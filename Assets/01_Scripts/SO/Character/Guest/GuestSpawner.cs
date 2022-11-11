@@ -19,7 +19,7 @@ public class GuestSpawner : MonoBehaviour
     private void Awake()
     {
         index = Random.Range(0, ingre.Length);
-        meat = new int[] { ingre[index].i.cowMeat, ingre[index].i.sheepMeat};
+        meat = new int[] { ingre[index].i.cowMeat, ingre[index].i.sheepMeat };
         vegetable = new int[] { ingre[index].i.cabbage, ingre[index].i.pakChoi, ingre[index].i.blackMushroom, ingre[index].i.pangiMushroom, ingre[index].i.pangiMushroom, 
             ingre[index].i.pyogoMushroom, ingre[index].i.sasongiMushroom, ingre[index].i.mungSporout, ingre[index].i.sweetPotato, ingre[index].i.potato};
         noodle = new int[] { ingre[index].i.cornMeon, ingre[index].i.oriDang, ingre[index].i.wideDang, ingre[index].i.boonMoJa };

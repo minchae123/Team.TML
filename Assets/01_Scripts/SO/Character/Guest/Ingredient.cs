@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName ="SO/In")]
 public class Ingredient : ScriptableObject
 {
     [field : SerializeField] public IngredientList i = new IngredientList();
