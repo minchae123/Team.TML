@@ -35,10 +35,6 @@ public class DicIngredient : MonoBehaviour
     public Dictionary<Ingeredient, int> sets = new Dictionary<Ingeredient, int>();
     public Dictionary<Ingeredient, string> names = new Dictionary<Ingeredient, string>();
 
-    private void Start()
-    {
-    }
-
     public void GetList()
     {
         foreach(var item in ja)
