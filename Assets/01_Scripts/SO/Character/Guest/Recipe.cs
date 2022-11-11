@@ -35,12 +35,12 @@ public class Recipe : MonoBehaviour
         SetIngredient(etcList, ingredientSO.etcList);
 
         showTxt.text = string.Empty;
+        showTxt.text += $"´Ü°è : {level} \n";
         SetText(meatList);
         SetText(vegetableList);
         SetText(noodleList);
         SetText(stickList);
         SetText(etcList, true);
-
     }
 
     public void SetText(List<IngredientInfo> a, bool isLast = false)
