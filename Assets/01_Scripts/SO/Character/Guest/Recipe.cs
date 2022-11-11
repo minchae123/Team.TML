@@ -39,15 +39,24 @@ public class Recipe : MonoBehaviour
         SetText(vegetableList);
         SetText(noodleList);
         SetText(stickList);
-        SetText(etcList);
+        SetText(etcList, true);
 
     }
 
-    public void SetText(List<IngredientInfo> a)
+    public void SetText(List<IngredientInfo> a, bool isLast = false)
     {
-        foreach (var food in a)
+        for (int i = 0; i < a.Count; i++)
         {
-            showTxt.text += $"{food.name} ";
+            var food = a[i];
+            showTxt.text += $"{food.name}";
+            if (i == a.Count - 1 && isLast)
+            {
+                return;
+            }
+            else
+            {
+                showTxt.text += ", ";
+            }
         }
         showTxt.text += "\n";
     }
