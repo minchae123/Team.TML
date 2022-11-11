@@ -31,7 +31,6 @@ public class Spawner : MonoBehaviour
                 if($"{se.Key}" == $"{see.Key}")
                 {
                     txt.text += $"{see.Value}\n";
-                    Debug.Log(see.Value);
                 }
             }
 
