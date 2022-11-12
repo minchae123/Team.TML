@@ -6,12 +6,18 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject submenu;
+    public GameObject timer;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             submenu.SetActive(!submenu.activeSelf);
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            timer.SetActive(!timer.activeSelf);
         }
     }
 
