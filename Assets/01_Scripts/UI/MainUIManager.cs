@@ -24,7 +24,6 @@ public class MainUIManager : MonoBehaviour
         setting.onClick.AddListener(() => SettingBtn());
         left.onClick.AddListener(() => LeftBtn());
         right.onClick.AddListener(() => RightBtn());
-
     }
 
     private void Start()
@@ -32,25 +31,26 @@ public class MainUIManager : MonoBehaviour
         StartCoroutine(TimeAdd());
     }
 
+    private void Update()
+    {
+        SetMoney(GameManager.Instance.Money);
+    }
+
     public void LeftBtn()
     {
         Debug.Log(1);
     }
-
     public void RightBtn()
     {
         Debug.Log(2);
     }
-
     public void SettingBtn()
     {
         Debug.Log(3);
-        SetMoney();
     }
 
-    public void SetMoney(int money = 10000000)
+    public void SetMoney(int money)
     {
-       // moneyTxt.text = $"µ· : {money}";
         moneyTxt.text = string.Format("µ· : {0:#,###}", money);
     }
 
@@ -62,14 +62,14 @@ public class MainUIManager : MonoBehaviour
         timeTxt.text = string.Format("½Ã°£ = {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
     }
 
-    IEnumerator TimeAdd()
-    {
-        int time = 0;
-        while(time < 144)
-        {
-            yield return new WaitForSeconds(1);
-            time++;
-            SetTime(time);
+    IEnumerator TimeAdd()                                             
+    {                                                                 
+        int time = 0;                                                 
+        while(time < 144)                                                
+        {                                                                
+            yield return new WaitForSeconds(1);                          
+            time++;                                                      
+            SetTime(time);                                               
         }
     }
 }

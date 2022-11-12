@@ -21,6 +21,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ShowEsc()
+    {
+        submenu.SetActive(!submenu.activeSelf);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
