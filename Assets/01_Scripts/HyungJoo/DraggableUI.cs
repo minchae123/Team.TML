@@ -9,19 +9,18 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         get
         {
-            _droppableUI ??= GameObject.Find("DroppalbeUI");
+            _droppableUI ??= GameObject.Find("DroppableUI");
             return _droppableUI;
         }
     }
     public Vector3 originPos;
     RectTransform rect;
-    public static bool dragging;
     public bool dragged;
     private GameObject _droppableUI;
     private void Awake()
     {
         dragged = false;
-        dragging = false;
+        //dragging = false;
         rect = GetComponent<RectTransform>();
     }
     //drag 시작했을때
@@ -29,7 +28,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         originPos = transform.position;
         transform.position = eventData.position;
-        dragging = true;
+        //dragging = true;
     }
     //drage 중일때
 
@@ -43,25 +42,24 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         if (DroppableUI.GetComponent<RectTransform>().position == rect.position)
         {
-            dragged = true;
-        }
-        else
-        {
-            dragged = false;
-        }
-
-        if(dragged)
-        {
             transform.position = DroppableUI.GetComponent<RectTransform>().position;
         }
         else
         {
             transform.position = originPos;
         }
+        //if (dragged)
+        //{
+        //    
+        //}
+        //else
+        //{
+        //    
+        //}
 
 
-        dragging = false;
 
     }
+
 
 }

@@ -1420,7 +1420,7 @@ RectTransform:
   m_Children:
   - {fileID: 430388862}
   m_Father: {fileID: 1206812173}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1439,7 +1439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880ab7c9f3dd7024985c1a5127018a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gredientList: []
 --- !u!114 &1197922252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,8 +1574,8 @@ RectTransform:
   - {fileID: 1154802445}
   - {fileID: 109325154}
   - {fileID: 1154580314}
-  - {fileID: 1658579177}
   - {fileID: 1197922250}
+  - {fileID: 1658579177}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1862,7 +1861,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1206812173}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1899,7 +1898,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

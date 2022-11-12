@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPointerExitHandler
 {
-    public List<DroppableUI> gredientList = new List<DroppableUI>();
     private Image _image;
     RectTransform rect;
     void Awake()
@@ -18,7 +17,7 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(DraggableUI.dragging)
+        if(true)
         {
             _image.color = Color.yellow;
 
