@@ -13,51 +13,39 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             return _droppableUI;
         }
     }
+    private Transform _canvas;
     public Vector3 originPos;
     RectTransform rect;
     public bool dragged;
     private GameObject _droppableUI;
+    private CanvasGroup _canvasGroup;
     private void Awake()
     {
-        dragged = false;
-        //dragging = false;
         rect = GetComponent<RectTransform>();
+        _canvas = GameObject.Find("Canvas").transform;
+        _canvasGroup = GetComponent<CanvasGroup>();
     }
-    //drag ½ÃÀÛÇßÀ»¶§
+    //drag ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public void OnBeginDrag(PointerEventData eventData)
     {
         originPos = transform.position;
+        transform.SetParent(_canvas);
+        transform.SetAsFirstSibling();
+
+        _canvasGroup.alpha =0.5f;
+        _canvasGroup.blocksRaycasts = false;
         transform.position = eventData.position;
-        //dragging = true;
+
     }
-    //drage ÁßÀÏ¶§
+
 
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
     }
-    //drage ³¡³µÀ» ¶§
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (DroppableUI.GetComponent<RectTransform>().position == rect.position)
-        {
-            transform.position = DroppableUI.GetComponent<RectTransform>().position;
-        }
-        else
-        {
-            transform.position = originPos;
-        }
-        //if (dragged)
-        //{
-        //    
-        //}
-        //else
-        //{
-        //    
-        //}
-
-
 
     }
 
