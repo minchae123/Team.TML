@@ -24,7 +24,7 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        _image.color = Color.green;
+        _image.color = Color.white;
     }
     public void OnDrop(PointerEventData eventData)
     {
