@@ -14,6 +14,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
     }
     private Transform _canvas;
+    private Transform _previousParent;
     public Vector3 originPos;
     RectTransform rect;
     public bool dragged;
@@ -29,6 +30,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         originPos = transform.position;
+        _previousParent = transform.parent;
         transform.SetParent(_canvas);
         transform.SetAsFirstSibling();
 
@@ -46,7 +48,15 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if(transform.parent == _canvas)
+        {
+            transform.SetParent(_previousParent);
+            rect.position = originPos;
+            //transform.position = originPos;
+        }
 
+        _canvasGroup.alpha =1.0f;
+        _canvasGroup.blocksRaycasts = true;
     }
 
 
