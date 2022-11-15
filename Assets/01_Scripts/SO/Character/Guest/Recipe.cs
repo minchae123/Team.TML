@@ -21,9 +21,6 @@ public class Recipe : MonoBehaviour
 
     public void SetRecipe()
     {
-        int index = Random.Range(0, listSO.ingredients.Count);
-
-        ingredientSO = listSO.ingredients[index];
         TextShow();
     }
 
