@@ -26,6 +26,7 @@ public enum Etc
 public class IngredientSO : ScriptableObject
 {
     public int level;
+    public Sprite sp;
 
     [Header("°í±â")]
     public List<Meat> meatList;

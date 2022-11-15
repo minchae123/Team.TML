@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tada 2
   m_EditorClassIdentifier: 
   level: 0
+  sp: {fileID: 21300000, guid: fe9ab3f7775901048a2266fdd6048292, type: 3}
   meatList: 00000000
   vegetableList: 00000000
   noodleList: 0000000002000000

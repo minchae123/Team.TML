@@ -4,23 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Recipe : MonoBehaviour
+public class Recipe : MonoBehaviour, IPoolable
 {
     public TextMeshProUGUI txt;
 
-    public IngredientRecipeListSO listSO;
-    public IngredientSO ingredientSO;
-
-    private void Update()
+    private IngredientSO ingredientSO;
+    public IngredientSO IngredientSO
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        get => ingredientSO; 
+        set
         {
+            ingredientSO = value;
             SetRecipe();
         }
+
     }
+
+    private string objName;
+    public string NAME { get => objName; set => objName = value; }
 
     public void SetRecipe()
     {
+        GetComponent<Image>().sprite = ingredientSO.sp;
         TextShow();
     }
 
@@ -42,4 +47,11 @@ public class Recipe : MonoBehaviour
         }
         txt.text += "\n";
     }
+
+    public void OnPool()
+    {
+        Invoke("PushObj", 3f);
+    }
+
+    public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);
 }

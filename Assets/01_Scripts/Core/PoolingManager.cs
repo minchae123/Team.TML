@@ -8,19 +8,19 @@ public class PoolingManager
 
     public static Dictionary<string, GameObject> poolObjectDictionary = new Dictionary<string, GameObject>();
 
-
     public static void CreatePool(string name, Transform parent = null, int count = 5)
     {
         Queue<GameObject> q = new Queue<GameObject>();
         GameObject prefab = null;
 
-        if (poolObjectDictionary.ContainsKey(name))
+        if (!poolObjectDictionary.ContainsKey(name))
         {
-            prefab = poolObjectDictionary[name];
+            prefab = Resources.Load<GameObject>($"Prefabs/{name}");
+            poolObjectDictionary.Add(name, prefab);
         }
         else
         {
-            prefab = Resources.Load<GameObject>($"Prefabs/{name}");
+            prefab = poolObjectDictionary[name];
         }
 
         for (int i = 0; i < count; i++)
@@ -51,24 +51,20 @@ public class PoolingManager
                 poolDictionary[name].Enqueue(q.Dequeue());
             }
         }
-
-        if (!poolObjectDictionary.ContainsKey(name))
-        {
-            poolObjectDictionary.Add(name, prefab);
-        }
     }
     public static void CreatePool(string name, string address, Transform parent = null, int count = 5)
     {
         Queue<GameObject> q = new Queue<GameObject>();
         GameObject prefab = null;
 
-        if (poolObjectDictionary.ContainsKey(name))
+        if (!poolObjectDictionary.ContainsKey(name))
         {
-            prefab = poolObjectDictionary[name];
+            prefab = Resources.Load<GameObject>($"Prefabs/{address}/{name}");
+            poolObjectDictionary.Add(name, prefab);
         }
         else
         {
-            prefab = Resources.Load<GameObject>($"Prefabs/{address}/{name}");
+            prefab = poolObjectDictionary[name];
         }
 
         for (int i = 0; i < count; i++)
@@ -98,14 +94,7 @@ public class PoolingManager
                 poolDictionary[name].Enqueue(q.Dequeue());
             }
         }
-
-
-        if (!poolObjectDictionary.ContainsKey(name))
-        {
-            poolObjectDictionary.Add(name, prefab);
-        }
     }
-
 
     public static GameObject PopObject(string name)
     {
@@ -131,6 +120,7 @@ public class PoolingManager
         {
             returnObj = null;
             Debug.LogWarning("Interface가 달려있지 않습니다.");
+            return returnObj;
         }
 
         iPool.OnPool();
@@ -156,5 +146,14 @@ public class PoolingManager
             obj.transform.SetAsLastSibling();
             poolDictionary[name].Enqueue(obj);
         }
+    }
+
+    public static bool PooledCheck(string name)
+    {
+        if (poolDictionary.ContainsKey(name))
+        {
+            return poolDictionary[name].Count > 0;
+        }
+        return false;
     }
 }
