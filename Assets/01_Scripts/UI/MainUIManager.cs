@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainUIManager : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class MainUIManager : MonoBehaviour
     private Button right;
     private Button left;
 
-    private Text timeTxt;
-    private Text moneyTxt;
+    public TextMeshProUGUI timeTxt;
+    public TextMeshProUGUI moneyTxt;
 
     private void Awake()
     {
@@ -18,8 +19,8 @@ public class MainUIManager : MonoBehaviour
         right = transform.Find("Rightbtn").GetComponent<Button>();
         left = transform.Find("Leftbtn").GetComponent<Button>();
 
-        timeTxt = transform.Find("Image").Find("TimeTxt").GetComponent<Text>();
-        moneyTxt = transform.Find("Image").Find("MoneyTxt").GetComponent<Text>();
+        //timeTxt = transform.Find("Image").Find("TimeTxt").GetComponent<Text>();
+       // moneyTxt = transform.Find("Image").Find("MoneyTxt").GetComponent<Text>();
 
         setting.onClick.AddListener(() => SettingBtn());
         left.onClick.AddListener(() => LeftBtn());
