@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d090a5055d0cbd418419922b0c52305, type: 3}
-  m_Name: Tada 1
+  m_Name: Shooong
   m_EditorClassIdentifier: 
   level: 0
-  meatList: 00000000
-  vegetableList: 000000000300000007000000
-  noodleList: 02000000
-  etcList: 0400000000000000
+  meatList: 010000000000000001000000
+  vegetableList: 0200000002000000
+  noodleList: 000000000200000003000000
+  etcList: 0000000007000000

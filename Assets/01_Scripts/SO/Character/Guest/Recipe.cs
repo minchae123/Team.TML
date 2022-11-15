@@ -6,7 +6,6 @@ using TMPro;
 
 public class Recipe : MonoBehaviour
 {
-    //public Text showTxt;
     public TextMeshProUGUI txt;
 
     public IngredientRecipeListSO listSO;
@@ -17,13 +16,12 @@ public class Recipe : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             SetRecipe();
-
         }
     }
 
     public void SetRecipe()
     {
-        int index = Random.Range(0,listSO.ingredients.Count);
+        int index = Random.Range(0, listSO.ingredients.Count);
 
         ingredientSO = listSO.ingredients[index];
         TextShow();
@@ -36,15 +34,14 @@ public class Recipe : MonoBehaviour
         SetIngredient(ingredientSO.meatList);
         SetIngredient(ingredientSO.vegetableList);
         SetIngredient(ingredientSO.noodleList);
-        SetIngredient(ingredientSO.stickList);
         SetIngredient(ingredientSO.etcList);
     }
 
-    void SetIngredient(List<string> ingredients)
+    void SetIngredient<T>(List<T> ingredients)
     {
-        foreach (string ingredient in ingredients)
+        foreach (T ingredient in ingredients)
         {
-            txt.text += $"{ingredient} ";
+            txt.text += $"{ingredient.ToString()} ";
         }
         txt.text += "\n";
     }

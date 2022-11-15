@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Listt
   m_EditorClassIdentifier: 
   ingredients:
+  - {fileID: 11400000, guid: 82c510869d6d5704a9ae4140523cb442, type: 2}
   - {fileID: 11400000, guid: f03dd86264cebd54c99b63fa81000562, type: 2}
   - {fileID: 11400000, guid: ab44e08ce8e5d9b409b0594a527141ac, type: 2}

@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Tada 2
   m_EditorClassIdentifier: 
   level: 0
-  meatList:
-  - "\uC18C\uACE0\uAE30"
-  vegetableList:
-  - "\uBC30\uCD94"
-  noodleList: []
-  stickList: []
-  etcList: []
+  meatList: 00000000
+  vegetableList: 00000000
+  noodleList: 0000000002000000
+  etcList: 030000000500000000000000
