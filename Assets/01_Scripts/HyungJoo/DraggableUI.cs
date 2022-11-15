@@ -54,6 +54,10 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             rect.position = originPos;
             //transform.position = originPos;
         }
+        else
+        {
+            this.gameObject.GetComponent<DraggableUI>().enabled = false;
+        }
 
         _canvasGroup.alpha =1.0f;
         _canvasGroup.blocksRaycasts = true;
