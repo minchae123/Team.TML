@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -12,6 +13,8 @@ public class MainUIManager : MonoBehaviour
 
     public TextMeshProUGUI timeTxt;
     public TextMeshProUGUI moneyTxt;
+
+    public UnityEvent nightEvent;
 
     private void Awake()
     {
@@ -52,7 +55,7 @@ public class MainUIManager : MonoBehaviour
 
     public void SetMoney(int money)
     {
-        moneyTxt.text = string.Format("µ· : {0:#,###}", money);
+        moneyTxt.text = string.Format("ï¿½ï¿½ : {0:#,###}", money);
     }
 
     public void SetTime(int time)
@@ -60,7 +63,12 @@ public class MainUIManager : MonoBehaviour
         int h = time / 6;
         int m = time % 6;
         m = m * 10;
-        timeTxt.text = string.Format("½Ã°£ = {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
+        timeTxt.text = string.Format("ï¿½Ã°ï¿½ = {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
+
+        if(h == 20 && m == 0)
+        {
+            nightEvent.Invoke();
+        }
     }
 
     IEnumerator TimeAdd()                                             
