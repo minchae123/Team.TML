@@ -11,8 +11,10 @@ public class Feed : MonoBehaviour
 
     IEnumerator ThrowFood(){
         while(true){
-            if(Input.GetKey(KeyCode.Mouse0)){
-                mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);            }
+            if(Input.GetKey(KeyCode.Mouse0))
+            {
+                mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);            
+            }
             yield return new WaitForSeconds(delay);
         }
     }

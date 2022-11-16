@@ -14,7 +14,7 @@ public enum Vegetable
 
 public enum Noodle
 {
-    옥수수면, 당면, 넓적당면, 분모자당면
+    옥수수면, 넓적당면, 분모자당면
 }
 
 public enum Etc
