@@ -50,7 +50,7 @@ public class Recipe : MonoBehaviour, IPoolable
 
     public void OnPool()
     {
-        Invoke("PushObj", 3f);
+
     }
 
     public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);
