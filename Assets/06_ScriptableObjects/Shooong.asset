@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shooong
   m_EditorClassIdentifier: 
   level: 0
-  sp: {fileID: 21300000, guid: e44d0f64f9be37d44b61c1d32eb921fc, type: 3}
+  sp: {fileID: 21300000, guid: 0c4bb716b64afcd4ebe7d5a7dc7d1370, type: 3}
   meatList: 00000000
   vegetableList: 0400000002000000
   noodleList: 0000000002000000
