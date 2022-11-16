@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   sp: {fileID: 21300000, guid: e44d0f64f9be37d44b61c1d32eb921fc, type: 3}
-  meatList: 010000000000000001000000
-  vegetableList: 0200000002000000
+  meatList: 00000000
+  vegetableList: 0400000002000000
   noodleList: 000000000200000003000000
   etcList: 0000000007000000

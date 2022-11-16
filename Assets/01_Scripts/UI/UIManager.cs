@@ -23,6 +23,13 @@ public class UIManager : MonoBehaviour
 
     public void ShowEsc()
     {
+        Time.timeScale = 0;
+        submenu.SetActive(!submenu.activeSelf);
+    }
+
+    public void QuitEsc()
+    {
+        Time.timeScale = 1;
         submenu.SetActive(!submenu.activeSelf);
     }
 

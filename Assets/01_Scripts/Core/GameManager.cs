@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int money;
     public int Money { get => money; set => money = value; }
 
-    //private _poolingList = null;
-
     private void Awake()
     {
         if (Instance != null)

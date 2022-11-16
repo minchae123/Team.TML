@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Meat
 {
-    양고기, 소고기
+    고기
 }
 
 public enum Vegetable
