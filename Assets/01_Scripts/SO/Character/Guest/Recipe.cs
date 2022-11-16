@@ -6,6 +6,19 @@ using TMPro;
 
 public class Recipe : MonoBehaviour, IPoolable
 {
+
+    public void OnPool()
+    {
+
+    }
+
+    public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);
+
+    /*public void PushObj() 이 코드를 람다로
+    {
+       PoolingManager.PushObject(NAME, this.gameObject);
+    }*/
+
     public TextMeshProUGUI txt;
 
     private IngredientSO ingredientSO;
@@ -48,10 +61,4 @@ public class Recipe : MonoBehaviour, IPoolable
         txt.text += "\n";
     }
 
-    public void OnPool()
-    {
-
-    }
-
-    public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);
 }
