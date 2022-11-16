@@ -17,6 +17,8 @@ public class CameraColor : MonoBehaviour
     private void Awake()
     {
         cam = GetComponent<Camera>();
+
+        StartCoroutine(Cycle());
     }
 
     private void Update()
