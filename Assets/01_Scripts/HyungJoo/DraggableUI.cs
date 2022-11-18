@@ -13,6 +13,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             return _droppableUI;
         }
     }
+    public bool nambi;
     private Transform _canvas;
     private Transform _previousParent;
     public Vector3 originPos;
@@ -23,9 +24,11 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private void Awake()
     {
         rect = GetComponent<RectTransform>();
-        _canvas = GameObject.Find("Canvas").transform;
+       // _canvas = GameObject.Find("Canvas").transform;
         _canvasGroup = GetComponent<CanvasGroup>();
+        _canvas = FindObjectOfType<Canvas>().transform;
     }
+
     //drag ����������
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -39,7 +42,6 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         transform.position = eventData.position;
 
     }
-
 
     public void OnDrag(PointerEventData eventData)
     {
