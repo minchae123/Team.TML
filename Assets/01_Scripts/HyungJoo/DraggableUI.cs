@@ -21,6 +21,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public bool dragged;
     private GameObject _droppableUI;
     private CanvasGroup _canvasGroup;
+
     private void Awake()
     {
         rect = GetComponent<RectTransform>();

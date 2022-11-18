@@ -9,7 +9,7 @@ public enum Meat
 
 public enum Vegetable
 {
-    배추, 청경채, 팽이버섯, 표고버섯, 새송이버섯, 목이버섯, 숙주, 고구마, 감자
+    배추, 청경채, 팽이버섯, 표고버섯, 새송이버섯, 목이버섯, 숙주, 감자
 }
 
 public enum Noodle
