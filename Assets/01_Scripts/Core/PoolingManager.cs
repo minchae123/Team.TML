@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,139 +11,167 @@ public class PoolingManager
 
     public static void CreatePool(string name, Transform parent = null, int count = 5)
     {
-        Queue<GameObject> q = new Queue<GameObject>();
-        GameObject prefab = null;
+        try
+        {
+            Queue<GameObject> q = new Queue<GameObject>();
+            GameObject prefab = null;
 
-        if (!poolObjectDictionary.ContainsKey(name))
-        {
-            prefab = Resources.Load<GameObject>($"Prefabs/{name}");
-            poolObjectDictionary.Add(name, prefab);
-        }
-        else
-        {
-            prefab = poolObjectDictionary[name];
-        }
-
-        for (int i = 0; i < count; i++)
-        {
-            GameObject newPrefab = GameObject.Instantiate(prefab, parent);
-            IPoolable iPool = newPrefab.GetComponent<IPoolable>();
-            if (iPool == null)
+            if (!poolObjectDictionary.ContainsKey(name))
             {
-                Debug.LogError("Interface가 달려있지 않습니다.");
-                return;
+                prefab = Resources.Load<GameObject>($"Prefabs/{name}");
+
+                if (prefab == null)
+                {
+                    throw new Exception("prefab을 찾지 못 하였습니다.");
+                }
+
+                poolObjectDictionary.Add(name, prefab);
+            }
+            else
+            {
+                prefab = poolObjectDictionary[name];
             }
 
-            newPrefab.GetComponent<IPoolable>().NAME = name;
-            newPrefab.SetActive(false);
-
-            q.Enqueue(newPrefab);
-        }
-
-        if (!poolDictionary.ContainsKey(name))
-        {
-            poolDictionary.Add(name, q);
-        }
-        else
-        {
-            int index = q.Count;
-            for (int i = 0; i < index; i++)
+            for (int i = 0; i < count; i++)
             {
-                poolDictionary[name].Enqueue(q.Dequeue());
+
+                GameObject newPrefab = GameObject.Instantiate(prefab, parent);
+                IPoolable iPool = newPrefab.GetComponent<IPoolable>();
+
+                if (iPool == null)
+                {
+                    throw new Exception("Interface가 달려있지 않습니다.");
+                }
+
+                newPrefab.GetComponent<IPoolable>().NAME = name;
+                newPrefab.SetActive(false);
+
+                q.Enqueue(newPrefab);
             }
+
+            if (!poolDictionary.ContainsKey(name))
+            {
+                poolDictionary.Add(name, q);
+            }
+            else
+            {
+                int index = q.Count;
+                for (int i = 0; i < index; i++)
+                {
+                    poolDictionary[name].Enqueue(q.Dequeue());
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError(ex);
+            return;
         }
     }
     public static void CreatePool(string name, string address, Transform parent = null, int count = 5)
     {
-        Queue<GameObject> q = new Queue<GameObject>();
-        GameObject prefab = null;
+        try
+        {
+            Queue<GameObject> q = new Queue<GameObject>();
+            GameObject prefab = null;
 
-        if (!poolObjectDictionary.ContainsKey(name))
-        {
-            prefab = Resources.Load<GameObject>($"Prefabs/{address}/{name}");
-            poolObjectDictionary.Add(name, prefab);
-        }
-        else
-        {
-            prefab = poolObjectDictionary[name];
-        }
-
-        for (int i = 0; i < count; i++)
-        {
-            GameObject newPrefab = GameObject.Instantiate(prefab, parent);
-            IPoolable iPool = newPrefab.GetComponent<IPoolable>();
-            if (iPool == null)
+            if (!poolObjectDictionary.ContainsKey(name))
             {
-                Debug.LogError("Interface가 달려있지 않습니다.");
-                return;
+                prefab = Resources.Load<GameObject>($"Prefabs/{address}/{name}");
+
+                if (prefab == null)
+                {
+                    throw new Exception("prefab을 찾지 못 하였습니다.");
+                }
+
+                poolObjectDictionary.Add(name, prefab);
+            }
+            else
+            {
+                prefab = poolObjectDictionary[name];
             }
 
-            newPrefab.GetComponent<IPoolable>().NAME = name;
-            newPrefab.SetActive(false);
-
-            q.Enqueue(newPrefab);
-        }
-
-        if (!poolDictionary.ContainsKey(name))
-        {
-            poolDictionary.Add(name, q);
-        }
-        else
-        {
-            for (int i = 0; i < q.Count; i++)
+            for (int i = 0; i < count; i++)
             {
-                poolDictionary[name].Enqueue(q.Dequeue());
+
+                GameObject newPrefab = GameObject.Instantiate(prefab, parent);
+                IPoolable iPool = newPrefab.GetComponent<IPoolable>();
+
+                if (iPool == null)
+                {
+                    throw new Exception("Interface가 달려있지 않습니다.");
+                }
+
+                newPrefab.GetComponent<IPoolable>().NAME = name;
+                newPrefab.SetActive(false);
+
+                q.Enqueue(newPrefab);
             }
+
+            if (!poolDictionary.ContainsKey(name))
+            {
+                poolDictionary.Add(name, q);
+            }
+            else
+            {
+                for (int i = 0; i < q.Count; i++)
+                {
+                    poolDictionary[name].Enqueue(q.Dequeue());
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError(ex);
+            return;
         }
     }
 
     public static GameObject PopObject(string name)
     {
-        GameObject returnObj = null;
-        if (!poolDictionary.ContainsKey(name))
+        try
         {
-            Debug.LogError("Pooling이 되지 않았다");
-            return null;
-        }
+            GameObject returnObj = null;
+            if (!poolDictionary.ContainsKey(name))
+            {
+                throw new Exception("Not pooled");
+            }
 
-        Queue<GameObject> q = poolDictionary[name];
+            Queue<GameObject> q = poolDictionary[name];
 
-        if (q.Count == 1)
-        {
-            CreatePool(name, q.Peek().transform.parent, 1);
-        }
+            if (q.Count == 1)
+            {
+                CreatePool(name, q.Peek().transform.parent, 1);
+            }
 
-        returnObj = q.Dequeue();
-        returnObj.SetActive(true);
+            returnObj = q.Dequeue();
+            returnObj.SetActive(true);
 
-        IPoolable iPool = returnObj.GetComponent<IPoolable>();
-        if (iPool == null)
-        {
-            returnObj = null;
-            Debug.LogWarning("Interface가 달려있지 않습니다.");
+            IPoolable iPool = returnObj.GetComponent<IPoolable>();
+            if (iPool == null)
+            {
+                returnObj = null;
+                throw new Exception("There is no interface attached.");
+            }
+
+            iPool.OnPool();
+
             return returnObj;
         }
-
-        iPool.OnPool();
-
-        return returnObj;
-    }
-
-    public static void PushObject(string name, GameObject obj)
-    {
-        if (poolDictionary.ContainsKey(name))
+        catch (Exception ex)
         {
-            obj.SetActive(false);
-            obj.transform.SetAsLastSibling();
-            poolDictionary[name].Enqueue(obj);
+            Debug.LogError(ex);
+            return null;
         }
     }
-    public static void PushObject(string name, GameObject obj, Transform parent)
+
+    public static void PushObject(string name, GameObject obj, Transform parent = null)
     {
         if (poolDictionary.ContainsKey(name))
         {
             obj.SetActive(false);
-            obj.transform.SetParent(parent);
+            if (parent != null)
+                obj.transform.SetParent(parent);
             obj.transform.SetAsLastSibling();
             poolDictionary[name].Enqueue(obj);
         }

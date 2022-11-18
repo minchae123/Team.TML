@@ -55,7 +55,7 @@ public class MainUIManager : MonoBehaviour
 
     public void SetMoney(int money)
     {
-        moneyTxt.text = string.Format("�� : {0:#,###}", money);
+        moneyTxt.text = string.Format("돈 : {0:#,###}", money);
     }
 
     public void SetTime(int time)
@@ -63,7 +63,7 @@ public class MainUIManager : MonoBehaviour
         int h = time / 6;
         int m = time % 6;
         m = m * 10;
-        timeTxt.text = string.Format("�ð� = {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
+        timeTxt.text = string.Format("시간 = {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
 
         if(h == 20 && m == 0)
         {
