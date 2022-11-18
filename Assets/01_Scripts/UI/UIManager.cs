@@ -23,8 +23,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-
-
     public void ShowEsc()
     {
         Time.timeScale = 0;

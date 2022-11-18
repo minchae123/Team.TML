@@ -9,6 +9,8 @@ public class CustomerManager : MonoBehaviour
 
     public List<NamBi> namBii;
 
+    public AudioSource ef;
+
     private void Start()
     {
         PoolingManager.CreatePool("Customer", this.transform);
@@ -18,11 +20,21 @@ public class CustomerManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            int index = Random.Range(0, list.ingredients.Count);
-
-            GameObject obj = PoolingManager.PopObject("Customer");
-            obj.GetComponent<Recipe>().IngredientSO = list.ingredients[index];
+            ShowCustomer();
         }
+    }
+
+    public void ShowCustomer()
+    {
+        int index = Random.Range(0, list.ingredients.Count);
+
+        Vector3 pos = new Vector3(-81, 131, 0);
+
+        GameObject obj = PoolingManager.PopObject("Customer");
+        obj.GetComponent<Recipe>().IngredientSO = list.ingredients[index];
+
+        ef.Play();
+        obj.transform.DOLocalMove(pos, 0.8f).SetEase(Ease.Linear);
     }
 
     public void SetRecipe(List<string> re)
