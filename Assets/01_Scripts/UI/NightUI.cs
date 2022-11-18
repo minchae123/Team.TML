@@ -45,6 +45,6 @@ public class NightUI : MonoBehaviour
     }
 
     public void Calculate(){
-
+        
     }
 }
