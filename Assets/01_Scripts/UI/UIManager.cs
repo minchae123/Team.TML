@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public GameObject submenu;
     public GameObject timer;
 
+    public List<NamBi> namBii;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -20,6 +22,8 @@ public class UIManager : MonoBehaviour
             timer.SetActive(!timer.activeSelf);
         }
     }
+
+
 
     public void ShowEsc()
     {

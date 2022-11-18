@@ -13,17 +13,11 @@ public class CameraColor : MonoBehaviour
     private int index = 0;
     private int nextIndex = 1;
 
-
     private void Awake()
     {
         cam = GetComponent<Camera>();
 
         StartCoroutine(Cycle());
-    }
-
-    private void Update()
-    {
-        
     }
 
     IEnumerator Cycle()

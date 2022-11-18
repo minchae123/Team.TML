@@ -8,6 +8,10 @@ public class Recipe : MonoBehaviour, IPoolable
 {
     public TextMeshProUGUI txt;
 
+    public List<string> save;
+
+    public CustomerManager customer;
+
     private IngredientSO ingredientSO;
     public IngredientSO IngredientSO
     {
@@ -23,6 +27,11 @@ public class Recipe : MonoBehaviour, IPoolable
     private string objName;
     public string NAME { get => objName; set => objName = value; }
 
+    private void Awake()
+    {
+        customer = FindObjectOfType<CustomerManager>();
+    }
+
     public void SetRecipe()
     {
         GetComponent<Image>().sprite = ingredientSO.sp;
@@ -37,6 +46,8 @@ public class Recipe : MonoBehaviour, IPoolable
         SetIngredient(ingredientSO.vegetableList);
         SetIngredient(ingredientSO.noodleList);
         SetIngredient(ingredientSO.etcList);
+
+        customer.SetRecipe(save);
     }
 
     void SetIngredient<T>(List<T> ingredients)
@@ -44,6 +55,7 @@ public class Recipe : MonoBehaviour, IPoolable
         foreach (T ingredient in ingredients)
         {
             txt.text += $"{ingredient.ToString()} ";
+            save.Add(ingredient.ToString());
         }
         txt.text += "\n";
     }
