@@ -55,7 +55,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             transform.SetParent(_previousParent);
             rect.position = originPos;
-            //transform.position = originPos;
+            transform.position = originPos;
         }
         else
         {
