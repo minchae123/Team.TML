@@ -14,6 +14,7 @@ public class MainUIManager : MonoBehaviour
     public TextMeshProUGUI timeTxt;
     public TextMeshProUGUI moneyTxt;
     public int dayCount = 1;
+    public int time = 48;
 
     public UnityEvent nightEvent;
 
@@ -22,9 +23,6 @@ public class MainUIManager : MonoBehaviour
         setting = transform.Find("Settingbtn").GetComponent<Button>();
         right = transform.Find("Rightbtn").GetComponent<Button>();
         left = transform.Find("Leftbtn").GetComponent<Button>();
-
-        //timeTxt = transform.Find("Image").Find("TimeTxt").GetComponent<Text>();
-       // moneyTxt = transform.Find("Image").Find("MoneyTxt").GetComponent<Text>();
 
         setting.onClick.AddListener(() => SettingBtn());
         left.onClick.AddListener(() => LeftBtn());
@@ -64,7 +62,7 @@ public class MainUIManager : MonoBehaviour
         int h = time / 6;
         int m = time % 6;
         m = m * 10;
-        timeTxt.text = string.Format("시간 = {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
+        timeTxt.text = string.Format("시간 : {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
 
         if(h == 20 && m == 0)
         {
@@ -77,9 +75,8 @@ public class MainUIManager : MonoBehaviour
         }
     }
 
-    IEnumerator TimeAdd()                                             
+    public IEnumerator TimeAdd()                                             
     {                                                                 
-        int time = 0;                                                 
         while(time < 144)                                                
         {                                                                
             yield return new WaitForSeconds(1);                          

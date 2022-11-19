@@ -79,6 +79,7 @@ public class NightUI : MonoBehaviour
         moveOrigin.OnComplete(() => {
             graphicRaycaster.enabled = false;
             fadeImage.enabled = false;
+            mainUIManager.time = 48;
         });
 
     }
