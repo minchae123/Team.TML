@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d090a5055d0cbd418419922b0c52305, type: 3}
-  m_Name: Tada 1
+  m_Name: BoyFr
   m_EditorClassIdentifier: 
   level: 0
   sp: {fileID: 21300000, guid: 559a3f15e2a74e64190640b9312e8c82, type: 3}
+  tell: "\uACE0\uAE30\uB791 \uBC30\uCD94 !\n\uD45C\uACE0\uBC84\uC12F \uAC10\uC790
+    !\n\uBD84\uBAA8\uC790 \uB2F9\uBA74, \uCE58\uC988\uB5A1 \uAF2C\uCE58 \uB123\uC5B4\uC8FC\uC138\uC694
+    !"
   meatList: 00000000
   vegetableList: 000000000300000007000000
   noodleList: 02000000

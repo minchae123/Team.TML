@@ -28,6 +28,9 @@ public class IngredientSO : ScriptableObject
     public int level;
     public Sprite sp;
 
+    [TextArea]
+    public string tell;
+
     [Header("고기")]
     public List<Meat> meatList;
 
