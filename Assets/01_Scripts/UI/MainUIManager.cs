@@ -64,7 +64,7 @@ public class MainUIManager : MonoBehaviour
         int h = time / 6;
         int m = time % 6;
         m = m * 10;
-        timeTxt.text = string.Format("시간 = {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
+        timeTxt.text = string.Format("시간 : {0} : {1} {2}", h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
 
         if(h == 20 && m == 0)
         {
@@ -79,12 +79,14 @@ public class MainUIManager : MonoBehaviour
 
     IEnumerator TimeAdd()                                             
     {                                                                 
-        int time = 0;                                                 
+        int time = 48;                                                 
         while(time < 144)                                                
         {                                                                
             yield return new WaitForSeconds(1);                          
             time++;                                                      
             SetTime(time);                                               
         }
+
+
     }
 }
