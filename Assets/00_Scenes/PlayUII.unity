@@ -2640,6 +2640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeTxt: {fileID: 137793907}
   moneyTxt: {fileID: 478351342}
+  dayCount: 1
   nightEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3424,7 +3425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   submenu: {fileID: 1801448237}
   timer: {fileID: 0}
-  namBii: []
+  namBii:
+  - {fileID: 5962373873410279920}
 --- !u!82 &1465103347
 AudioSource:
   m_ObjectHideFlags: 0
