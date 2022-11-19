@@ -13,6 +13,7 @@ public class MainUIManager : MonoBehaviour
 
     public TextMeshProUGUI timeTxt;
     public TextMeshProUGUI moneyTxt;
+    public int dayCount = 1;
 
     public UnityEvent nightEvent;
 
@@ -68,6 +69,11 @@ public class MainUIManager : MonoBehaviour
         if(h == 20 && m == 0)
         {
             nightEvent.Invoke();
+        }
+
+        if(h == 24){
+
+            dayCount++;
         }
     }
 
