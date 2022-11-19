@@ -14,6 +14,7 @@ public class MainUIManager : MonoBehaviour
     public TextMeshProUGUI timeTxt;
     public TextMeshProUGUI moneyTxt;
     public int dayCount = 1;
+    public int time = 48;
 
     public UnityEvent nightEvent;
 
@@ -74,16 +75,13 @@ public class MainUIManager : MonoBehaviour
         }
     }
 
-    IEnumerator TimeAdd()                                             
+    public IEnumerator TimeAdd()                                             
     {                                                                 
-        int time = 48;                                                 
         while(time < 144)                                                
         {                                                                
             yield return new WaitForSeconds(1);                          
             time++;                                                      
             SetTime(time);                                               
         }
-
-
     }
 }

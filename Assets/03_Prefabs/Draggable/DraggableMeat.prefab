@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4991fd6cd0814824a976a3ce9a0087a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nambi: 0
   originPos: {x: 0, y: 0, z: 0}
   dragged: 0
 --- !u!225 &1046182011520862711
@@ -117,3 +118,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: "\uACE0\uAE30"
+  sp: {fileID: 21300000, guid: 0e0f5b372decb3c48b17c97441d9bd67, type: 3}

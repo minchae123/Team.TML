@@ -118,3 +118,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: "\uC720\uBD80"
+  sp: {fileID: 21300000, guid: c19a091c01f892b4e847173299abc540, type: 3}
