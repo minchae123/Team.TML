@@ -1977,6 +1977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list: {fileID: 11400000, guid: 03ed6762933118a46aac0e583ef19f73, type: 2}
+  namBii: []
+  ef: {fileID: 0}
 --- !u!1 &1043938420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,6 +3108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   submenu: {fileID: 2090145933}
   timer: {fileID: 0}
+  namBii: []
 --- !u!1001 &1487179010
 PrefabInstance:
   m_ObjectHideFlags: 0
