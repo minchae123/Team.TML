@@ -14,10 +14,12 @@ public class NightUI : MonoBehaviour
     public TextMeshProUGUI receiptText_Day;
     public TextMeshProUGUI receiptText_Calculate;
     private MainUIManager mainUIManager;
+    public GraphicRaycaster graphicRaycaster;
 
     private void Awake() {
 
         mainUIManager = GameObject.Find("MainCanvas").GetComponent<MainUIManager>();
+        graphicRaycaster.enabled = false;
     }
 
     private void Update() {
@@ -59,7 +61,7 @@ public class NightUI : MonoBehaviour
     }
 
     public void Receipt(){
-
+        graphicRaycaster.enabled = true;
         receiptText_Day.text = $"{mainUIManager.dayCount}일차";
         //receiptText_Calculate.text =  
         receipt.transform.DOMove(Vector3.zero, 0.5f);
@@ -75,7 +77,7 @@ public class NightUI : MonoBehaviour
         moveOrigin.Append(fadeImage.DOFade(0, 1f));
 
         moveOrigin.OnComplete(() => {
-
+            graphicRaycaster.enabled = false;
             fadeImage.enabled = false;
         });
 
