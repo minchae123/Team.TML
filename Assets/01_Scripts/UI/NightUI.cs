@@ -7,7 +7,7 @@ using TMPro;
 
 public class NightUI : MonoBehaviour
 {   
-    public Vector3 originalTransform;
+    private Vector3 originalTransform;
     public Image fadeImage;
     public GameObject shutter;
     public GameObject receipt;
@@ -17,7 +17,7 @@ public class NightUI : MonoBehaviour
 
     private void Awake() {
 
-        mainUIManager = GameObject.Find("Canvas").GetComponent<MainUIManager>();
+        mainUIManager = GameObject.Find("MainCanvas").GetComponent<MainUIManager>();
     }
 
     private void Update() {
@@ -30,7 +30,7 @@ public class NightUI : MonoBehaviour
     public void NightFade(){
         
         Sequence fadeSequence = DOTween.Sequence();
-
+        
         fadeImage.enabled = true;
         fadeSequence.Append(fadeImage.DOFade(1f, 2f));
         
