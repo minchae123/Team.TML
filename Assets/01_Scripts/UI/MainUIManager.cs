@@ -23,9 +23,6 @@ public class MainUIManager : MonoBehaviour
         right = transform.Find("Rightbtn").GetComponent<Button>();
         left = transform.Find("Leftbtn").GetComponent<Button>();
 
-        //timeTxt = transform.Find("Image").Find("TimeTxt").GetComponent<Text>();
-       // moneyTxt = transform.Find("Image").Find("MoneyTxt").GetComponent<Text>();
-
         setting.onClick.AddListener(() => SettingBtn());
         left.onClick.AddListener(() => LeftBtn());
         right.onClick.AddListener(() => RightBtn());
