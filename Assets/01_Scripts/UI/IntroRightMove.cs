@@ -8,6 +8,7 @@ public class IntroRightMove : MonoBehaviour
 {
     public GameObject introCut;
     public GameObject introCanvas;
+    public GameObject mainCanvas;
     public int clickCount = 1;
     private Vector3 moveVector = new Vector3(-1920, 0, 0);
 

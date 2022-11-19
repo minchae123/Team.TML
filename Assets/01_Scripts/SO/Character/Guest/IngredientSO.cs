@@ -4,22 +4,22 @@ using UnityEngine;
 
 public enum Meat
 {
-    °í±â
+    ê³ ê¸°
 }
 
 public enum Vegetable
 {
-    ¹èÃß, Ã»°æÃ¤, ÆØÀÌ¹ö¼¸, Ç¥°í¹ö¼¸, »õ¼ÛÀÌ¹ö¼¸, ¸ñÀÌ¹ö¼¸, ¼÷ÁÖ, °¨ÀÚ
+    ë°°ì¶”, ì²­ê²½ì±„, íŒ½ì´ë²„ì„¯, í‘œê³ ë²„ì„¯, ìƒˆì†¡ì´ë²„ì„¯, ëª©ì´ë²„ì„¯, ìˆ™ì£¼, ê°ì
 }
 
 public enum Noodle
 {
-    ¿Á¼ö¼ö¸é, ³ĞÀû´ç¸é, ºĞ¸ğÀÚ´ç¸é
+    ì˜¥ìˆ˜ìˆ˜ë©´, ë„“ì ë‹¹ë©´, ë¶„ëª¨ìë‹¹ë©´
 }
 
 public enum Etc
 {
-    ²¿Ä¡, ¿ÏÀÚ, °ÇµÎºÎ, ÇªÁÖ, Ä¡Áî¶±, °í±¸¸¶¶±, ¸ŞÃß¸®¾Ë, ¼Ò¼¼Áö
+    ê¼¬ì¹˜, ì™„ì, ê±´ë‘ë¶€, í‘¸ì£¼, ì¹˜ì¦ˆë–¡, ê³ êµ¬ë§ˆë–¡, ë©”ì¶”ë¦¬ì•Œ, ì†Œì„¸ì§€
 }
 
 [CreateAssetMenu(menuName ="SO/Recipe")]
@@ -28,15 +28,15 @@ public class IngredientSO : ScriptableObject
     public int level;
     public Sprite sp;
 
-    [Header("°í±â")]
+    [Header("ê³ ê¸°")]
     public List<Meat> meatList;
 
-    [Header("Ã¤¼Ò")]
+    [Header("ì±„ì†Œ")]
     public List<Vegetable> vegetableList;
 
-    [Header("¸é")] 
+    [Header("ë©´")] 
     public List<Noodle> noodleList;
 
-    [Header("±âÅ¸")]
+    [Header("ê¸°íƒ€")]
     public List<Etc> etcList;
 }
