@@ -39,6 +39,8 @@ public class IntroRightMove : MonoBehaviour
                 break;
             case 5 :
                 introCanvas.SetActive(false);
+                MainUIManager a = FindObjectOfType<MainUIManager>();
+                a.StartCoroutine(a.TimeAdd());
                 break;
 
         }

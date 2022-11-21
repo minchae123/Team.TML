@@ -4873,7 +4873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1333162670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4891,7 +4891,7 @@ MonoBehaviour:
   receipt: {fileID: 891821682}
   receiptText_Day: {fileID: 919084004}
   receiptText_Calculate: {fileID: 1910655505}
-  graphicRaycaster: {fileID: 0}
+  graphicRaycaster: {fileID: 1333162671}
 --- !u!114 &1333162671
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ public class MainUIManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(TimeAdd());
+
     }
 
     private void Update()
