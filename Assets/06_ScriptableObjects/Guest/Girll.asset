@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   sp: {fileID: 21300000, guid: 016b3bbfdb997c140887bd6e94eecb96, type: 3}
-  tell: "\uD0A4\uD0A4 \uACE0\uAE30 \uBC30\uCD94\n\uD0A4\uD0A4 \uBAA9\uC774\uBC84\uC12F\n\uD0A4\uD0A4
+  tell: "\uD0A4\uD0A4 \uACE0\uAE30 \n\uD0A4\uD0A4 \uBC30\uCD94\n\uD0A4\uD0A4 \uBAA9\uC774\uBC84\uC12F\n\uD0A4\uD0A4
     \uC625\uC218\uC218\uBA74 \n\uD0A4\uD0A4 \uBD84\uBAA8\uC790 \uB2F9\uBA74\n\uD0A4\uD0A4
-    \uD478\uC8FC\n\uD0A4\uD0A4 \uACE0\uAD6C\uB9C8\uB5A1\n\uD0A4\uD0A4 \uAF2C\uCE58"
+    \uACE0\uAD6C\uB9C8\uB5A1\n\uD0A4\uD0A4 \uAF2C\uCE58 \uC8FC\uC138\uC6A9"
   meatList: 00000000
   vegetableList: 0000000005000000
   noodleList: 0000000002000000
