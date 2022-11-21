@@ -19,7 +19,7 @@ public enum Noodle
 
 public enum Etc
 {
-    꼬치, 완자, 건두부, 푸주, 치즈떡, 고구마떡, 메추리알, 소세지, 유부
+    꼬치, 완자, 건두부, 치즈떡, 고구마떡, 메추리알, 소세지, 유부
 }
 
 [CreateAssetMenu(menuName ="SO/Recipe")]
@@ -27,6 +27,9 @@ public class IngredientSO : ScriptableObject
 {
     public int level;
     public Sprite sp;
+
+    [TextArea]
+    public string tell;
 
     [Header("고기")]
     public List<Meat> meatList;

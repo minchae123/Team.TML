@@ -47,6 +47,7 @@ public class Recipe : MonoBehaviour, IPoolable
         SetIngredient(ingredientSO.noodleList);
         SetIngredient(ingredientSO.etcList);
 
+        txt.text += ingredientSO.tell;
         customer.SetRecipe(save);
     }
 
@@ -54,10 +55,10 @@ public class Recipe : MonoBehaviour, IPoolable
     {
         foreach (T ingredient in ingredients)
         {
-            txt.text += $"{ingredient.ToString()} ";
+            //txt.text += $"{ingredient.ToString()} ";
             save.Add(ingredient.ToString());
         }
-        txt.text += "\n";
+        //txt.text += "\n";
     }
 
     public void OnPool()

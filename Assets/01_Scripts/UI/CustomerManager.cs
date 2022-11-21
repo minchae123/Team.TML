@@ -5,11 +5,22 @@ using DG.Tweening;
 
 public class CustomerManager : MonoBehaviour
 {
+    public CustomerManager Instance = null;
+
     public IngredientRecipeListSO list;
 
     public List<NamBi> namBii;
 
     public AudioSource ef;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Debug.Log("Multiple Gamemanager is running");
+        }
+        Instance = this;
+    }
 
     private void Start()
     {
