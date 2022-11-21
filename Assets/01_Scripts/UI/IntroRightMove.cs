@@ -12,9 +12,12 @@ public class IntroRightMove : MonoBehaviour
     private Vector3 moveVector = new Vector3(-1920, 0, 0);
 
     public TextMeshProUGUI infoText;
-    
+
+    [TextArea]
     public string infoText2 = "2번 설명입니다.";
+    [TextArea]
     public string infoText3 = "3번 설명입니다.";
+    [TextArea]
     public string infoText4 = "4번 설명입니다.";
     
     public void IntroButtonClick(){
