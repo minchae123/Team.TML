@@ -5,10 +5,10 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
-    
+
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Destroy(gameObject);
             return;
@@ -21,8 +21,6 @@ public class Inventory : MonoBehaviour
 
     public delegate void OnChangeItem();
     public OnChangeItem onChangeItem;
-
-    public List<Item> items = new List<Item>();
 
     private int slotCnt;
 
@@ -39,16 +37,5 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         SlotCnt = 4;
-    }
-
-    public bool AddItem(Item _item)
-    {
-        if(items.Count < SlotCnt)
-        {
-            items.Add(_item);
-            onChangeItem.Invoke();
-            return true;
-        }
-        return false;
     }
 }

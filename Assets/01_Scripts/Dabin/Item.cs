@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public enum ItemType
+public enum IngredientType
 {
-    Equiment,
-    Consumables,
+    Meat,
+    Vegetable,
+    Noodle,
     Etc
 }
 
 [System.Serializable]
 public class Item 
 {
-    public ItemType itemType;
-    public string ItemName;
-    public Sprite itemImage;
+    public IngredientType ingredientType; 
+    public string ingredientName; // 
+    public Sprite ingredientImage; // 여기에다가 재료 이미지 추가
+    public int ingredientNumber; // 상점에서 음식 살때마다 증가
 
     public bool Use()
     {
