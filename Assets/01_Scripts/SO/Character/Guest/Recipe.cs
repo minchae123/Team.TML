@@ -55,15 +55,12 @@ public class Recipe : MonoBehaviour, IPoolable
     {
         foreach (T ingredient in ingredients)
         {
-            //txt.text += $"{ingredient.ToString()} ";
             save.Add(ingredient.ToString());
         }
-        //txt.text += "\n";
     }
 
     public void OnPool()
     {
-
     }
 
     public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);

@@ -17,14 +17,12 @@ public class NightUI : MonoBehaviour
     public GraphicRaycaster graphicRaycaster;
 
     private void Awake() {
-
         mainUIManager = GameObject.Find("MainCanvas").GetComponent<MainUIManager>();
         graphicRaycaster.enabled = false;
     }
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.F)){
-            Debug.Log("키 입력");
             NightFade();
         }
     }
@@ -45,8 +43,6 @@ public class NightUI : MonoBehaviour
     }
 
     public void ShutterDown(){
-
-        Debug.Log("셔터다운");
 
         originalTransform = shutter.transform.position;
 

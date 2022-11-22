@@ -8,13 +8,18 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
 {
     public bool gas;
     public bool clear;
+    public bool namBi;
 
     private Image _image;
     RectTransform rect;
+
+    Color co;
+
     void Awake()
     {
         _image = GetComponent<Image>();
         rect = GetComponent<RectTransform>();
+        co = this._image.color;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -27,7 +32,7 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _image.color = Color.white;
+        _image.color = co;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -41,7 +46,9 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
                     return;
                 }
             }
+
             NamBi nambi = transform.GetComponent<NamBi>();
+
             if (nambi != null)
             {
                 Yummy yummy = eventData.pointerDrag.gameObject.GetComponent<Yummy>();
@@ -50,6 +57,13 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
                     nambi.AddItem(yummy.ingredientName);
                 }
             }
+
+            if(clear == true && transform.childCount > 0)
+            {
+                Debug.Log("¿Ï·á");
+                nambi.Money();
+            }
+
             eventData.pointerDrag.transform.SetParent(transform);
             eventData.pointerDrag.GetComponent<RectTransform>().position = rect.position;
         }

@@ -17,7 +17,7 @@ public class CustomerManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Debug.Log("Multiple Gamemanager is running");
+            Debug.Log("Null");
         }
         Instance = this;
     }
