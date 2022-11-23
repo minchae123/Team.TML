@@ -8,11 +8,6 @@ public class IngredientManager : MonoBehaviour
     public List<Item> items = new List<Item>();
     public Slot[] slots;
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         IngredientSubstitution();
