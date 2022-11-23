@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Store : MonoBehaviour
 {
@@ -15,37 +16,29 @@ public class Store : MonoBehaviour
     public void MeatBtn()
     {
         meatP.SetActive(true);
-        storeGoods.MeatSubstitution();
-        for (int i = 0; i < btn.Length; i++)
-        {
-            btn[i].SetActive(false);
-        }
+        AllBtnFalse();
     }
 
     public void VegetabelBtn()
     {
         vegatableP.SetActive(true);
-        storeGoods.VegetableSubstitution();
-        for (int i = 0; i < btn.Length; i++)
-        {
-            btn[i].SetActive(false);
-        }
+        AllBtnFalse();
     }
 
     public void NoodleBtn()
     {
         noodleP.SetActive(true);
-        storeGoods.NoodleSubstitution();
-        for (int i = 0; i < btn.Length; i++)
-        {
-            btn[i].SetActive(false);
-        }
+        AllBtnFalse();
     }
 
     public void EtcBtn()
     {
         etcP.SetActive(true);
-        storeGoods.EtcSubstitution();
+        AllBtnFalse();
+    }
+
+    public void AllBtnFalse()
+    {
         for (int i = 0; i < btn.Length; i++)
         {
             btn[i].SetActive(false);
@@ -60,7 +53,7 @@ public class Store : MonoBehaviour
         etcP.SetActive(false);
 
         for(int i =0; i < btn.Length; i++) 
-        { 
+        {
             btn[i].SetActive(true);
         }
     }

@@ -5,56 +5,22 @@ using UnityEngine.UI;
 
 public class StoreGoods : MonoBehaviour
 {
-    public Text[] text;
-    public Image[] image;
+    public int[] price;
+    public Text[] ingredientPirce;
 
-    IngredientManager ingredientManager;
+    private void Start()
+    {
 
-    public void MeatSubstitution()
-    {
-        for (int i = 0; i < ingredientManager.items.Count; i++)
-        {
-            if (ingredientManager.items[i].ingredientType == IngredientType.Meat)
-            {
-                text[i].text = $"{ingredientManager.items[i].ingredientName} : {ingredientManager.items[i].ingredientNumber}";
-                image[i].sprite = ingredientManager.items[i].ingredientImage;
-            }
-        }
     }
-    
-    public void VegetableSubstitution()
+
+    private void Update()
     {
-        for (int i = 0; i < ingredientManager.items.Count; i++)
-        {
-            if (ingredientManager.items[i].ingredientType == IngredientType.Vegetable)
-            {
-                text[i].text = $"{ingredientManager.items[i].ingredientName} : {ingredientManager.items[i].ingredientNumber}";
-                image[i].sprite = ingredientManager.items[i].ingredientImage;
-            }
-        }
+        Price();
+        
     }
-    
-    public void NoodleSubstitution()
+
+    public void Price()
     {
-        for (int i = 0; i < ingredientManager.items.Count; i++)
-        {
-            if (ingredientManager.items[i].ingredientType == IngredientType.Noodle)
-            {
-                text[i].text = $"{ingredientManager.items[i].ingredientName} : {ingredientManager.items[i].ingredientNumber}";
-                image[i].sprite = ingredientManager.items[i].ingredientImage;
-            }
-        }
-    }
-    
-    public void EtcSubstitution()
-    {
-        for (int i = 0; i < ingredientManager.items.Count; i++)
-        {
-            if (ingredientManager.items[i].ingredientType == IngredientType.Etc)
-            {
-                text[i].text = $"{ingredientManager.items[i].ingredientName} : {ingredientManager.items[i].ingredientNumber}";
-                image[i].sprite = ingredientManager.items[i].ingredientImage;
-            }
-        }
+        //ingredientPirce = $"АЁАн : {price}";
     }
 }
