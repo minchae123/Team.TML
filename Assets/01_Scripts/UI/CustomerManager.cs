@@ -9,7 +9,6 @@ public class CustomerManager : MonoBehaviour
 
     public IngredientRecipeListSO list;
 
-    //public List<NamBi> namBii;
     public NamBi namBii;
 
     public AudioSource ef;

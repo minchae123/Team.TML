@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class NamBiPool : MonoBehaviour
 {
-    public string NAME { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
     private void Start()
     {
         PoolingManager.CreatePool("NamBi", this.transform, 1);
@@ -15,6 +13,7 @@ public class NamBiPool : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
+
             NewNamBi();
         }
     }
