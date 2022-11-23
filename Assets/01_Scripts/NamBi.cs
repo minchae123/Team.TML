@@ -11,6 +11,8 @@ public class NamBi : MonoBehaviour, IPoolable
     private string objName;
     public string NAME { get => objName; set => objName = value; }
 
+    public AudioSource ef;
+
     public void AddItem(string ingre)
     {
         if (!recipe.Contains(ingre))
@@ -37,6 +39,10 @@ public class NamBi : MonoBehaviour, IPoolable
         {
             GameManager.Instance.Money += 5000 + (count * 1000);
         }
+        
+        ef = FindObjectOfType<AudioSource>();
+
+        ef.Play();
     }
 
     public void OnPool()

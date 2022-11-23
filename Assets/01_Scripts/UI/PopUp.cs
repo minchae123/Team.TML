@@ -22,7 +22,6 @@ public class PopUp : MonoBehaviour
         
         panel.transform.DOMove(_popDownTrm, 1);
         startButton.SetActive(true);
-
     }
 
     public void CheckPanel()
