@@ -51,6 +51,11 @@ public class Recipe : MonoBehaviour, IPoolable
         customer.SetRecipe(save);
     }
 
+    public void ThanksTxt()
+    {
+        txt.text += ingredientSO.thanks;
+    }
+
     void SetIngredient<T>(List<T> ingredients)
     {
         foreach (T ingredient in ingredients)

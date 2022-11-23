@@ -18,6 +18,7 @@ public class NamBiPool : MonoBehaviour
             NewNamBi();
         }
     }
+
     public void NewNamBi()
     {
         GameObject obj = PoolingManager.PopObject("NamBi");
