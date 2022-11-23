@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 30526106}
   - component: {fileID: 30526105}
   - component: {fileID: 30526107}
+  - component: {fileID: 30526108}
   m_Layer: 5
   m_Name: keyboard_0
   m_TagString: Untagged
@@ -242,7 +243,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 30526105}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &30526108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30526103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb711e6d557b70f40874bd929a8a9278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &222504111
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +474,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 375186618}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Del
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &409004791
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,7 +689,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 535358615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button9
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &672077938
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +821,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 672077940}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button6
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &737050091
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +846,6 @@ GameObject:
   - component: {fileID: 737050095}
   - component: {fileID: 737050094}
   - component: {fileID: 737050093}
-  - component: {fileID: 737050096}
   m_Layer: 5
   m_Name: keyboard_1
   m_TagString: Untagged
@@ -856,7 +916,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 737050096}
+      - m_Target: {fileID: 30526108}
         m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
         m_MethodName: Button1
         m_Mode: 1
@@ -906,18 +966,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737050091}
   m_CullTransparentMesh: 1
---- !u!114 &737050096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737050091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb711e6d557b70f40874bd929a8a9278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &743375980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,7 +1085,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 743375982}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button8
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &902290034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1333,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1113295961}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1118304488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,7 +1424,6 @@ GameObject:
   - component: {fileID: 1239582704}
   - component: {fileID: 1239582703}
   - component: {fileID: 1239582705}
-  - component: {fileID: 1239582706}
   m_Layer: 5
   m_Name: keyboard_Enter
   m_TagString: Untagged
@@ -1461,7 +1532,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1239582706}
+      - m_Target: {fileID: 30526108}
         m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
         m_MethodName: Enter
         m_Mode: 1
@@ -1473,18 +1544,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1239582706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239582701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb711e6d557b70f40874bd929a8a9278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1447782207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,7 +1663,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1447782209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1487284094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1929,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1508401355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1802705466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,7 +2061,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1802705468}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1883313274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,4 +2193,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1883313276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 30526108}
+        m_TargetAssemblyTypeName: ATMKeyButton, Assembly-CSharp
+        m_MethodName: Button7
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

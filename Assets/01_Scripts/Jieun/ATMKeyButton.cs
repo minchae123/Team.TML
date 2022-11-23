@@ -7,10 +7,43 @@ public class ATMKeyButton : MonoBehaviour
 
     public void Button1(){
 
-        Debt.Instance.inputStack.Push(1);
-        
+        InputView(1);
+    }
+    public void Button2(){
 
+        InputView(2);
+    }
+    public void Button3(){
 
+        InputView(3);
+    }
+    public void Button4(){
+
+        InputView(4);
+    }
+    public void Button5(){
+
+        InputView(5);
+    }
+    public void Button6(){
+
+        InputView(6);
+    }
+    public void Button7(){
+
+        InputView(7);
+    }
+    public void Button8(){
+
+        InputView(8);
+    }
+    public void Button9(){
+
+        InputView(9);
+    }
+    public void Button0(){
+
+        Debt.Instance.numText.text = (Debt.Instance.inputMoney * 10).ToString();
     }
 
     public void Del(){
@@ -19,22 +52,20 @@ public class ATMKeyButton : MonoBehaviour
 
     public void Enter(){
         
-        if(Debt.Instance.inputStack.Count == 0){
-
-            Debug.Log("아무것도 입력하지 않았어요");
-        }
-        else{
-
-            for(int i = 0; i < Debt.Instance.inputStack.Count; i++){
-
-                Debt.Instance.inputMoney += Debt.Instance.inputStack.Pop() * (int)Mathf.Pow(10, i);
-            }
-        }
-
-        Debug.Log(Debt.Instance.inputMoney);
-
-
         Debt.Instance.DebtCheck();
     }
+
+    List<int> inputLength = new List<int>();
+    int input;
+    public void InputView(int button){
+
+        input = button;
+        input *= (int) Mathf.Pow(10, inputLength.Count);
+        inputLength.Add(input);
+        Debt.Instance.inputMoney += input;
+        Debt.Instance.numText.text = Debt.Instance.inputMoney.ToString();
+        
+    }
+
     
 }
