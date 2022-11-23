@@ -9,7 +9,8 @@ public class CustomerManager : MonoBehaviour
 
     public IngredientRecipeListSO list;
 
-    public List<NamBi> namBii;
+    //public List<NamBi> namBii;
+    public NamBi namBii;
 
     public AudioSource ef;
 
@@ -24,7 +25,7 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
-        PoolingManager.CreatePool("Customer", this.transform);
+        PoolingManager.CreatePool("Customer", this.transform, 1);
     }
 
     private void Update()
@@ -50,9 +51,7 @@ public class CustomerManager : MonoBehaviour
 
     public void SetRecipe(List<string> re)
     {
-        for (int i = 0; i < namBii.Count; i++)
-        {
-            namBii[i].recipe = re;
-        }
+        namBii = FindObjectOfType<NamBi>();
+        namBii.recipe = re;
     }
 }

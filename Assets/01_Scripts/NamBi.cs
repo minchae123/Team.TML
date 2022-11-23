@@ -21,4 +21,29 @@ public class NamBi : MonoBehaviour
             Debug.Log("¿Ï¼­¾î¾û");
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    public void Money()
+    {
+        if (index > 0)
+        {
+            GameManager.Instance.Money += 5000 + count * 1000 - index * 1500;
+        }
+        else if(count < 0)
+        {
+            GameManager.Instance.Money -= 5000;
+        }
+        else
+        {
+            GameManager.Instance.Money += 5000 + (count * 1000);
+        }
+    }
+
+    public void OnPool()
+    {
+    }
+
+    public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);
+>>>>>>> Stashed changes
 }

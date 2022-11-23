@@ -31,6 +31,9 @@ public class IngredientSO : ScriptableObject
     [TextArea]
     public string tell;
 
+    [TextArea]
+    public string thanks;
+
     [Header("고기")]
     public List<Meat> meatList;
 
