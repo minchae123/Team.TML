@@ -53,7 +53,7 @@ public class Recipe : MonoBehaviour, IPoolable
 
     public void ThanksTxt()
     {
-        txt.text += ingredientSO.thanks;
+        txt.text = ingredientSO.thanks;
     }
 
     void SetIngredient<T>(List<T> ingredients)

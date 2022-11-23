@@ -15,12 +15,16 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
     Color co;
 
     private NamBiPool pool;
+    private CustomerManager customerManager;
+
+    public GameObject del;
 
     void Awake()
     {
         _image = GetComponent<Image>();
         rect = GetComponent<RectTransform>();
         pool = FindObjectOfType<NamBiPool>();
+        customerManager = FindObjectOfType<CustomerManager>();
         co = this._image.color;
 
     }
@@ -53,28 +57,26 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
                 }
             }
 
-
             if (clear == true)
             {
                 if (eventData.pointerDrag.gameObject.GetComponent<DraggableUI>().nambi == false)
                 {
                     return;
                 }
-
                 try
                 {
                     if(nambi != null)
                     {
                         nambi.Money();
+                        del = GameObject.Find("Customer(Clone)");
                         StartCoroutine(Success());
                     }
                 }
                 catch(Exception e)
                 {
-                    Debug.Log(e.Message);
+                    Debug.LogException(e);
                 }
             }
-
             eventData.pointerDrag.transform.SetParent(transform);
             eventData.pointerDrag.GetComponent<RectTransform>().position = rect.position;
         }
@@ -82,8 +84,16 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
 
     IEnumerator Success()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(2f);
+
+        Recipe re = FindObjectOfType<Recipe>();
+        re.ThanksTxt();
+        yield return new WaitForSeconds(2f);
+
+        Destroy(del);
+        yield return new WaitForSeconds(2f);
 
         pool.NewNamBi();
+        customerManager.ShowCustomer();
     }
 }
