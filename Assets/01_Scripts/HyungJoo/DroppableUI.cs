@@ -90,10 +90,10 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
         re.ThanksTxt();
         yield return new WaitForSeconds(2f);
 
-        Destroy(del);
-        yield return new WaitForSeconds(2f);
-
         pool.NewNamBi();
         customerManager.ShowCustomer();
+
+        Destroy(del);
+        yield return new WaitForSeconds(2f);
     }
 }

@@ -58,9 +58,10 @@ public class NightUI : MonoBehaviour
 
     public void Receipt(){
         graphicRaycaster.enabled = true;
-        receiptText_Day.text = $"{mainUIManager.dayCount}일차";
+        receiptText_Day.text = $"{GameManager.Instance.Day}일차";
         //receiptText_Calculate.text =  
         receipt.transform.DOMove(Vector3.zero, 0.5f);
+        GameManager.Instance.Day++;
 
     }
 
@@ -73,9 +74,9 @@ public class NightUI : MonoBehaviour
         moveOrigin.Append(fadeImage.DOFade(0, 1f));
 
         moveOrigin.OnComplete(() => {
+            mainUIManager.time = 48;
             graphicRaycaster.enabled = false;
             fadeImage.enabled = false;
-            mainUIManager.time = 48;
         });
 
     }

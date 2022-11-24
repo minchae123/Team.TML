@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3104725850243936032}
   - component: {fileID: 3104725850243936033}
   - component: {fileID: -8537405466065684604}
+  - component: {fileID: 1577486354124565781}
   m_Layer: 5
   m_Name: NamBi 1
   m_TagString: Untagged
@@ -234,6 +235,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1577486354124565781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104725850243936035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65939be6360124542abaeefd4cc83d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boilTime: 0
+  burnTime: 0
 --- !u!1 &3104725851256557353
 GameObject:
   m_ObjectHideFlags: 0
