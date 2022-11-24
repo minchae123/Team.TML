@@ -13,7 +13,6 @@ public class NamBiPool : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-
             NewNamBi();
         }
     }

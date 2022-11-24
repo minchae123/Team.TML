@@ -20,6 +20,8 @@ public class CustomerManager : MonoBehaviour
             Debug.Log("Null");
         }
         Instance = this;
+
+        ef = GetComponent<AudioSource>();
     }
 
     private void Start()
