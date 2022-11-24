@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class Debt : MonoBehaviour
 {   
-
     public static Debt Instance = null;
 
     private int startDebt = 50000000;
@@ -13,6 +14,10 @@ public class Debt : MonoBehaviour
     public int inputMoney;
 
     public TextMeshProUGUI numText;
+    public TextMeshProUGUI debtText;
+    
+    public Camera mainCamera;
+    public GameObject panel;
 
     private void Awake() {
         
@@ -20,28 +25,40 @@ public class Debt : MonoBehaviour
         {
             Instance = this;
         }  
+
+        
     }
     
     private void Start() {
         
         currentDebt = startDebt;
+        debtText.text = currentDebt.ToString();
+        
     }
 
     public void DebtCheck(){
+
+        debtText.text = currentDebt.ToString();
         
         if(inputMoney < GameManager.Instance.Money){
             
             currentDebt -= inputMoney;
-        }
-        else if(inputMoney == 0){
-
-            numText.text = "입력해주세요";
+            debtText.text = currentDebt.ToString();
+            GameManager.Instance.Money -= inputMoney;
         }
         else{
 
-            numText.text = "입력한 돈이 소지한 돈보다 많아요!";
+            inputMoney = 0;
+            numText.text = "돈 부족";
+            ShakeCamera();
+            
         }
 
         inputMoney = 0;
+    }
+
+    public void ShakeCamera(){
+
+        panel.transform.DOShakePosition(1f, 10);
     }
 }

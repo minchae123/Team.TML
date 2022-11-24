@@ -52,10 +52,27 @@ public class ATMKeyButton : MonoBehaviour
     }
 
     public void Enter(){
-        Debt.Instance.inputMoney = int.Parse(viewString);
-        Debt.Instance.DebtCheck();
+
+        if(viewString == null || viewString == ""){
+
+            Debt.Instance.inputMoney = 0;
+            Debt.Instance.numText.text = "입력해주세요";
+            Debt.Instance.ShakeCamera();
+        }
+        else{
+
+            Debt.Instance.inputMoney = int.Parse(viewString);
+            viewString = null;
+            Debt.Instance.numText.text = viewString;
+            Debt.Instance.DebtCheck();
+        }
+
     }
 
+    private void Start() {
+        
+        viewString = null;
+    }
 
     public string viewString;
     public void InputView(int button){
