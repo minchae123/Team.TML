@@ -6,10 +6,12 @@ public class NamBi : MonoBehaviour, IPoolable
 {
     public List<string> recipe;
     int index = 0;
-    public int count;
+    public int count = 0;
 
     private string objName;
     public string NAME { get => objName; set => objName = value; }
+
+    public AudioSource ef;
 
     public void AddItem(string ingre)
     {
@@ -21,10 +23,6 @@ public class NamBi : MonoBehaviour, IPoolable
 
         recipe.Remove(ingre);
         count++;
-        if(recipe.Count == 0)
-        {
-            Debug.Log("¿Ï¼­¾î¾û");
-        }
     }
 
     public void Money()
@@ -33,7 +31,7 @@ public class NamBi : MonoBehaviour, IPoolable
         {
             GameManager.Instance.Money += 5000 + count * 1000 - index * 1500;
         }
-        else if(count < 0)
+        else if(count == 0)
         {
             GameManager.Instance.Money -= 5000;
         }
@@ -41,10 +39,15 @@ public class NamBi : MonoBehaviour, IPoolable
         {
             GameManager.Instance.Money += 5000 + (count * 1000);
         }
+        
+        ef = FindObjectOfType<AudioSource>();
+
+        ef.Play();
     }
 
     public void OnPool()
     {
+
     }
 
     public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);
