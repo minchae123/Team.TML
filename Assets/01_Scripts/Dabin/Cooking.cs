@@ -15,17 +15,22 @@ public class Cooking : MonoBehaviour
 
     public GameObject bBogle;
 
+    public NamBi bi;
+
     public void Start()
     {
         rend = GetComponent<Renderer>();
         currentColor = Color.white;
+        bi = GetComponent<NamBi>();
         //bBogle = GameObject.Find("Booggle");
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (bi.isCook)
         {
+            Debug.Log("Ω√¿€");
+            bi.isCook = false;
             StartCoroutine(StartCook());
         }
     }
@@ -37,8 +42,11 @@ public class Cooking : MonoBehaviour
 
     IEnumerator StartCook()
     {
+        GameObject.Find("Manager").transform.FindChild("Booggle").gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
-        bBogle.SetActive(true);
+        bBogle = GameObject.Find("Booggle");
+        bBogle.GetComponent<ParticleSystem>().Play();
+
         bBogle.GetComponent<ParticleSystem>().Play();
 
 

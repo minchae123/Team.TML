@@ -7,14 +7,18 @@ public class NamBi : MonoBehaviour, IPoolable
     public List<string> recipe;
     int index = 0;
     public int count = 0;
+    public int upLevel = 1000;
 
     private string objName;
     public string NAME { get => objName; set => objName = value; }
 
     public AudioSource ef;
 
+    public bool isCook;
+
     public void AddItem(string ingre)
     {
+        isCook = true;
         if (!recipe.Contains(ingre))
         {
             index++;
@@ -29,7 +33,7 @@ public class NamBi : MonoBehaviour, IPoolable
     {
         if (index > 0)
         {
-            GameManager.Instance.Money += 5000 + count * 1000 - index * 1500;
+            GameManager.Instance.Money += 5000 + count * upLevel - index * 1500;
         }
         else if(count == 0)
         {
@@ -37,7 +41,7 @@ public class NamBi : MonoBehaviour, IPoolable
         }
         else
         {
-            GameManager.Instance.Money += 5000 + (count * 1000);
+            GameManager.Instance.Money += 5000 + (upLevel * 1000);
         }
         
         ef = FindObjectOfType<AudioSource>();
