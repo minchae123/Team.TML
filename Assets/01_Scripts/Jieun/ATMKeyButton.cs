@@ -43,27 +43,26 @@ public class ATMKeyButton : MonoBehaviour
     }
     public void Button0(){
 
-        Debt.Instance.numText.text = (Debt.Instance.inputMoney * 10).ToString();
+        InputView(0);
     }
 
     public void Del(){
-
+        viewString = viewString.Substring(0, viewString.Length - 1);
+        Debt.Instance.numText.text = viewString;
     }
 
     public void Enter(){
-        
+        Debt.Instance.inputMoney = int.Parse(viewString);
         Debt.Instance.DebtCheck();
     }
 
-    List<int> inputLength = new List<int>();
-    int input;
-    public void InputView(int button){
 
-        input = button;
-        input *= (int) Mathf.Pow(10, inputLength.Count);
-        inputLength.Add(input);
-        Debt.Instance.inputMoney += input;
-        Debt.Instance.numText.text = Debt.Instance.inputMoney.ToString();
+    public string viewString;
+    public void InputView(int button){
+        
+        viewString += button.ToString();
+        
+        Debt.Instance.numText.text = viewString;
         
     }
 
