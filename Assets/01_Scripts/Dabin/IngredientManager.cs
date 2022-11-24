@@ -7,6 +7,7 @@ public class IngredientManager : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
     public Slot[] slots;
+    int I = 0;
 
     private void Start()
     {
@@ -16,20 +17,18 @@ public class IngredientManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void IngredientSubstitution(int i)
     {
-        IngredientSubstitution();
-    }
-
-    public void IngredientSubstitution()
-    {
-        for(int i = 0; i < items.Count; i++)
+        if(slots[I]._ingredientImage.enabled == false)
         {
-            /*if (slots[i].button.interactable == true)
-            {
-                slots[i].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
-                slots[i]._ingredientImage.sprite = items[i].ingredientImage;
-            }*/
+            slots[I]._ingredientImage.enabled = true;
+            slots[I].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
+            slots[I]._ingredientImage.sprite = items[i].ingredientImage;
+            I++;
+        }
+        else
+        {
+            slots[I].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
         }
     }
 }
