@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class Cooking : MonoBehaviour
@@ -9,6 +10,7 @@ public class Cooking : MonoBehaviour
     [Tooltip("타는 시간")] public int burnTime;
 
     public bool start;
+    public bool end;
 
     Renderer rend;
     Color currentColor;
@@ -17,12 +19,15 @@ public class Cooking : MonoBehaviour
 
     public NamBi bi;
 
+    public Sprite[] inm;
+    public Image curImage;
+
     public void Start()
     {
         rend = GetComponent<Renderer>();
         currentColor = Color.white;
         bi = GetComponent<NamBi>();
-        //bBogle = GameObject.Find("Booggle");
+        curImage = GetComponent<Image>();
     }
 
     private void Update()
@@ -37,7 +42,7 @@ public class Cooking : MonoBehaviour
 
     public void Boiling()
     {
-        rend.material.DOColor(Color.black, burnTime);
+        curImage.DOColor(Color.black, burnTime);
     }
 
     IEnumerator StartCook()
@@ -46,9 +51,11 @@ public class Cooking : MonoBehaviour
         yield return new WaitForSeconds(1f);
         bBogle = GameObject.Find("Booggle");
         bBogle.GetComponent<ParticleSystem>().Play();
+        Boiling();
 
-        bBogle.GetComponent<ParticleSystem>().Play();
+        curImage.sprite = inm[0];
 
-
+        yield return new WaitForSeconds(burnTime);
+        end = true;
     }
 }

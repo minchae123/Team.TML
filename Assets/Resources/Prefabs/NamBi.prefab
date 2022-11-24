@@ -250,10 +250,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boilTime: 0
-  burnTime: 0
+  burnTime: 30
   start: 0
+  end: 0
   bBogle: {fileID: 3741109595136187167, guid: 7badefdc0c46d724da12819027ac7cf6, type: 3}
   bi: {fileID: 3104725850243936044}
+  inm:
+  - {fileID: 21300000, guid: d38a93b2b6e71ce4ab04b65bcd6747c2, type: 3}
+  - {fileID: 21300000, guid: 0cf15dbc28d578a4dace34ffed8017fa, type: 3}
+  curImage: {fileID: 0}
 --- !u!1 &3104725851256557353
 GameObject:
   m_ObjectHideFlags: 0
