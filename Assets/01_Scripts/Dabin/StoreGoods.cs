@@ -5,22 +5,32 @@ using UnityEngine.UI;
 
 public class StoreGoods : MonoBehaviour
 {
-    public int[] price;
+    [SerializeField, Tooltip("가격 배열!!")] int[] price;
     public Text[] ingredientPirce;
+
+    IngredientManager ingredientManager;
 
     private void Start()
     {
-
+        ingredientManager = GameObject.Find("Ingredient").GetComponent<IngredientManager>();
     }
 
     private void Update()
     {
         Price();
-        
     }
 
     public void Price()
     {
-        //ingredientPirce = $"가격 : {price}";
+        for(int i = 0; i < price.Length; i++)
+        {
+            ingredientPirce[i].text = $"가격 : {price[i]}";
+        }
+    }
+
+    public void Purchase(int i)
+    {
+        ingredientManager.items[i].ingredientNumber++;
+        Debug.Log("구매 성공!!");
     }
 }

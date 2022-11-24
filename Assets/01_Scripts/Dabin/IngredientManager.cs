@@ -8,6 +8,14 @@ public class IngredientManager : MonoBehaviour
     public List<Item> items = new List<Item>();
     public Slot[] slots;
 
+    private void Start()
+    {
+        for(int i = 0; i < items.Count; i++)
+        {
+            Debug.Log($"{i}¹øÂ° : {items[i].ingredientName}");
+        }
+    }
+
     private void Update()
     {
         IngredientSubstitution();
@@ -17,11 +25,11 @@ public class IngredientManager : MonoBehaviour
     {
         for(int i = 0; i < items.Count; i++)
         {
-            if (slots[i].button.interactable == true)
+            /*if (slots[i].button.interactable == true)
             {
                 slots[i].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
                 slots[i]._ingredientImage.sprite = items[i].ingredientImage;
-            }
+            }*/
         }
     }
 }
