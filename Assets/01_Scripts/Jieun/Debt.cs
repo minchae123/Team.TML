@@ -7,7 +7,7 @@ public class Debt : MonoBehaviour
 {   
 
     public static Debt Instance = null;
-    public Stack<int> inputStack = new Stack<int>();
+
     private int startDebt = 50000000;
     private int currentDebt;
     public int inputMoney;
@@ -27,12 +27,6 @@ public class Debt : MonoBehaviour
         currentDebt = startDebt;
     }
 
-    private void Update() {
-        
-        
-        
-    }
-
     public void DebtCheck(){
         
         if(inputMoney < GameManager.Instance.Money){
@@ -41,11 +35,11 @@ public class Debt : MonoBehaviour
         }
         else if(inputMoney == 0){
 
-            Debug.Log("입력해주세요");
+            numText.text = "입력해주세요";
         }
         else{
 
-            Debug.Log("입력한 돈이 소지한 돈보다 많아요!");
+            numText.text = "입력한 돈이 소지한 돈보다 많아요!";
         }
 
         inputMoney = 0;
