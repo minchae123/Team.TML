@@ -37,9 +37,7 @@ public class NightUI : MonoBehaviour
         fadeSequence.OnComplete(() => {
             
             ShutterDown();
-        });
-
-        
+        });  
     }
 
     public void ShutterDown(){
