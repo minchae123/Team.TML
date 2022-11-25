@@ -6,7 +6,6 @@ using DG.Tweening;
 
 public class Cooking : MonoBehaviour
 {
-    [Tooltip("끓는 시간")] public int boilTime;
     [Tooltip("타는 시간")] public int burnTime = 1;
 
     public float time;
@@ -29,6 +28,9 @@ public class Cooking : MonoBehaviour
         ui = GetComponent<DraggableUI>();
         uii = GetComponent<DroppableUI>();
         burnTime = 1;
+
+        ui.enabled = true;
+        uii.enabled = true;
     }
 
     private void Update()
