@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     private int time = 8;
     public int Time { get => time; set => time = value; }
 
+    public GameObject ingre;
+    public Vector2 po;
+
     private void Awake()
     {
         if (Instance != null)
@@ -22,5 +25,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Multiple Gamemanager is running");
         }
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Instantiate(ingre, po, Quaternion.identity, GameObject.Find("MainCanvas").transform);
+        }
     }
 }

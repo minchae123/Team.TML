@@ -67,6 +67,8 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
                 {
                     if(nambi != null)
                     {
+                        GameObject nam = GameObject.Find("NamBi(Clone)");
+                        nam.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
                         nambi.Money();
                         del = GameObject.Find("Customer(Clone)");
                         StartCoroutine(Success());

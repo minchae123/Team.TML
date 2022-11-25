@@ -259,6 +259,7 @@ MonoBehaviour:
   inm:
   - {fileID: 21300000, guid: d38a93b2b6e71ce4ab04b65bcd6747c2, type: 3}
   - {fileID: 21300000, guid: f56ed67f20de0da49abd22c411f5afb3, type: 3}
+  - {fileID: 21300000, guid: a6d742c3f6b11d844864ea91767738f1, type: 3}
   - {fileID: 21300000, guid: 0cf15dbc28d578a4dace34ffed8017fa, type: 3}
   curImage: {fileID: 0}
   ui: {fileID: 0}
