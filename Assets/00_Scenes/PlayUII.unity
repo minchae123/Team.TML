@@ -5264,6 +5264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 30000
+  toMoney: 0
   day: 1
   ingre: {fileID: 5765824332498724178, guid: ad62cc5f38a27b545b6d713bdc4fda80, type: 3}
   po: {x: 0, y: 0}
@@ -14851,7 +14852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1523323854
 MonoBehaviour:
   m_ObjectHideFlags: 0

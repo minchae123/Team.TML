@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using TMPro;
 
 public class NamBi : MonoBehaviour, IPoolable
 {
@@ -16,6 +18,8 @@ public class NamBi : MonoBehaviour, IPoolable
 
     public bool isCook;
     public bool iss;
+
+    public TextMeshProUGUI pop;
 
     public void AddItem(string ingre)
     {
