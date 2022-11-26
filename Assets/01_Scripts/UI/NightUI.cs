@@ -70,8 +70,6 @@ public class NightUI : MonoBehaviour
         moveOrigin.Append(shutter.transform.DOMove(originalTransform, 0.5f));
         moveOrigin.Append(receipt.transform.DOMove(originalTransform, 0.5f));
         
-        GameManager.Instance.StartDay();
-
         moveOrigin.OnComplete(() => {
             
             debtCanvas.SetActive(true);
@@ -82,7 +80,8 @@ public class NightUI : MonoBehaviour
     public void DebtButtonClock(){
 
         debtCanvas.SetActive(false);
-        
+        GameManager.Instance.StartDay();
+
         Sequence debt = DOTween.Sequence();
         debt.Append(fadeImage.DOFade(0, 1f));
 
