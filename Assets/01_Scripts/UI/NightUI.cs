@@ -13,8 +13,8 @@ public class NightUI : MonoBehaviour
     public GameObject receipt;
     public TextMeshProUGUI receiptText_Day;
     public TextMeshProUGUI receiptText_Calculate;
-    private MainUIManager mainUIManager;
     public GraphicRaycaster graphicRaycaster;
+    private MainUIManager mainUIManager;
 
     private void Awake() {
         mainUIManager = GameObject.Find("MainCanvas").GetComponent<MainUIManager>();
@@ -37,9 +37,7 @@ public class NightUI : MonoBehaviour
         fadeSequence.OnComplete(() => {
             
             ShutterDown();
-        });
-
-        
+        });  
     }
 
     public void ShutterDown(){
