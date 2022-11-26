@@ -49,6 +49,7 @@ public class ATMKeyButton : MonoBehaviour
     public void Del(){
         viewString = viewString.Substring(0, viewString.Length - 1);
         Debt.Instance.numText.text = viewString;
+        //Debt.Instance.numText.text = string.Format("{0:#,###}", viewString);
     }
 
     public void Enter(){
@@ -64,6 +65,7 @@ public class ATMKeyButton : MonoBehaviour
             Debt.Instance.inputMoney = int.Parse(viewString);
             viewString = null;
             Debt.Instance.numText.text = viewString;
+            //Debt.Instance.numText.text = string.Format("{0:#,###}", viewString);
             Debt.Instance.DebtCheck();
         }
 
@@ -80,6 +82,7 @@ public class ATMKeyButton : MonoBehaviour
         viewString += button.ToString();
         
         Debt.Instance.numText.text = viewString;
+        //Debt.Instance.numText.text = string.Format("{0:#,###}", viewString);
         
     }
 

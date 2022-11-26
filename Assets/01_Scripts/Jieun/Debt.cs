@@ -31,18 +31,21 @@ public class Debt : MonoBehaviour
     private void Start() {
         
         currentDebt = startDebt;
-        debtText.text = currentDebt.ToString();
-        
+        //debtText.text = currentDebt.ToString();
+        debtText.text = string.Format("{0:#,###}", currentDebt);
+
     }
 
     public void DebtCheck(){
 
         debtText.text = currentDebt.ToString();
+        debtText.text = string.Format("{0:#,###}", currentDebt);
         
         if(inputMoney < GameManager.Instance.Money){
             
             currentDebt -= inputMoney;
-            debtText.text = currentDebt.ToString();
+            //debtText.text = currentDebt.ToString();
+            debtText.text = string.Format("{0:#,###}", currentDebt);
             GameManager.Instance.Money -= inputMoney;
         }
         else{
