@@ -57,7 +57,7 @@ public class NightUI : MonoBehaviour
     public void Receipt(){
         graphicRaycaster.enabled = true;
         receiptText_Day.text = $"{GameManager.Instance.Day}일차";
-        //receiptText_Calculate.text =  
+        receiptText_Calculate.text = $"오늘의 수익\n{GameManager.Instance.TOMoney.ToString()}";
         receipt.transform.DOMove(Vector3.zero, 0.5f);
         GameManager.Instance.Day++;
 
