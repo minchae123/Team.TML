@@ -15,10 +15,12 @@ public class NamBi : MonoBehaviour, IPoolable
     public AudioSource ef;
 
     public bool isCook;
+    public bool iss;
 
     public void AddItem(string ingre)
     {
-        isCook = true;
+        if (!iss) isCook = true;
+
         if (!recipe.Contains(ingre))
         {
             index++;
@@ -41,11 +43,10 @@ public class NamBi : MonoBehaviour, IPoolable
         }
         else
         {
-            GameManager.Instance.Money += 5000 + (upLevel * 1000);
+            GameManager.Instance.Money += 5000 + (upLevel * 1);
         }
         
         ef = FindObjectOfType<AudioSource>();
-
         ef.Play();
     }
 

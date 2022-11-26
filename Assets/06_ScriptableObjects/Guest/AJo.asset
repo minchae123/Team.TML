@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d090a5055d0cbd418419922b0c52305, type: 3}
+  m_Name: AJo
+  m_EditorClassIdentifier: 
+  level: 0
+  sp: {fileID: 21300000, guid: c01478114e4f2b244b078cb8619104c1, type: 3}
+  tell: "\uCF5C\uB77C\uB791 \uC798 \uC5B4\uC6B8\uB9AC\uB294 \uB9C8\uB77C\uD0D5\uC774
+    \uBA39\uACE0 \uC2F6\uB124\uC694\n\uACE0\uAE30, \uBC30\uCD94, \uAC10\uC790, \uB113\uC801\uB2F9\uBA74,
+    \uCE58\uC988\uB5A1, \uBA54\uCD94\uB9AC\uC54C\uC744 \uCD94\uAC00\uD574\uC8FC\uC138\uC694"
+  thanks: "\uC624\uC624\n\uC798 \uBA39\uC744\uAC8C\uC694 ~"
+  meatList: 00000000
+  vegetableList: 0000000007000000
+  noodleList: 01000000
+  etcList: 0300000005000000

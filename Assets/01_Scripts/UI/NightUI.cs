@@ -13,8 +13,8 @@ public class NightUI : MonoBehaviour
     public GameObject receipt;
     public TextMeshProUGUI receiptText_Day;
     public TextMeshProUGUI receiptText_Calculate;
-    private MainUIManager mainUIManager;
     public GraphicRaycaster graphicRaycaster;
+    private MainUIManager mainUIManager;
 
     private void Awake() {
         mainUIManager = GameObject.Find("MainCanvas").GetComponent<MainUIManager>();
@@ -32,14 +32,12 @@ public class NightUI : MonoBehaviour
         Sequence fadeSequence = DOTween.Sequence();
         
         fadeImage.enabled = true;
+        GameManager.Instance.Clear();
         fadeSequence.Append(fadeImage.DOFade(1f, 2f));
         
         fadeSequence.OnComplete(() => {
-            
             ShutterDown();
-        });
-
-        
+        });  
     }
 
     public void ShutterDown(){
@@ -50,7 +48,6 @@ public class NightUI : MonoBehaviour
         ShutterSequence.Append(shutter.transform.DOMove(Vector3.zero, 1.5f));
         
         ShutterSequence.OnComplete(() => {
-
             Receipt();
         });
 
@@ -72,9 +69,10 @@ public class NightUI : MonoBehaviour
         moveOrigin.Append(shutter.transform.DOMove(originalTransform, 0.5f));
         moveOrigin.Append(receipt.transform.DOMove(originalTransform, 0.5f));
         moveOrigin.Append(fadeImage.DOFade(0, 1f));
+        GameManager.Instance.StartDay();
 
         moveOrigin.OnComplete(() => {
-            mainUIManager.time = 48;
+            //mainUIManager.time = 48;
             graphicRaycaster.enabled = false;
             fadeImage.enabled = false;
         });

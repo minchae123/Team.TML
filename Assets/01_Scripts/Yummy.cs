@@ -8,5 +8,4 @@ public class Yummy : MonoBehaviour
     public string ingredientName;
 
     public Sprite sp;
-
 }

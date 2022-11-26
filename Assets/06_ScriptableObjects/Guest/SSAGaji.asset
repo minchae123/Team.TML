@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d090a5055d0cbd418419922b0c52305, type: 3}
+  m_Name: SSAGaji
+  m_EditorClassIdentifier: 
+  level: 0
+  sp: {fileID: 21300000, guid: cabe62895485a3946a9265506a93a50d, type: 3}
+  tell: "\uC54C\uC544\uC11C \uC798 \uC8FC\uC138\uC694 (\uCD08\uC131 \uB9DE\uCD94\uAE30)\n\u3131\u3131,
+    \u3145\u3148, \u314D\u3147\u3142\u3145, \u3134\u3148\u3137\u3141"
+  thanks: "\u3131\u3145\u314E\u3134\u3137."
+  meatList: 00000000
+  vegetableList: 050000000000000002000000
+  noodleList: 01000000
+  etcList: 
