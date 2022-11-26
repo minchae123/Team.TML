@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int money;
     public int Money { get => money; set => money = value; }
 
+    [SerializeField] private int toMoney = 0;
+    public int TOMoney { get => toMoney; set => toMoney = value; }
+
     [SerializeField] private int day = 1;
     public int Day { get => day; set => day = value; }
 
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void StartDay()
     {
+        toMoney = 0;
         uiManager.time = 46;
         NamBiPool.Instance.NewNamBi();
         CustomerManager.Instance.ShowCustomer();

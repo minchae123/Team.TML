@@ -36,14 +36,12 @@ public class NamBi : MonoBehaviour, IPoolable
         if (index > 0)
         {
             GameManager.Instance.Money += 5000 + count * upLevel - index * 1500;
-        }
-        else if(count == 0)
-        {
-            GameManager.Instance.Money -= 5000;
+            GameManager.Instance.TOMoney += 5000 + count * upLevel - index * 1500;
         }
         else
         {
             GameManager.Instance.Money += 5000 + (upLevel * 1);
+            GameManager.Instance.TOMoney += 5000 + (upLevel * 1);
         }
         
         ef = FindObjectOfType<AudioSource>();

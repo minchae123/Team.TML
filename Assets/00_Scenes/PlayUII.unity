@@ -3542,13 +3542,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f000df91fbb1b845a8fe34f8e363cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introCut: {fileID: 0}
-  introCanvas: {fileID: 0}
+  introCut: {fileID: 61567872}
+  introCanvas: {fileID: 1523323853}
   clickCount: 1
-  infoText: {fileID: 0}
-  infoText2: "2\uBC88 \uC124\uBA85\uC785\uB2C8\uB2E4."
-  infoText3: "3\uBC88 \uC124\uBA85\uC785\uB2C8\uB2E4."
-  infoText4: "4\uBC88 \uC124\uBA85\uC785\uB2C8\uB2E4."
+  infoText: {fileID: 1555735909}
+  infoText2: "\uB9C8\uB77C\uD0D5\uC9D1\uC5D0\uC11C \uB9DB\uC788\uAC8C \uB9C8\uB77C\uD0D5\uC744
+    \uBA39\uB2E4\uAC00 \uC790\uC2E0\uC5D0\uAC8C \uBE5A\uC774 \uC788\uB2E4\uB294 \uAC83\uC744
+    \uC54C\uC544\uCC48\uB2E4.\n\uB9C8\uB77C\uD0D5 \uACB0\uC7AC\uB3C4 \uD560 \uC218
+    \uC5C6\uB294 \uC0C1\uD669\uC774\uB2E4."
+  infoText3: "\uADF8 \uC0AC\uC815\uC744 \uB4E4\uC740 \uB9C8\uB77C\uD0D5 \uAC00\uAC8C
+    \uC0AC\uC7A5\uB2D8\uC740 \uB9C8\uB77C\uD0D5 \uAC00\uAC8C\uC5D0\uC11C \uC77C\uC744
+    \uD558\uB77C\uACE0 \uC81C\uC548\uD55C\uB2E4.\t"
+  infoText4: "\uC81C\uC548\uC744 \uBC1B\uACE0 \uD0D5\uB77C\uB9C8\uB294 \uB9C8\uB77C\uD0D5
+    \uAC00\uAC8C\uC5D0\uC11C \uC77C\uD558\uAE30\uB85C \uD55C\uB2E4 !\n\uB9C8\uB77C\uD0D5
+    \uAC00\uAC8C\uC5D0\uC11C \uC77C\uC5B4\uB098\uB294 \uC774\uC57C\uAE30 \uC2DC\uC791\uD569\uB2C8\uB2E4
+    !"
 --- !u!114 &370942734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3593,7 +3601,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 370942733}
         m_TargetAssemblyTypeName: IntroRightMove, Assembly-CSharp
         m_MethodName: IntroButtonClick
         m_Mode: 1
@@ -6556,6 +6564,7 @@ MonoBehaviour:
   fadeImage: {fileID: 1811608530}
   shutter: {fileID: 1061797113}
   receipt: {fileID: 190665691}
+  debtCanvas: {fileID: 0}
   receiptText_Day: {fileID: 441912844}
   receiptText_Calculate: {fileID: 486322576}
   graphicRaycaster: {fileID: 716830787}
@@ -14842,7 +14851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1523323854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15243,7 +15252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD68C\uC0AC\uC5D0\uC11C \uD574\uACE0 \uB2F9\uD55C \uC2AC\uD508 \u3147\u3147\u3147.
+  m_text: "\uD68C\uC0AC\uC5D0\uC11C \uD574\uACE0 \uB2F9\uD55C \uC2AC\uD508 \uD0D5\uB77C\uB9C8.
     \uC790\uC2E0\uC774 \uAC00\uC7A5 \uC88B\uC544\uD558\uB294 \uB9C8\uB77C\uD0D5\uC744
     \uBA39\uC73C\uB7EC \uAC00\uAE30\uB85C \uD55C\uB2E4. "
   m_isRightToLeft: 0
