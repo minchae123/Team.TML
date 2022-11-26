@@ -15,10 +15,12 @@ public class NamBi : MonoBehaviour, IPoolable
     public AudioSource ef;
 
     public bool isCook;
+    public bool iss;
 
     public void AddItem(string ingre)
     {
-        isCook = true;
+        if (!iss) isCook = true;
+
         if (!recipe.Contains(ingre))
         {
             index++;

@@ -37,6 +37,7 @@ public class Cooking : MonoBehaviour
     {
         if (bi.isCook)
         {
+            bi.iss = true;
             bi.isCook = false;
             StartCoroutine(StartCook());
         }
@@ -76,6 +77,7 @@ public class Cooking : MonoBehaviour
         ui.enabled = true;
         curImage.sprite = inm[3];
         end = true;
+        bi.iss = false;
     }
 
     public float CheckTime()

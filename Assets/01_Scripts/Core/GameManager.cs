@@ -31,12 +31,25 @@ public class GameManager : MonoBehaviour
         uiManager = FindObjectOfType<MainUIManager>();
     }
 
+    private void Start()
+    {
+        StartDay();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
             GameObject a = GameObject.Find("Ingredient");
-            Destroy(a);
+            GameObject a1 = GameObject.Find("Ingredient(Clone)");
+            if (a1 != null)
+            {
+                Destroy(a1);
+            }
+            if(a != null)
+            {
+                Destroy(a);
+            }
             Instantiate(ingre, po, Quaternion.identity, GameObject.Find("MainCanvas").transform);
         }
     }

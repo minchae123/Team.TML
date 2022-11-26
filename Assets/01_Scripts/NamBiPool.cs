@@ -13,11 +13,11 @@ public class NamBiPool : MonoBehaviour
             Debug.Log(null);
         }
         Instance = this;
+        PoolingManager.CreatePool("NamBi", this.transform, 1);
     }
 
     private void Start()
     {
-        PoolingManager.CreatePool("NamBi", this.transform, 1);
     }
 
     private void Update()

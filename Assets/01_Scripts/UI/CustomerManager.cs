@@ -22,11 +22,11 @@ public class CustomerManager : MonoBehaviour
         Instance = this;
 
         ef = GetComponent<AudioSource>();
+        PoolingManager.CreatePool("Customer", this.transform, 1);
     }
 
     private void Start()
     {
-        PoolingManager.CreatePool("Customer", this.transform, 1);
     }
 
     private void Update()
