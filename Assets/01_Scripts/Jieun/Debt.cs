@@ -16,7 +16,6 @@ public class Debt : MonoBehaviour
     public TextMeshProUGUI numText;
     public TextMeshProUGUI debtText;
     
-    public Camera mainCamera;
     public GameObject panel;
 
     private void Awake() {
@@ -50,14 +49,14 @@ public class Debt : MonoBehaviour
 
             inputMoney = 0;
             numText.text = "돈 부족";
-            ShakeCamera();
+            ShakePanel();
             
         }
 
         inputMoney = 0;
     }
 
-    public void ShakeCamera(){
+    public void ShakePanel(){
 
         panel.transform.DOShakePosition(1f, 10);
     }
