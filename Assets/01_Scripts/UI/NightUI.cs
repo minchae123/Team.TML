@@ -69,14 +69,28 @@ public class NightUI : MonoBehaviour
 
         moveOrigin.Append(shutter.transform.DOMove(originalTransform, 0.5f));
         moveOrigin.Append(receipt.transform.DOMove(originalTransform, 0.5f));
-        moveOrigin.Append(fadeImage.DOFade(0, 1f));
+        
         GameManager.Instance.StartDay();
 
         moveOrigin.OnComplete(() => {
-            //mainUIManager.time = 48;
-            graphicRaycaster.enabled = false;
+            
+            debtCanvas.SetActive(true);
+            graphicRaycaster.enabled = false;   
+        });
+    }
+
+    public void DebtButtonClock(){
+
+        debtCanvas.SetActive(false);
+        
+        Sequence debt = DOTween.Sequence();
+        debt.Append(fadeImage.DOFade(0, 1f));
+
+        debt.OnComplete(() => {
+            
             fadeImage.enabled = false;
         });
-
+        
     }
+
 }
