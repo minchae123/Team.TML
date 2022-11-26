@@ -46,7 +46,7 @@ public class NightUI : MonoBehaviour
         originalTransform = shutter.transform.position;
 
         Sequence ShutterSequence = DOTween.Sequence();
-        ShutterSequence.Append(shutter.transform.DOMove(Vector3.zero, 1.5f));
+        ShutterSequence.Append(shutter.transform.DOLocalMove(new Vector3(0, -36.45f, 0), 1.5f));
         
         ShutterSequence.OnComplete(() => {
             Receipt();
@@ -57,7 +57,7 @@ public class NightUI : MonoBehaviour
     public void Receipt(){
         graphicRaycaster.enabled = true;
         receiptText_Day.text = $"{GameManager.Instance.Day}일차";
-        receiptText_Calculate.text = $"오늘의 수익\n{GameManager.Instance.TOMoney.ToString()}";
+        receiptText_Calculate.text = $"오늘의 수익\n{GameManager.Instance.TOMoney.ToString()} 원";
         receipt.transform.DOMove(Vector3.zero, 0.5f);
         GameManager.Instance.Day++;
 
@@ -77,7 +77,7 @@ public class NightUI : MonoBehaviour
         });
     }
 
-    public void DebtButtonClock(){
+    public void DebtButtonClick(){
 
         debtCanvas.SetActive(false);
         GameManager.Instance.StartDay();

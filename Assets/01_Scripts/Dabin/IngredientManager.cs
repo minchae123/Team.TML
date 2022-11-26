@@ -7,6 +7,10 @@ public class IngredientManager : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
     public Slot[] slots;
+    public List<string> names = new List<string>();
+    [Tooltip("slot하나에 들어갈 수 있는 최대 수")] public int maxNum = 100;
+
+    int I = 0;
 
     private void Start()
     {
@@ -16,20 +20,48 @@ public class IngredientManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public bool CheckIndex(int num)
     {
-        IngredientSubstitution();
+        if (names.Contains(items[num].ingredientName))
+        {
+            return true;
+        }
+        else
+        {
+            if(names.Count != 0)
+            {
+                I++;
+            }
+            names.Add(items[num].ingredientName);
+        }
+        return false;
     }
 
-    public void IngredientSubstitution()
+    public bool NotPullSlot(int i)
     {
-        for(int i = 0; i < items.Count; i++)
+        if (items[i].ingredientNumber > maxNum)
         {
-            /*if (slots[i].button.interactable == true)
+            items[i].ingredientNumber = 0;
+            I++;
+            return false;
+        }
+        return true;
+    }
+
+    public void IngredientSubstitution(int i)
+    {
+        if (CheckIndex(i) && NotPullSlot(i))
+        {
+            if(slots[I]._ingredientImage.enabled == false)
             {
-                slots[i].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
-                slots[i]._ingredientImage.sprite = items[i].ingredientImage;
-            }*/
+                slots[I]._ingredientImage.enabled = true;
+                slots[I].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
+                slots[I]._ingredientImage.sprite = items[i].ingredientImage;
+            }
+            else
+            {
+                slots[I].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
+            }
         }
     }
 }

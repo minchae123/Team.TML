@@ -30,7 +30,16 @@ public class StoreGoods : MonoBehaviour
 
     public void Purchase(int i)
     {
-        ingredientManager.items[i].ingredientNumber++;
-        Debug.Log("구매 성공!!");
+        if(price[i] <= GameManager.Instance.Money)
+        {
+            ingredientManager.items[i].ingredientNumber++;
+            ingredientManager.IngredientSubstitution(i);
+            GameManager.Instance.Money -= price[i];
+            Debug.Log("구매 성공!!");
+        }
+        else
+        {
+            Debug.Log("넌거지다!!");
+        }
     }
 }
