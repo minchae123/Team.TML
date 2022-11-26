@@ -5,8 +5,8 @@ using DG.Tweening;
 
 public class Cooking : MonoBehaviour
 {
-    [Tooltip("²ú´Â ½Ã°£")] public int boilTime;
-    [Tooltip("Å¸´Â ½Ã°£")] public int burnTime;
+    [Tooltip("ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½")] public int boilTime;
+    [Tooltip("Å¸ï¿½ï¿½ ï¿½Ã°ï¿½")] public int burnTime;
 
     public bool start;
 
@@ -29,7 +29,7 @@ public class Cooking : MonoBehaviour
     {
         if (bi.isCook)
         {
-            Debug.Log("½ÃÀÛ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½");
             bi.isCook = false;
             StartCoroutine(StartCook());
         }
@@ -42,7 +42,7 @@ public class Cooking : MonoBehaviour
 
     IEnumerator StartCook()
     {
-        GameObject.Find("Manager").transform.FindChild("Booggle").gameObject.SetActive(true);
+        GameObject.Find("Manager").transform.Find("Booggle").gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         bBogle = GameObject.Find("Booggle");
         bBogle.GetComponent<ParticleSystem>().Play();
