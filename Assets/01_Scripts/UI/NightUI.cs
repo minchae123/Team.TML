@@ -46,7 +46,7 @@ public class NightUI : MonoBehaviour
         originalTransform = shutter.transform.position;
 
         Sequence ShutterSequence = DOTween.Sequence();
-        ShutterSequence.Append(shutter.transform.DOMove(Vector3.zero, 1.5f));
+        ShutterSequence.Append(shutter.transform.DOLocalMove(new Vector3(0, -36.45f, 0), 1.5f));
         
         ShutterSequence.OnComplete(() => {
             Receipt();
@@ -77,7 +77,7 @@ public class NightUI : MonoBehaviour
         });
     }
 
-    public void DebtButtonClock(){
+    public void DebtButtonClick(){
 
         debtCanvas.SetActive(false);
         GameManager.Instance.StartDay();
