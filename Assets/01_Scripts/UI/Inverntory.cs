@@ -19,6 +19,8 @@ public class Inverntory : MonoBehaviour
         inven = Inventory.instance;
         slots = slotHolder.GetComponentsInChildren<Slot>();
         inven.onSlotCountChange += SlotChange;
+        _inventory.SetActive(false);
+        inventoryButton.SetActive(true);
     }
 
     private void SlotChange(int vall)
