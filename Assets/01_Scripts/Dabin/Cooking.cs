@@ -57,6 +57,11 @@ public class Cooking : MonoBehaviour
         curImage.DOColor(Color.black, burnTime);
     }
 
+    public void GoBtn()
+    {
+            StartCoroutine(StartCook());
+    }
+
     IEnumerator StartCook()
     {
         ui.enabled = false;

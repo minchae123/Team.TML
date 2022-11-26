@@ -23,8 +23,6 @@ public class NamBi : MonoBehaviour, IPoolable
 
     public void AddItem(string ingre)
     {
-        if (!iss) isCook = true;
-
         if (!recipe.Contains(ingre))
         {
             index++;
