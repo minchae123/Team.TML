@@ -12,6 +12,10 @@ public class Recipe : MonoBehaviour, IPoolable
 
     public CustomerManager customer;
 
+    public Slider slider;
+
+    public GameObject btn;
+
     private IngredientSO ingredientSO;
     public IngredientSO IngredientSO
     {
@@ -30,6 +34,11 @@ public class Recipe : MonoBehaviour, IPoolable
     private void Awake()
     {
         customer = FindObjectOfType<CustomerManager>();
+        slider = FindObjectOfType<Slider>();
+    }
+
+    private void Update()
+    {
     }
 
     public void SetRecipe()
@@ -61,6 +70,22 @@ public class Recipe : MonoBehaviour, IPoolable
         foreach (T ingredient in ingredients)
         {
             save.Add(ingredient.ToString());
+        }
+    }
+
+    public void GetOrder()
+    {
+        Destroy(btn);
+        Debug.Log("ÁÖ¹®");
+        StartCoroutine(Order());
+    }
+
+    IEnumerator Order()
+    {
+        while (slider.value >= 0)
+        {
+            slider.value -= Time.deltaTime;
+            yield return null;
         }
     }
 

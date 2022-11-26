@@ -30,6 +30,8 @@ public class Cooking : MonoBehaviour
     public DraggableUI ui;
     public DroppableUI uii;
 
+    public DroppableUI cUi;
+
     public void Start()
     {
         bi = GetComponent<NamBi>();
@@ -38,7 +40,7 @@ public class Cooking : MonoBehaviour
         uii = GetComponent<DroppableUI>();
         burnTime = 1;
 
-        ui.enabled = true;
+        ui.enabled = false;
         uii.enabled = true;
     }
 
@@ -59,37 +61,31 @@ public class Cooking : MonoBehaviour
 
     public void GoBtn()
     {
-            StartCoroutine(StartCook());
+        StartCoroutine(StartCook());
     }
 
     IEnumerator StartCook()
     {
-        ui.enabled = false;
-        GameObject.Find("Manager").transform.Find("Booggle").gameObject.SetActive(true);
-        bBogle = GameObject.Find("Booggle");
-        bBogle.GetComponent<ParticleSystem>().Play();
-        yield return new WaitForSeconds(CheckTime());
-
-        curImage.sprite = inm[0];
-
-        yield return new WaitForSeconds(1);
-
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
-        uii.enabled = false;
-
+        GameObject.Find("Manager").transform.Find("Booggle").gameObject.SetActive(true);
+        bBogle = GameObject.Find("Booggle");
+        bBogle.GetComponent<ParticleSystem>().Play();
+        curImage.sprite = inm[0];
+        yield return new WaitForSeconds(CheckTime());
         curImage.sprite = inm[1];
-
+        yield return new WaitForSeconds(1);
+        uii.enabled = false;
         yield return new WaitForSeconds(CheckTime() - 1);
-
         curImage.sprite = inm[2];
-
         yield return new WaitForSeconds(CheckTime());
         bBogle.GetComponent<ParticleSystem>().Stop();
-        ui.enabled = true;
         curImage.sprite = inm[3];
+        cUi = GameObject.Find("Clearrr").GetComponent<DroppableUI>();
+        cUi.enabled = true;
+        ui.enabled = true;
         end = true;
         bi.iss = false;
     }

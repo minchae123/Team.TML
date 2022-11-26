@@ -9111,10 +9111,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: subMenu, Assembly-CSharp
+      - m_Target: {fileID: 502804828}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: GoTitle
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9997,8 +9997,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: subMenu, Assembly-CSharp
+      - m_Target: {fileID: 502804828}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -11224,7 +11224,7 @@ MonoBehaviour:
   - {r: 0.0971342, g: 0.42730066, b: 0.4811321, a: 0}
   - {r: 0.0707903, g: 0.34164932, b: 0.38679248, a: 0}
   - {r: 0.0707903, g: 0.34164932, b: 0.38679248, a: 0}
-  - {r: 0.058953352, g: 0.298042, b: 0.33962262, a: 0}
+  - {r: 0.4528302, g: 0.105350114, b: 0, a: 0}
 --- !u!81 &1059994261
 AudioListener:
   m_ObjectHideFlags: 0

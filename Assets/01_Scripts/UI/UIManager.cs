@@ -38,9 +38,9 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void GoTitle(string scene)
+    public void GoTitle()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(0);
     }
 
     public void Mute(bool muted)
