@@ -5,8 +5,17 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 public class Cooking : MonoBehaviour
-{
-    [Tooltip("Å¸´Â ½Ã°£")] public int burnTime = 1;
+{   
+    public static Cooking Instance = null;
+
+    private void Awake() {
+        
+        if (Instance == null)
+        {
+            Instance = this;
+        }     
+    }
+    [Tooltip("Å¸ï¿½ï¿½ ï¿½Ã°ï¿½")] public int burnTime = 1;
 
     public float time;
 

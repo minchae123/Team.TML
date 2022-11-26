@@ -11,6 +11,7 @@ public class NightUI : MonoBehaviour
     public Image fadeImage;
     public GameObject shutter;
     public GameObject receipt;
+    public GameObject debtCanvas;
     public TextMeshProUGUI receiptText_Day;
     public TextMeshProUGUI receiptText_Calculate;
     public GraphicRaycaster graphicRaycaster;
