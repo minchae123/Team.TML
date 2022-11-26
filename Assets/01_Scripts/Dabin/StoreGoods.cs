@@ -21,7 +21,7 @@ public class StoreGoods : MonoBehaviour
     }
 
     public void Price()
-    {
+    {  
         for(int i = 0; i < price.Length; i++)
         {
             ingredientPirce[i].text = $"АЁАн : {price[i]}";

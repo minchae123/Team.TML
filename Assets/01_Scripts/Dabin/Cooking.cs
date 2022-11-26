@@ -44,12 +44,12 @@ public class Cooking : MonoBehaviour
 
     private void Update()
     {
-        if (bi.isCook)
+        /*if (bi.isCook)
         {
             bi.iss = true;
             bi.isCook = false;
             StartCoroutine(StartCook());
-        }
+        }*/
     }
 
     public void Boiling()
