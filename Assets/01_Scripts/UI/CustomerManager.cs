@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class CustomerManager : MonoBehaviour
 {
-    public CustomerManager Instance = null;
+    public static CustomerManager Instance = null;
 
     public IngredientRecipeListSO list;
 

@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject ingre;
     public Vector2 po;
 
+    private MainUIManager uiManager;
+
     private void Awake()
     {
         if (Instance != null)
@@ -25,13 +27,44 @@ public class GameManager : MonoBehaviour
             Debug.Log("Multiple Gamemanager is running");
         }
         Instance = this;
+
+        uiManager = FindObjectOfType<MainUIManager>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
+            GameObject a = GameObject.Find("Ingredient");
+            Destroy(a);
             Instantiate(ingre, po, Quaternion.identity, GameObject.Find("MainCanvas").transform);
         }
+    }
+
+    public void Clear()
+    {
+        GameObject b = GameObject.Find("Booggle");
+        if(b != null)
+        {
+            b.GetComponent<ParticleSystem>().Stop();
+        }
+        GameObject c = GameObject.Find("Customer(Clone)");
+        GameObject n = GameObject.Find("NamBi(Clone)");
+
+        if (c != null)
+        {
+            Destroy(c);
+        }
+        if (n != null)
+        {
+            Destroy(n);
+        }
+    }
+
+    public void StartDay()
+    {
+        uiManager.time = 46;
+        NamBiPool.Instance.NewNamBi();
+        CustomerManager.Instance.ShowCustomer();
     }
 }

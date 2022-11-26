@@ -84,17 +84,14 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
         }
     }
 
-    IEnumerator Success()
+    public IEnumerator Success()
     {
         yield return new WaitForSeconds(2f);
-
         Recipe re = FindObjectOfType<Recipe>();
         re.ThanksTxt();
         yield return new WaitForSeconds(2f);
-
         pool.NewNamBi();
         customerManager.ShowCustomer();
-
         Destroy(del);
         yield return new WaitForSeconds(2f);
     }
