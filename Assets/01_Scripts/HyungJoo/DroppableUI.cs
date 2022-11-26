@@ -9,6 +9,7 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
 {
     public bool clear;
     public bool ch;
+    public bool isGo = false;
 
     private Image _image;
     RectTransform rect;
@@ -34,56 +35,65 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!clear)
+        if (isGo)
         {
-            _image.color = Color.yellow;
+            if(!clear)
+            {
+                _image.color = Color.yellow;
+            }
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _image.color = co;
+        if (isGo)
+        {
+            _image.color = co;
+        }
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (eventData.pointerDrag != null)
+        if (isGo)
         {
-            NamBi nambi = FindObjectOfType<NamBi>();
-
-            if (nambi != null)
+            if (eventData.pointerDrag != null)
             {
-                Yummy yummy = eventData.pointerDrag.gameObject.GetComponent<Yummy>();
-                if (yummy != null)
-                {
-                    nambi.AddItem(yummy.ingredientName);
-                }
-            }
+                NamBi nambi = FindObjectOfType<NamBi>();
 
-            if (clear == true)
-            {
-                if (eventData.pointerDrag.gameObject.GetComponent<DraggableUI>().nambi == false)
+                if (nambi != null)
                 {
-                    return;
-                }
-                try
-                {
-                    if(nambi != null)
+                    Yummy yummy = eventData.pointerDrag.gameObject.GetComponent<Yummy>();
+                    if (yummy != null)
                     {
-                        GameObject nam = GameObject.Find("NamBi(Clone)");
-                        nam.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
-                        nambi.Money();
-                        del = GameObject.Find("Customer(Clone)");
-                        StartCoroutine(Success());
+                        nambi.AddItem(yummy.ingredientName);
                     }
                 }
-                catch(Exception e)
+
+                if (clear == true)
                 {
-                    Debug.LogException(e);
+                    if (eventData.pointerDrag.gameObject.GetComponent<DraggableUI>().nambi == false)
+                    {
+                        return;
+                    }
+                    try
+                    {
+                        if(nambi != null)
+                        {
+                            GameObject nam = GameObject.Find("NamBi(Clone)");
+                            nam.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+                            nambi.Money();
+                            del = GameObject.Find("Customer(Clone)");
+                            StartCoroutine(Success());
+                        }
+                    }
+                    catch(Exception e)
+                    {
+                        Debug.LogException(e);
+                    }
                 }
+                eventData.pointerDrag.transform.SetParent(transform);
+                eventData.pointerDrag.GetComponent<RectTransform>().position = rect.position;
             }
-            eventData.pointerDrag.transform.SetParent(transform);
-            eventData.pointerDrag.GetComponent<RectTransform>().position = rect.position;
         }
     }
 

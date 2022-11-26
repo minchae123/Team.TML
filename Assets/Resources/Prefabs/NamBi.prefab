@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clear: 0
   ch: 0
+  isGo: 0
   del: {fileID: 0}
 --- !u!114 &3104725850243936044
 MonoBehaviour:
@@ -265,6 +266,7 @@ MonoBehaviour:
   nambi: 1
   originPos: {x: 0, y: 0, z: 0}
   dragged: 0
+  isMove: 1
 --- !u!225 &3104725850243936033
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -399,6 +401,7 @@ MonoBehaviour:
   curImage: {fileID: 0}
   ui: {fileID: 0}
   uii: {fileID: 0}
+  cUi: {fileID: 0}
 --- !u!1 &3104725851256557353
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000019073, y: -0.000011444}
+  m_AnchoredPosition: {x: -0.0000019073, y: 50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3104725851256557398

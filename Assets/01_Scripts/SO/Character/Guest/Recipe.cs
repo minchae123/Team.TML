@@ -76,6 +76,8 @@ public class Recipe : MonoBehaviour, IPoolable
     public void GetOrder()
     {
         Destroy(btn);
+        GameObject.Find("Ingredient").transform.GetComponentInChildren<DraggableUI>().isMove = true;
+        GameObject.Find("NamBi(Clone)").GetComponent<DroppableUI>().isGo = true;
         Debug.Log("¡÷πÆ");
         StartCoroutine(Order());
     }
