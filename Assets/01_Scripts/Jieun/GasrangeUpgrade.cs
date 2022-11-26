@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GasrangeUpgrade : MonoBehaviour
 {   
@@ -10,6 +11,12 @@ public class GasrangeUpgrade : MonoBehaviour
 
     public Button gas_level2Button;
     public Button gas_level3Button;
+
+    public GameObject errorPanel;
+
+    private void Start() {
+        gas_level3Button.interactable = false;
+    }
     public void Level2(){
 
         if(GameManager.Instance.Money > gas_Level2UpgradePrice){
@@ -17,6 +24,12 @@ public class GasrangeUpgrade : MonoBehaviour
             Cooking.Instance.burnTime = 2;
             GameManager.Instance.Money -= gas_Level2UpgradePrice;
             gas_level2Button.interactable = false;
+            gas_level3Button.interactable = true;
+        }
+        else{
+            errorPanel.SetActive(true);
+            ShakePanel();
+            errorPanel.SetActive(false);
         }
         
     }
@@ -29,5 +42,16 @@ public class GasrangeUpgrade : MonoBehaviour
             GameManager.Instance.Money -= gas_Level3UpgradePrice;
             gas_level3Button.interactable = false;
         }
+        else{
+
+            errorPanel.SetActive(true);
+            ShakePanel();
+            errorPanel.SetActive(false);
+        }
+    }
+
+    public void ShakePanel(){
+
+        errorPanel.transform.DOShakePosition(1f, 10);
     }
 }
