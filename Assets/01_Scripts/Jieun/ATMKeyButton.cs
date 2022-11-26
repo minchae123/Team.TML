@@ -57,7 +57,7 @@ public class ATMKeyButton : MonoBehaviour
 
             Debt.Instance.inputMoney = 0;
             Debt.Instance.numText.text = "입력해주세요";
-            Debt.Instance.ShakeCamera();
+            Debt.Instance.ShakePanel();
         }
         else{
 
