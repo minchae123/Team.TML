@@ -2905,6 +2905,7 @@ MonoBehaviour:
   ef: {fileID: 0}
   isCook: 0
   iss: 0
+  pop: {fileID: 0}
 --- !u!114 &210098011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6637,6 +6638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 30000
+  toMoney: 0
   day: 1
   ingre: {fileID: 0}
   po: {x: 0, y: 0}
@@ -19960,7 +19962,7 @@ MonoBehaviour:
   inputMoney: 0
   numText: {fileID: 1426951438}
   debtText: {fileID: 351017512}
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 1059994259}
   panel: {fileID: 0}
 --- !u!114 &1633553232
 MonoBehaviour:
