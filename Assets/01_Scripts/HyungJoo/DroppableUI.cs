@@ -26,7 +26,10 @@ public class DroppableUI : MonoBehaviour,IPointerEnterHandler,IDropHandler,IPoin
         pool = FindObjectOfType<NamBiPool>();
         customerManager = FindObjectOfType<CustomerManager>();
         co = this._image.color;
-
+        if (clear)
+        {
+            this.enabled = false;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

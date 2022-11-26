@@ -41,7 +41,7 @@ public class CustomerManager : MonoBehaviour
     {
         int index = Random.Range(0, list.ingredients.Count);
 
-        Vector3 pos = new Vector3(-81, 131, 0);
+        Vector3 pos = new Vector3(315, 131, 0);
 
         GameObject obj = PoolingManager.PopObject("Customer");
         obj.GetComponent<Recipe>().IngredientSO = list.ingredients[index];
