@@ -54,8 +54,6 @@ public class Cooking : MonoBehaviour
 
     public void GoBtn()
     {
-        AudioSource a = GameObject.Find("GoBTn").GetComponent<AudioSource>();
-        a.Play();
         StartCoroutine(StartCook());
     }
 
