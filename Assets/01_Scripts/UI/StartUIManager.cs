@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+
 
 public class StartUIManager : MonoBehaviour
 {
     int ClickCount = 0;
+
+
+    public GameObject move1;
+    public GameObject move2;
+
+    void Start()
+    {
+
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -20,7 +32,6 @@ public class StartUIManager : MonoBehaviour
             CancelInvoke("DoubleClick");
             Application.Quit();
         }
-
     }
 
     public void DoubleClick()
