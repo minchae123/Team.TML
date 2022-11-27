@@ -27,11 +27,12 @@ public class MainUIManager : MonoBehaviour
         setting.onClick.AddListener(() => SettingBtn());
         left.onClick.AddListener(() => LeftBtn());
         right.onClick.AddListener(() => RightBtn());
+
+        StartCoroutine(TimeAdd());
     }
 
     private void Start()
     {
-        StartCoroutine(TimeAdd());
     }
 
     private void Update()
@@ -64,24 +65,25 @@ public class MainUIManager : MonoBehaviour
         m = m * 10;
         timeTxt.text = string.Format("{0}일차 {1} : {2} {3}", GameManager.Instance.Day ,h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
 
-        if(h == 20 && m == 0)
+        if(h == 22 && m == 0)
         {
             nightEvent.Invoke();
         }
 
-        if(h == 24){
+        /*if(h == 24){
 
             dayCount++;
-        }
+        }*/
     }
 
     public IEnumerator TimeAdd()                                             
     {                                                                 
         while(time < 144)                                                
-        {                                                                
-            yield return new WaitForSeconds(1);                          
+        {
+            yield return null;
             time++;                                                      
             SetTime(time);                                               
+            yield return new WaitForSeconds(2f);                          
         }
     }
 }

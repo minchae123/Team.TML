@@ -39,6 +39,12 @@ public class Recipe : MonoBehaviour, IPoolable
 
     private void Update()
     {
+        if(slider.value <= 0)
+        {
+            GameManager.Instance.Clear();
+            GameManager.Instance.Money -= 10000;
+            GameManager.Instance.TOMoney -= 10000;
+        }
     }
 
     public void SetRecipe()
@@ -75,9 +81,9 @@ public class Recipe : MonoBehaviour, IPoolable
 
     public void GetOrder()
     {
+        DroppableUI n = GameObject.Find("NamBi(Clone)").GetComponent<DroppableUI>();
+        n.enabled = true;
         Destroy(btn);
-        GameObject.Find("Ingredient").transform.GetComponentInChildren<DraggableUI>().isMove = true;
-        GameObject.Find("NamBi(Clone)").GetComponent<DroppableUI>().isGo = true;
         Debug.Log("ÁÖ¹®");
         StartCoroutine(Order());
     }
@@ -86,7 +92,7 @@ public class Recipe : MonoBehaviour, IPoolable
     {
         while (slider.value >= 0)
         {
-            slider.value -= Time.deltaTime;
+            slider.value -= Time.deltaTime * 1.5f;
             yield return null;
         }
     }

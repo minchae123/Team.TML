@@ -16,10 +16,6 @@ public class NamBiPool : MonoBehaviour
         PoolingManager.CreatePool("NamBi", this.transform, 1);
     }
 
-    private void Start()
-    {
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))

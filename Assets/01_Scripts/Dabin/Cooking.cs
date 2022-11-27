@@ -30,8 +30,6 @@ public class Cooking : MonoBehaviour
     public DraggableUI ui;
     public DroppableUI uii;
 
-    public DroppableUI cUi;
-
     public void Start()
     {
         bi = GetComponent<NamBi>();
@@ -41,7 +39,7 @@ public class Cooking : MonoBehaviour
         burnTime = 1;
 
         ui.enabled = false;
-        uii.enabled = true;
+        uii.enabled = false;
     }
 
     private void Update()
@@ -54,13 +52,10 @@ public class Cooking : MonoBehaviour
         }*/
     }
 
-    public void Boiling()
-    {
-        curImage.DOColor(Color.black, burnTime);
-    }
-
     public void GoBtn()
     {
+        AudioSource a = GameObject.Find("GoBTn").GetComponent<AudioSource>();
+        a.Play();
         StartCoroutine(StartCook());
     }
 
@@ -83,8 +78,6 @@ public class Cooking : MonoBehaviour
         yield return new WaitForSeconds(CheckTime());
         bBogle.GetComponent<ParticleSystem>().Stop();
         curImage.sprite = inm[3];
-        cUi = GameObject.Find("Clearrr").GetComponent<DroppableUI>();
-        cUi.enabled = true;
         ui.enabled = true;
         end = true;
         bi.iss = false;

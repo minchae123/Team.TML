@@ -46,7 +46,7 @@ public class NamBi : MonoBehaviour, IPoolable
             GameManager.Instance.TOMoney += 5000 + (upLevel * 1);
         }
         
-        ef = FindObjectOfType<AudioSource>();
+        ef = GetComponent<AudioSource>();
         ef.Play();
     }
 

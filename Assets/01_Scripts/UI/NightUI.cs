@@ -46,7 +46,7 @@ public class NightUI : MonoBehaviour
         originalTransform = shutter.transform.position;
 
         Sequence ShutterSequence = DOTween.Sequence();
-        ShutterSequence.Append(shutter.transform.DOLocalMove(new Vector3(0, -36.45f, 0), 1.5f));
+        ShutterSequence.Append(shutter.transform.DOLocalMove(new Vector3(0, 26f, 0), 1.5f));
         
         ShutterSequence.OnComplete(() => {
             Receipt();
@@ -79,8 +79,8 @@ public class NightUI : MonoBehaviour
 
     public void DebtButtonClick(){
 
-        debtCanvas.SetActive(false);
         GameManager.Instance.StartDay();
+        debtCanvas.SetActive(false);
 
         Sequence debt = DOTween.Sequence();
         debt.Append(fadeImage.DOFade(0, 1f));

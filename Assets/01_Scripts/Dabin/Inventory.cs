@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
         set
         {
             slotCnt = value;
-            onSlotCountChange.Invoke(slotCnt);
+            onSlotCountChange?.Invoke(slotCnt);
         }
     }
 
