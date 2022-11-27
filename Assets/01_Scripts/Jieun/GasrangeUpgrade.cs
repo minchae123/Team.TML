@@ -6,8 +6,8 @@ using DG.Tweening;
 
 public class GasrangeUpgrade : MonoBehaviour
 {   
-    int gas_Level2UpgradePrice;
-    int gas_Level3UpgradePrice;
+    int gas_Level2UpgradePrice = 100000;
+    int gas_Level3UpgradePrice = 500000;
 
     public Button gas_level2Button;
     public Button gas_level3Button;
