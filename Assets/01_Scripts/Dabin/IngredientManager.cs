@@ -14,10 +14,10 @@ public class IngredientManager : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < items.Count; i++)
+       /* for(int i = 0; i < items.Count; i++)
         {
             Debug.Log($"{i}¹øÂ° : {items[i].ingredientName}");
-        }
+        }*/
     }
 
     public bool CheckIndex(int num)
