@@ -6,18 +6,20 @@ using DG.Tweening;
 
 public class RefrigeratorUpgrade : MonoBehaviour
 {
-    private int refUpgradePrice;
+    private int refUpgradePrice = 100000;
     public Button ref_levelUpButton;
     public GameObject errorPanel;
 
+    private Inverntory inventory;
+
     private void Awake() {
-        
+        inventory = GameObject.Find("StoreCanvas").GetComponent<Inverntory>();
     }
     public void UpgradeButtonClick(){
 
         if(GameManager.Instance.Money > refUpgradePrice){
 
-            
+            inventory.AddSlot();
             GameManager.Instance.Money -= refUpgradePrice;
         }
         else{
