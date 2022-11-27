@@ -8,8 +8,8 @@ public class RestaurantUpgrade : MonoBehaviour
 {
     private NamBi _namBi;
 
-    int res_Level2UpgradePrice;
-    int res_Level3UpgradePrice;
+    int res_Level2UpgradePrice = 100000;
+    int res_Level3UpgradePrice = 500000;
 
     public Button res_level2Button;
     public Button res_level3Button;
