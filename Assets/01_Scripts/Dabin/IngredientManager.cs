@@ -8,12 +8,13 @@ public class IngredientManager : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<string> names = new List<string>();
     public Slot[] slots;
-    [Tooltip("slot하나에 들어갈 수 있는 최대 수")] public int maxNum = 100;
+    [Tooltip("slot하나에 들어갈 수 있는 최대 수")] public static int maxNum = 100;
     
     public GameObject storePanel;
     public Vector2 domaMin;
     public Vector2 domaMax;
     public GameObject[] dragObject;
+    public GameObject panel;
 
     public Vector3 dir;
     private int I = 0;
@@ -36,6 +37,19 @@ public class IngredientManager : MonoBehaviour
             dir.x = Random.Range(domaMin.x, domaMax.x);
             dir.y = Random.Range(domaMin.y, domaMax.y);
             Instantiate(dragObject[ReturnInt(i)], dir, Quaternion.identity, GameObject.Find("Doma").transform);
+            DownNumber(i); 
+            slots[ReturnInt(i)].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
+        }
+    }
+
+    public void DownNumber(int i)
+    {
+        for(int j = 0; j < items.Count; j++)
+        {
+            if(items[j].ingredientName == names[i])
+            {
+                items[j].ingredientNumber--;
+            }
         }
     }
 
@@ -63,8 +77,7 @@ public class IngredientManager : MonoBehaviour
     {
         if (items[i].ingredientNumber > maxNum)
         {
-            items[i].ingredientNumber = 0;
-            I++;
+            StartCoroutine(PullSlot());
             return false;
         }
         return true;
@@ -83,7 +96,6 @@ public class IngredientManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("여기인가?");
                 slots[ReturnInt(i)].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
             }
         }
@@ -99,5 +111,12 @@ public class IngredientManager : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    IEnumerator PullSlot()
+    {
+        panel.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        panel.SetActive(false);
     }
 }

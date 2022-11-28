@@ -36,6 +36,6 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        SlotCnt = 4;
+        SlotCnt = 19;
     }
 }
