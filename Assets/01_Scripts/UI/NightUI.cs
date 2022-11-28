@@ -17,6 +17,8 @@ public class NightUI : MonoBehaviour
     public GraphicRaycaster graphicRaycaster;
     private MainUIManager mainUIManager;
 
+    public GameObject tpButtons;
+
     private void Awake() {
         mainUIManager = GameObject.Find("MainCanvas").GetComponent<MainUIManager>();
         graphicRaycaster.enabled = false;
@@ -67,29 +69,16 @@ public class NightUI : MonoBehaviour
 
         Sequence moveOrigin = DOTween.Sequence();
 
-        moveOrigin.Append(shutter.transform.DOMove(originalTransform, 0.5f));
+        //moveOrigin.Append(shutter.transform.DOMove(originalTransform, 0.5f));
         moveOrigin.Append(receipt.transform.DOMove(originalTransform, 0.5f));
         
         moveOrigin.OnComplete(() => {
             
-            debtCanvas.SetActive(true);
-            graphicRaycaster.enabled = false;   
+            receipt.SetActive(false);
+            GameManager.Instance.StartDay();
+            tpButtons.SetActive(true);
+              
         });
-    }
-
-    public void DebtButtonClick(){
-
-        GameManager.Instance.StartDay();
-        debtCanvas.SetActive(false);
-
-        Sequence debt = DOTween.Sequence();
-        debt.Append(fadeImage.DOFade(0, 1f));
-
-        debt.OnComplete(() => {
-            
-            fadeImage.enabled = false;
-        });
-        
     }
 
 }

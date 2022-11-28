@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class RestaurantUpgrade : MonoBehaviour
 {
@@ -16,12 +17,16 @@ public class RestaurantUpgrade : MonoBehaviour
 
     public GameObject errorPanel;
 
-    private void Awake() {
-        _namBi = GameObject.Find("DroppableUI").GetComponent<NamBi>();
+    public TextMeshProUGUI priceText;
+
+
+    private void Update() {
+        _namBi = GameObject.Find("NamBi(Clone)").GetComponent<NamBi>();
     }
 
     private void Start() {
         res_level3Button.interactable = false;
+        priceText.text = $"{res_Level2UpgradePrice.ToString()} 원";
     }
     public void Level2(){
 
@@ -31,12 +36,12 @@ public class RestaurantUpgrade : MonoBehaviour
             GameManager.Instance.Money -= res_Level2UpgradePrice;
             res_level2Button.interactable = false;
             res_level3Button.interactable = true;
+            priceText.text = $"{res_Level3UpgradePrice.ToString()} 원";
         }
         else{
 
             errorPanel.SetActive(true);
             ShakePanel();
-            errorPanel.SetActive(false);
         }
     }
 
@@ -51,13 +56,20 @@ public class RestaurantUpgrade : MonoBehaviour
         else{
 
             errorPanel.SetActive(true);
+            
             ShakePanel();
-            errorPanel.SetActive(false);
         }
     }
 
     public void ShakePanel(){
 
-        errorPanel.transform.DOShakePosition(1f, 10);
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(errorPanel.transform.DOShakePosition(1f, 10));
+
+        sequence.OnComplete(() => {
+
+            errorPanel.SetActive(false);
+        });
     }
 }
