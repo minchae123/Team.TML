@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class GasrangeUpgrade : MonoBehaviour
 {   
@@ -14,8 +15,11 @@ public class GasrangeUpgrade : MonoBehaviour
 
     public GameObject errorPanel;
 
+    public TextMeshProUGUI priceText;
+
     private void Start() {
         gas_level3Button.interactable = false;
+        priceText.text = $"{gas_Level2UpgradePrice.ToString()} 원";
     }
     public void Level2(){
 
@@ -25,6 +29,7 @@ public class GasrangeUpgrade : MonoBehaviour
             GameManager.Instance.Money -= gas_Level2UpgradePrice;
             gas_level2Button.interactable = false;
             gas_level3Button.interactable = true;
+            priceText.text = $"{gas_Level3UpgradePrice.ToString()} 원";
         }
         else{
             errorPanel.SetActive(true);
@@ -44,14 +49,23 @@ public class GasrangeUpgrade : MonoBehaviour
         }
         else{
 
+
             errorPanel.SetActive(true);
+            
             ShakePanel();
-            errorPanel.SetActive(false);
         }
     }
 
     public void ShakePanel(){
 
-        errorPanel.transform.DOShakePosition(1f, 10);
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(errorPanel.transform.DOShakePosition(1f, 10));
+
+        sequence.OnComplete(() => {
+
+            errorPanel.SetActive(false);
+
+        });
     }
 }
