@@ -5301,7 +5301,7 @@ MonoBehaviour:
   toMoney: 0
   day: 1
   ingre: {fileID: 7508754768024682632, guid: ad62cc5f38a27b545b6d713bdc4fda80, type: 3}
-  po: {x: 0, y: 0}
+  po: {x: -1.75, y: 0}
 --- !u!4 &502804830
 Transform:
   m_ObjectHideFlags: 0

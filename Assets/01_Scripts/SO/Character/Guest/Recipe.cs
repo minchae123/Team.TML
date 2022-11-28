@@ -84,7 +84,6 @@ public class Recipe : MonoBehaviour, IPoolable
         DroppableUI n = GameObject.Find("NamBi(Clone)").GetComponent<DroppableUI>();
         n.enabled = true;
         Destroy(btn);
-        Debug.Log("¡÷πÆ");
         StartCoroutine(Order());
     }
 
