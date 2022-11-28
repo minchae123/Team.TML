@@ -44,6 +44,8 @@ public class Recipe : MonoBehaviour, IPoolable
             GameManager.Instance.Clear();
             GameManager.Instance.Money -= 10000;
             GameManager.Instance.TOMoney -= 10000;
+            NamBiPool.Instance.NewNamBi();
+            CustomerManager.Instance.ShowCustomer();
         }
     }
 
