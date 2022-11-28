@@ -17,6 +17,9 @@ public class NightUI : MonoBehaviour
     public GraphicRaycaster graphicRaycaster;
     private MainUIManager mainUIManager;
 
+    public GameObject sunButton;
+    public GameObject sunButton2;
+
     public GameObject tpButtons;
 
     private void Awake() {
@@ -74,11 +77,13 @@ public class NightUI : MonoBehaviour
         
         moveOrigin.OnComplete(() => {
             receipt.SetActive(false);
+            sunButton.SetActive(true);
+            sunButton2.SetActive(true);
             tpButtons.SetActive(true);
         });
     }
 
-    public void StoreXButtonClick()
+    public void SunButtonClick()
     {   
         Sequence sequence = DOTween.Sequence();
 
@@ -86,6 +91,13 @@ public class NightUI : MonoBehaviour
         
         sequence.Append(fadeImage.DOFade(0f, 0.5f));
 
+        sequence.OnComplete(() => {
+            receipt.SetActive(true);
+            sunButton.SetActive(false);
+            sunButton2.SetActive(false);
+            tpButtons.SetActive(false);
+            GameManager.Instance.StartDay();
+        });
 
     }
 
