@@ -15,6 +15,8 @@ public class Debt : MonoBehaviour
 
     public TextMeshProUGUI numText;
     public TextMeshProUGUI debtText;
+
+    public TextMeshProUGUI moneyTxt;
     
     public GameObject panel;
 
@@ -29,11 +31,10 @@ public class Debt : MonoBehaviour
     }
     
     private void Start() {
-        
         currentDebt = startDebt;
         //debtText.text = currentDebt.ToString();
         debtText.text = string.Format("{0:#,###}", currentDebt);
-
+        moneyTxt.text = $"돈 : {GameManager.Instance.Money}원";
     }
 
     public void DebtCheck(){

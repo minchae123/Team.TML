@@ -17,7 +17,7 @@ public class CustomerManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Debug.Log("Null");
+            Debug.Log("dd");
         }
         Instance = this;
 

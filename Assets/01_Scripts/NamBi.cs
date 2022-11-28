@@ -10,6 +10,7 @@ public class NamBi : MonoBehaviour, IPoolable
     int index = 0;
     public int count = 0;
     public int upLevel = 1000;
+    public int price = 0;   
 
     private string objName;
     public string NAME { get => objName; set => objName = value; }
@@ -20,6 +21,7 @@ public class NamBi : MonoBehaviour, IPoolable
     public bool iss;
 
     public TextMeshProUGUI pop;
+    public GameObject popp;
 
     public void AddItem(string ingre)
     {
@@ -37,17 +39,33 @@ public class NamBi : MonoBehaviour, IPoolable
     {
         if (index > 0)
         {
-            GameManager.Instance.Money += 5000 + count * upLevel - index * 1500;
-            GameManager.Instance.TOMoney += 5000 + count * upLevel - index * 1500;
+            price = 5000 + count * upLevel - index * 1500;
+            GameManager.Instance.Money += price;
+            GameManager.Instance.TOMoney += price;
         }
         else
         {
-            GameManager.Instance.Money += 5000 + (upLevel * 1);
-            GameManager.Instance.TOMoney += 5000 + (upLevel * 1);
+            price = 5000 + (upLevel * 1);
+            GameManager.Instance.Money += price;
+            GameManager.Instance.TOMoney += price;
         }
         
         ef = GetComponent<AudioSource>();
         ef.Play();
+        StartCoroutine(PopTxt());
+    }
+
+    IEnumerator PopTxt()
+    {
+        pop = GameObject.Find("PopupMoney").GetComponent<TextMeshProUGUI>();
+        popp = GameObject.Find("PopupMoney");
+        pop.text = $"+ {price}";
+        popp.transform.DOMove(new Vector3(-6.3f, 4.53f), 1).From();
+
+        yield return new WaitForSeconds(1f);
+        pop.text = "";
+        price = 0;
+
     }
 
     public void OnPool()
