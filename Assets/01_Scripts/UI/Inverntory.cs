@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Inverntory : MonoBehaviour
 {
     Inventory inven;
+    IngredientManager ingredientManager;
 
     public GameObject _inventory;
     public GameObject inventoryButton;
@@ -21,6 +22,7 @@ public class Inverntory : MonoBehaviour
         inven.onSlotCountChange += SlotChange;
         _inventory.SetActive(false);
         inventoryButton.SetActive(true);
+        ingredientManager = GameObject.Find("IngredientManager").GetComponent<IngredientManager>();
     }
 
     private void SlotChange(int vall)
@@ -46,6 +48,6 @@ public class Inverntory : MonoBehaviour
 
     public void AddSlot()
     {
-        IngredientManager.maxNum += 70;
+        ingredientManager.maxNum += 70;
     }
 }
