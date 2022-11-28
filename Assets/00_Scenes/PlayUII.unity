@@ -1437,7 +1437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &152796748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3889,7 +3889,7 @@ MonoBehaviour:
   infoText: {fileID: 1555735909}
   infoText2: "\uB9C8\uB77C\uD0D5\uC9D1\uC5D0\uC11C \uB9DB\uC788\uAC8C \uB9C8\uB77C\uD0D5\uC744
     \uBA39\uB2E4\uAC00 \uC790\uC2E0\uC5D0\uAC8C \uBE5A\uC774 \uC788\uB2E4\uB294 \uAC83\uC744
-    \uC54C\uC544\uCC48\uB2E4.\n\uB9C8\uB77C\uD0D5 \uACB0\uC7AC\uB3C4 \uD560 \uC218
+    \uC54C\uC544\uCC48\uB2E4.\n\uB9C8\uB77C\uD0D5 \uACB0\uC81C\uB3C4 \uD560 \uC218
     \uC5C6\uB294 \uC0C1\uD669\uC774\uB2E4."
   infoText3: "\uADF8 \uC0AC\uC815\uC744 \uB4E4\uC740 \uB9C8\uB77C\uD0D5 \uAC00\uAC8C
     \uC0AC\uC7A5\uB2D8\uC740 \uB9C8\uB77C\uD0D5 \uAC00\uAC8C\uC5D0\uC11C \uC77C\uC744
@@ -5515,7 +5515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7f2f1b2ef724149b021b1da46cd420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 30000
+  money: 2147483647
   toMoney: 0
   day: 1
   ingre: {fileID: 7508754768024682632, guid: ad62cc5f38a27b545b6d713bdc4fda80, type: 3}
@@ -7363,6 +7363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be7cfbf22a2a1d43888c1e75668b92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storePanel: {fileID: 0}
   meatP: {fileID: 935035476}
   vegatableP: {fileID: 1921005927}
   noodleP: {fileID: 647331242}
@@ -9152,9 +9153,9 @@ RectTransform:
   m_Father: {fileID: 1174162718}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 944, y: -571.35}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 744.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719921863
@@ -17912,9 +17913,9 @@ RectTransform:
   m_Father: {fileID: 1174162718}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1532, y: -571.35}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 744.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334834438
@@ -21417,10 +21418,10 @@ RectTransform:
   m_Father: {fileID: 1523323857}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -450}
-  m_SizeDelta: {x: 1033.9, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.000030517578, y: 86}
+  m_SizeDelta: {x: 1651.26, y: 60.950012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555735909
 MonoBehaviour:
@@ -22990,86 +22991,107 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - ingredientType: 0
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 0
     ingredientName: "\uACE0\uAE30"
     ingredientImage: {fileID: 21300000, guid: 0e0f5b372decb3c48b17c97441d9bd67, type: 3}
     ingredientNumber: 0
-  - ingredientType: 0
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 0
     ingredientName: "\uC18C\uC138\uC9C0"
     ingredientImage: {fileID: 21300000, guid: 39d52907d08715b49be30f381b35e0ae, type: 3}
     ingredientNumber: 0
-  - ingredientType: 1
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 1
     ingredientName: "\uCCAD\uACBD\uCC44"
     ingredientImage: {fileID: 21300000, guid: 0c16968ecbd00c0489f63c2b6c686df4, type: 3}
     ingredientNumber: 0
-  - ingredientType: 1
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 1
     ingredientName: "\uBAA9\uC774\uBC84\uC12F"
     ingredientImage: {fileID: 21300000, guid: cf32ad889fee7c74ba1bd86d4b89fb3d, type: 3}
     ingredientNumber: 0
-  - ingredientType: 1
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 1
     ingredientName: "\uD33D\uC774\uBC84\uC12F"
     ingredientImage: {fileID: 21300000, guid: a98c3f8b6fdeae441a8da68008a52d80, type: 3}
     ingredientNumber: 0
-  - ingredientType: 1
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 1
     ingredientName: "\uAC10\uC790"
     ingredientImage: {fileID: 21300000, guid: a3e5ae364dfc4484ea5f1ccb7c75a471, type: 3}
     ingredientNumber: 0
-  - ingredientType: 1
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 1
     ingredientName: "\uBC30\uCD94"
     ingredientImage: {fileID: 21300000, guid: b9e080cac9c8cd1449b4b02da7c408d0, type: 3}
     ingredientNumber: 0
-  - ingredientType: 1
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 1
     ingredientName: "\uD45C\uACE0\uBC84\uC12F"
     ingredientImage: {fileID: 21300000, guid: b28c74af28a96f748a878318a3765817, type: 3}
     ingredientNumber: 0
-  - ingredientType: 1
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 1
     ingredientName: "\uC0C8\uC1A1\uC774\uBC84\uC12F"
     ingredientImage: {fileID: 21300000, guid: 00e925b6bf5460d47be7fac6bcaeaed8, type: 3}
     ingredientNumber: 0
-  - ingredientType: 1
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 1
     ingredientName: "\uC219\uC8FC"
     ingredientImage: {fileID: 21300000, guid: 3afa58532640b5641b292700703e40af, type: 3}
     ingredientNumber: 0
-  - ingredientType: 2
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 2
     ingredientName: "\uC911\uAD6D\uB2F9\uBA74"
     ingredientImage: {fileID: 21300000, guid: 6ea88fe0b6f56ab4aaa3ec186941b52a, type: 3}
     ingredientNumber: 0
-  - ingredientType: 2
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 2
     ingredientName: "\uBA74"
     ingredientImage: {fileID: 21300000, guid: fad4f1e49d02a20489b98beda754bd5f, type: 3}
     ingredientNumber: 0
-  - ingredientType: 2
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 2
     ingredientName: "\uBD84\uBAA8\uC790\uB2F9\uBA74"
     ingredientImage: {fileID: 21300000, guid: 01276a53d033dc845937225a7fefd97b, type: 3}
     ingredientNumber: 0
-  - ingredientType: 2
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 2
     ingredientName: "\uACE0\uAD6C\uB9C8\uB5A1"
     ingredientImage: {fileID: 21300000, guid: 7ffd8c3c66b22334cb565017e330b445, type: 3}
     ingredientNumber: 0
-  - ingredientType: 2
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 2
     ingredientName: "\uCE58\uC988\uB5A1"
     ingredientImage: {fileID: 21300000, guid: 106e42f1522e7d84b96f69598dde282f, type: 3}
     ingredientNumber: 0
-  - ingredientType: 3
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 3
     ingredientName: "\uC720\uBD80"
     ingredientImage: {fileID: 21300000, guid: c19a091c01f892b4e847173299abc540, type: 3}
     ingredientNumber: 0
-  - ingredientType: 3
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 3
     ingredientName: "\uC18C\uC2A4"
     ingredientImage: {fileID: 21300000, guid: 085571a35959e134b95215a72199e074, type: 3}
     ingredientNumber: 0
-  - ingredientType: 3
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 3
     ingredientName: "\uAF2C\uCE58"
     ingredientImage: {fileID: 21300000, guid: c89bdbd1b02b8b4478f659a1dcfebd88, type: 3}
     ingredientNumber: 0
-  - ingredientType: 3
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 3
     ingredientName: "\uAC74\uB450\uBD80"
     ingredientImage: {fileID: 21300000, guid: e44d77af061b1774c9eb26efbeb7d843, type: 3}
     ingredientNumber: 0
-  - ingredientType: 3
+  - dragGameObjgect: {fileID: 0}
+    ingredientType: 3
     ingredientName: "\uB9E4\uCD94\uB9AC\uC54C"
     ingredientImage: {fileID: 21300000, guid: 6802b02ebd4220c4b92f99fa1c12515c, type: 3}
     ingredientNumber: 0
+  names: []
   slots:
   - {fileID: 1291588744}
   - {fileID: 558776458}
@@ -23090,8 +23112,12 @@ MonoBehaviour:
   - {fileID: 1286160218}
   - {fileID: 1713512107}
   - {fileID: 677642616}
-  names: []
   maxNum: 100
+  storePanel: {fileID: 0}
+  domaMin: {x: 0, y: 0}
+  domaMax: {x: 0, y: 0}
+  dragObject: []
+  dir: {x: 0, y: 0, z: 0}
 --- !u!114 &1639045993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24831,9 +24857,9 @@ RectTransform:
   m_Father: {fileID: 1174162718}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 356, y: -571.35}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 744.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1731772902
