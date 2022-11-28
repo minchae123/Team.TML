@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Store : MonoBehaviour
 {
-    StoreGoods storeGoods;
-
+    public GameObject storePanel;
     public GameObject meatP; 
     public GameObject vegatableP; 
     public GameObject noodleP; 
@@ -35,6 +34,11 @@ public class Store : MonoBehaviour
     {
         etcP.SetActive(true);
         AllBtnFalse();
+    }
+
+    public void Exit()
+    {
+        storePanel.SetActive(false);
     }
 
     public void AllBtnFalse()
