@@ -7114,7 +7114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7f2f1b2ef724149b021b1da46cd420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 2147483647
+  money: 50000
   toMoney: 0
   day: 1
   ingre: {fileID: 7508754768024682632, guid: ad62cc5f38a27b545b6d713bdc4fda80, type: 3}
