@@ -24,7 +24,7 @@ public class IngredientManager : MonoBehaviour
         isBuyying = false;
         for(int i = 0; i < items.Count; i++)
         {
-            Debug.Log($"{i}번째 : {items[i].ingredientName}");
+            Debug.Log($"{i}번째 : {items[i].ingredientName}"); 
         }
     }
 

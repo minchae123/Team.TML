@@ -14,7 +14,7 @@ public class IntroRightMove : MonoBehaviour
     public TextMeshProUGUI infoText;
 
     [TextArea]
-    public string infoText2 = "마라탕집에서 맛있게 마라탕을 먹다가 자신에게 빚이 있다는 것을 알아챈다. 마라탕 결재도 할 수 없는 상황이다.";
+    public string infoText2 = "마라탕집에서 맛있게 마라탕을 먹다가 자신에게 빚이 있다는 것을 알아챈다. 마라탕 결제도 할 수 없는 상황이다.";
     [TextArea]
     public string infoText3 = "그 사정을 들은 마라탕 가게 사장님은 마라탕 가게에서 일을 하라고 제안한다.";
     [TextArea]
@@ -40,7 +40,8 @@ public class IntroRightMove : MonoBehaviour
             case 5 :
                 introCanvas.SetActive(false);
                 MainUIManager a = FindObjectOfType<MainUIManager>();
-                a.StartCoroutine(a.TimeAdd());
+                GameManager.Instance.StartDay();
+                //a.StartCoroutine(a.TimeAdd());
                 break;
 
         }

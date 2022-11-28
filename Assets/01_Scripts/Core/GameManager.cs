@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartDay();
+        //StartDay();
     }
 
     private void Update()
