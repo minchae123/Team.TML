@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3231810125166587542}
   - component: {fileID: 3231810125166587537}
   - component: {fileID: 6690058724903532100}
+  - component: {fileID: 1161020879480105970}
   m_Layer: 5
   m_Name: DraggableNooodle
   m_TagString: Untagged
@@ -119,3 +120,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: "\uC625\uC218\uC218\uBA74"
   sp: {fileID: 21300000, guid: fad4f1e49d02a20489b98beda754bd5f, type: 3}
+--- !u!114 &1161020879480105970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231810125166587540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0.5, y: -0.5}
+  m_UseGraphicAlpha: 1

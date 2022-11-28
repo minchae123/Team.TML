@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9030275120032496017}
   - component: {fileID: 9030275120032496022}
   - component: {fileID: -413910288354902253}
+  - component: {fileID: -1447522147859965501}
   m_Layer: 5
   m_Name: DraggableMeongi
   m_TagString: Untagged
@@ -119,3 +120,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: "\uBAA9\uC774\uBC84\uC12F"
   sp: {fileID: 21300000, guid: cf32ad889fee7c74ba1bd86d4b89fb3d, type: 3}
+--- !u!114 &-1447522147859965501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030275120032496019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0.5, y: -0.5}
+  m_UseGraphicAlpha: 1

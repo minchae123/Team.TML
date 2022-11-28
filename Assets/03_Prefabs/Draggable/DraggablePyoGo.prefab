@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 396654176191709991}
   - component: {fileID: 396654176191709984}
   - component: {fileID: 3009961422402713218}
+  - component: {fileID: 4944175764166933562}
   m_Layer: 5
   m_Name: DraggablePyoGo
   m_TagString: Untagged
@@ -119,3 +120,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientName: "\uD45C\uACE0\uBC84\uC12F"
   sp: {fileID: 21300000, guid: b28c74af28a96f748a878318a3765817, type: 3}
+--- !u!114 &4944175764166933562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396654176191709989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0.5, y: -0.5}
+  m_UseGraphicAlpha: 1
