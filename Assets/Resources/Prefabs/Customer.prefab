@@ -90,7 +90,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clear: 1
   ch: 0
-  isGo: 1
   del: {fileID: 0}
 --- !u!1 &909644169989688713
 GameObject:
@@ -513,7 +512,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "\uACE0\uAE30, \uCCAD\uACBD\uCC44, \uD33D\uC774\uBC84\uC12F\n3\uC778\uBD84
+    \uAC19\uC740 1\uC778\uBD84 \uC8FC\uC138\uC694~"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d42bca770194bd40a61fb3ea26c3ba2, type: 2}
   m_sharedMaterial: {fileID: 6313771322495488508, guid: 5d42bca770194bd40a61fb3ea26c3ba2, type: 2}
