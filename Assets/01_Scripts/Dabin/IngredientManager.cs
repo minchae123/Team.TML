@@ -8,7 +8,7 @@ public class IngredientManager : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<string> names = new List<string>();
     public Slot[] slots;
-    [Tooltip("slot하나에 들어갈 수 있는 최대 수")] public static int maxNum = 100;
+    [Tooltip("slot하나에 들어갈 수 있는 최대 수")] public int maxNum = 30;
     
     public GameObject storePanel;
     public Vector2 domaMin;
@@ -18,11 +18,24 @@ public class IngredientManager : MonoBehaviour
 
     public Vector3 dir;
     private int I = 0;
-    bool isBuyying = false;
+    public bool isFullSlot;
 
     private void Start()
     {
-        isBuyying = false;
+        for(int i = 0; i < items.Count; i++)
+        {
+            Debug.Log($"{items[i].ingredientName} : {items[i].ingredientNumber} : {i}");
+        }
+    }
+
+    private void Update()
+    {
+        for(int i = 0; i < items.Count; i++)
+        {
+            slots[i]._ingredientImage.enabled = true;
+            slots[i].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
+            slots[i]._ingredientImage.sprite = items[i].ingredientImage;
+        }
     }
 
     public void StoreBtn()
@@ -32,24 +45,13 @@ public class IngredientManager : MonoBehaviour
 
     public void IngredientDrop(int i)
     {
-        if (isBuyying)
+        if (items[i].ingredientNumber > 0)
         {
+            items[i].ingredientNumber--;
+            slots[ReturnInt(i)].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
             dir.x = Random.Range(domaMin.x, domaMax.x);
             dir.y = Random.Range(domaMin.y, domaMax.y);
-            Instantiate(dragObject[ReturnInt(i)], dir, Quaternion.identity, GameObject.Find("Doma").transform);
-            DownNumber(i); 
-            slots[ReturnInt(i)].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
-        }
-    }
-
-    public void DownNumber(int i)
-    {
-        for(int j = 0; j < items.Count; j++)
-        {
-            if(items[j].ingredientName == names[i])
-            {
-                items[j].ingredientNumber--;
-            }
+            Instantiate(dragObject[i], dir, Quaternion.identity, GameObject.Find("Doma").transform);
         }
     }
 
@@ -75,8 +77,9 @@ public class IngredientManager : MonoBehaviour
 
     public bool NotPullSlot(int i)
     {
-        if (items[i].ingredientNumber > maxNum)
+        if (items[i].ingredientNumber >= maxNum)
         {
+            isFullSlot = true;
             StartCoroutine(PullSlot());
             return false;
         }
@@ -85,7 +88,6 @@ public class IngredientManager : MonoBehaviour
 
     public void IngredientSubstitution(int i)
     {
-        isBuyying = true;
         if (CheckIndex(i) && NotPullSlot(i))
         {
             if(slots[I]._ingredientImage.enabled == false)

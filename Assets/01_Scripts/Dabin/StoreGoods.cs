@@ -30,7 +30,7 @@ public class StoreGoods : MonoBehaviour
 
     public void Purchase(int i)
     {
-        if(price[i] <= GameManager.Instance.Money)
+        if(price[i] <= GameManager.Instance.Money && ingredientManager.isFullSlot != true)
         {
             ingredientManager.items[i].ingredientNumber++;
             ingredientManager.IngredientSubstitution(i);
