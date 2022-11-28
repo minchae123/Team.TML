@@ -37,6 +37,11 @@ public class Debt : MonoBehaviour
         moneyTxt.text = $"돈 : {GameManager.Instance.Money}원";
     }
 
+    private void Update()
+    {
+        moneyTxt.text = $"돈 : {GameManager.Instance.Money}원";
+    }
+
     public void DebtCheck(){
 
         debtText.text = currentDebt.ToString();

@@ -33,6 +33,7 @@ public class RestaurantUpgrade : MonoBehaviour
         res_level3Button.interactable = false;
         priceText.text = $"{res_Level2UpgradePrice.ToString()} 원";
     }
+
     public void Level2(){
 
         if(GameManager.Instance.Money > res_Level2UpgradePrice){

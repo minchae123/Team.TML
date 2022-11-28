@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
     {
         toMoney = 0;
         uiManager.time = 46;
+        Debug.Log("½Ã°£");
         NamBiPool.Instance.NewNamBi();
         CustomerManager.Instance.ShowCustomer();
     }

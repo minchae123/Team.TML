@@ -68,6 +68,8 @@ public class MainUIManager : MonoBehaviour
         if(h == 22 && m == 0)
         {
             nightEvent.Invoke();
+            h = 1;
+            m = 1;
         }
 
         /*if(h == 24){
@@ -82,7 +84,7 @@ public class MainUIManager : MonoBehaviour
         {
             yield return null;
             time++;                                                      
-            SetTime(time);                                               
+            SetTime(time);
             yield return new WaitForSeconds(2f);                          
         }
     }
