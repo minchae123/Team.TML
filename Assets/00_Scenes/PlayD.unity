@@ -1119,6 +1119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be7cfbf22a2a1d43888c1e75668b92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   meatP: {fileID: 1029286526}
   vegatableP: {fileID: 1380773333}
   noodleP: {fileID: 123719204}
@@ -2765,10 +2766,10 @@ RectTransform:
   m_Father: {fileID: 1770322622}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1714.3501, y: -364.05}
-  m_SizeDelta: {x: 444.1, y: 728.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &240441154
 MonoBehaviour:
@@ -4420,10 +4421,10 @@ RectTransform:
   m_Father: {fileID: 1770322622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 262.05, y: -364.05}
-  m_SizeDelta: {x: 444.1, y: 728.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &385667746
 CanvasRenderer:
@@ -6502,10 +6503,10 @@ RectTransform:
   m_Father: {fileID: 1770322622}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1230.25, y: -364.05}
-  m_SizeDelta: {x: 444.1, y: 728.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653589204
 MonoBehaviour:
@@ -9454,10 +9455,6 @@ MonoBehaviour:
     ingredientImage: {fileID: 21300000, guid: c19a091c01f892b4e847173299abc540, type: 3}
     ingredientNumber: 0
   - ingredientType: 3
-    ingredientName: "\uC18C\uC2A4"
-    ingredientImage: {fileID: 21300000, guid: 085571a35959e134b95215a72199e074, type: 3}
-    ingredientNumber: 0
-  - ingredientType: 3
     ingredientName: "\uAF2C\uCE58"
     ingredientImage: {fileID: 21300000, guid: c89bdbd1b02b8b4478f659a1dcfebd88, type: 3}
     ingredientNumber: 0
@@ -9469,6 +9466,7 @@ MonoBehaviour:
     ingredientName: "\uB9E4\uCD94\uB9AC\uC54C"
     ingredientImage: {fileID: 21300000, guid: 6802b02ebd4220c4b92f99fa1c12515c, type: 3}
     ingredientNumber: 0
+  names: []
   slots:
   - {fileID: 427475631}
   - {fileID: 2001884667}
@@ -9489,8 +9487,11 @@ MonoBehaviour:
   - {fileID: 1553088983}
   - {fileID: 1053158497}
   - {fileID: 1392687691}
-  names: []
   maxNum: 100
+  storePanel: {fileID: 0}
+  domaMin: {x: 0, y: 0}
+  domaMax: {x: 0, y: 0}
+  dragObject: []
 --- !u!1 &991926318
 GameObject:
   m_ObjectHideFlags: 0
@@ -15087,10 +15088,10 @@ RectTransform:
   m_Father: {fileID: 1770322622}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 746.14996, y: -364.05}
-  m_SizeDelta: {x: 444.1, y: 728.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902929437
 MonoBehaviour:

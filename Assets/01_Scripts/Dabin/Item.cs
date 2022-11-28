@@ -14,6 +14,7 @@ public enum IngredientType
 [System.Serializable]
 public class Item 
 {
+    public GameObject dragGameObjgect;
     public IngredientType ingredientType; 
     public string ingredientName; // 
     public Sprite ingredientImage; // 여기에다가 재료 이미지 추가

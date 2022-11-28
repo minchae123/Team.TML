@@ -12,7 +12,7 @@ public class StoreGoods : MonoBehaviour
 
     private void Start()
     {
-        ingredientManager = GameObject.Find("Ingredient").GetComponent<IngredientManager>();
+        ingredientManager = GameObject.Find("IngredientManager").GetComponent<IngredientManager>();
     }
 
     private void Update()
