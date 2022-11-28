@@ -7,7 +7,7 @@ using TMPro;
 
 public class RestaurantUpgrade : MonoBehaviour
 {
-    private NamBi _namBi;
+    public NamBi _namBi;
 
     int res_Level2UpgradePrice = 100000;
     int res_Level3UpgradePrice = 500000;
@@ -19,9 +19,14 @@ public class RestaurantUpgrade : MonoBehaviour
 
     public TextMeshProUGUI priceText;
 
+    public TextMeshProUGUI moneyTxt;
+
 
     private void Update() {
-        _namBi = GameObject.Find("NamBi(Clone)").GetComponent<NamBi>();
+        //_namBi = GameObject.Find("NamBi(Clone)").GetComponent<NamBi>();
+        // _namBi = Resources.Load<GameObject>($"NamBi").GetComponent<NamBi>();
+
+        moneyTxt.text = $"돈 : {GameManager.Instance.Money} 원";
     }
 
     private void Start() {

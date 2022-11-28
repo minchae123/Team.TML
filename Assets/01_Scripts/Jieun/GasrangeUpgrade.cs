@@ -31,12 +31,15 @@ public class GasrangeUpgrade : MonoBehaviour
             gas_level3Button.interactable = true;
             priceText.text = $"{gas_Level3UpgradePrice.ToString()} 원";
         }
-        else{
+        else
+        {
+
+
             errorPanel.SetActive(true);
+
             ShakePanel();
-            errorPanel.SetActive(false);
         }
-        
+
     }
 
     public void Level3(){

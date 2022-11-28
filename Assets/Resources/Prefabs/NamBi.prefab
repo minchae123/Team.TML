@@ -259,10 +259,12 @@ MonoBehaviour:
   recipe: []
   count: 0
   upLevel: 1000
+  price: 0
   ef: {fileID: 0}
   isCook: 0
   iss: 0
   pop: {fileID: 0}
+  popp: {fileID: 0}
 --- !u!114 &3104725850243936032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +414,7 @@ MonoBehaviour:
   curImage: {fileID: 0}
   ui: {fileID: 0}
   uii: {fileID: 0}
+  boo: {fileID: 8429600096295700954}
 --- !u!82 &8429600096295700954
 AudioSource:
   m_ObjectHideFlags: 0

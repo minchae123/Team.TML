@@ -30,6 +30,8 @@ public class Cooking : MonoBehaviour
     public DraggableUI ui;
     public DroppableUI uii;
 
+    public AudioSource boo;
+
     public void Start()
     {
         bi = GetComponent<NamBi>();
@@ -74,6 +76,7 @@ public class Cooking : MonoBehaviour
         yield return new WaitForSeconds(CheckTime() - 1);
         curImage.sprite = inm[2];
         yield return new WaitForSeconds(CheckTime());
+        boo.Stop();
         bBogle.GetComponent<ParticleSystem>().Stop();
         curImage.sprite = inm[3];
         ui.enabled = true;

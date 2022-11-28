@@ -73,12 +73,20 @@ public class NightUI : MonoBehaviour
         moveOrigin.Append(receipt.transform.DOMove(originalTransform, 0.5f));
         
         moveOrigin.OnComplete(() => {
-            
             receipt.SetActive(false);
-            GameManager.Instance.StartDay();
             tpButtons.SetActive(true);
-              
         });
+    }
+
+    public void StoreXButtonClick()
+    {   
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(shutter.transform.DOMove(originalTransform, 0.5f));
+        
+        sequence.Append(fadeImage.DOFade(0f, 0.5f));
+
+
     }
 
 }
