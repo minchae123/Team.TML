@@ -46,6 +46,6 @@ public class Inverntory : MonoBehaviour
 
     public void AddSlot()
     {
-        inven.SlotCnt++;
+        IngredientManager.maxNum += 70;
     }
 }

@@ -8,12 +8,13 @@ public class IngredientManager : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<string> names = new List<string>();
     public Slot[] slots;
-    [Tooltip("slot하나에 들어갈 수 있는 최대 수")] public int maxNum = 100;
+    [Tooltip("slot하나에 들어갈 수 있는 최대 수")] public static int maxNum = 100;
     
     public GameObject storePanel;
     public Vector2 domaMin;
     public Vector2 domaMax;
     public GameObject[] dragObject;
+    public GameObject panel;
 
     public Vector3 dir;
     private int I = 0;
@@ -22,10 +23,6 @@ public class IngredientManager : MonoBehaviour
     private void Start()
     {
         isBuyying = false;
-        for(int i = 0; i < items.Count; i++)
-        {
-            Debug.Log($"{i}번째 : {items[i].ingredientName}");
-        }
     }
 
     public void StoreBtn()
@@ -39,13 +36,26 @@ public class IngredientManager : MonoBehaviour
         {
             dir.x = Random.Range(domaMin.x, domaMax.x);
             dir.y = Random.Range(domaMin.y, domaMax.y);
-            Instantiate(dragObject[i], dir, Quaternion.identity, GameObject.Find("Doma").transform);
+            Instantiate(dragObject[ReturnInt(i)], dir, Quaternion.identity, GameObject.Find("Doma").transform);
+            DownNumber(i); 
+            slots[ReturnInt(i)].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
         }
     }
 
-    public bool CheckIndex(int num)
+    public void DownNumber(int i)
     {
-        if (names.Contains(items[num].ingredientName))
+        for(int j = 0; j < items.Count; j++)
+        {
+            if(items[j].ingredientName == names[i])
+            {
+                items[j].ingredientNumber--;
+            }
+        }
+    }
+
+    public bool CheckIndex(int i)
+    {
+        if (names.Contains(items[i].ingredientName))
         {
             return true;
         }
@@ -55,7 +65,10 @@ public class IngredientManager : MonoBehaviour
             {
                 I++;
             }
-            names.Add(items[num].ingredientName);
+            names.Add(items[i].ingredientName); 
+            slots[I]._ingredientImage.enabled = true;
+            slots[I].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
+            slots[I]._ingredientImage.sprite = items[i].ingredientImage;
         }
         return false;
     }
@@ -64,8 +77,7 @@ public class IngredientManager : MonoBehaviour
     {
         if (items[i].ingredientNumber > maxNum)
         {
-            items[i].ingredientNumber = 0;
-            I++;
+            StartCoroutine(PullSlot());
             return false;
         }
         return true;
@@ -84,8 +96,27 @@ public class IngredientManager : MonoBehaviour
             }
             else
             {
-                slots[I].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
+                slots[ReturnInt(i)].text.text = $"{items[i].ingredientName} : {items[i].ingredientNumber}";
             }
         }
+    }
+
+    public int ReturnInt(int _i)
+    {
+        for(int i = 0; i < names.Count; i++)
+        {
+            if(names[i] == items[_i].ingredientName)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    IEnumerator PullSlot()
+    {
+        panel.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        panel.SetActive(false);
     }
 }
