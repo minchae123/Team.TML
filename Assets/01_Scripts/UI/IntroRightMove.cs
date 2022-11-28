@@ -47,4 +47,28 @@ public class IntroRightMove : MonoBehaviour
         }
 
     }
+
+    public void HelpButtonClick(){
+
+        clickCount++;
+
+        introCut.transform.DOLocalMove(introCut.transform.localPosition+ moveVector, 0.5f);
+
+        switch(clickCount){
+
+            case 2 :
+                infoText.text = infoText2;
+                break;
+            case 3 :
+                infoText.text = infoText3;
+                break;
+            case 4 :
+                infoText.text = infoText4;
+                break;
+            case 5 :
+                introCanvas.SetActive(false);
+                break;
+
+        }
+    }
 }
