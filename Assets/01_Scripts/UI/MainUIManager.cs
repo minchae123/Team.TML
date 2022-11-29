@@ -27,9 +27,15 @@ public class MainUIManager : MonoBehaviour
         setting.onClick.AddListener(() => SettingBtn());
         left.onClick.AddListener(() => LeftBtn());
         right.onClick.AddListener(() => RightBtn());
-
-        StartCoroutine(TimeAdd());
     }
+
+    public void Init()
+    {
+        if (coroutine != null) StopCoroutine(coroutine);
+        coroutine = StartCoroutine(TimeAdd());
+        //StartCoroutine(TimeAdd());
+    }
+
 
     private void Start()
     {
@@ -50,7 +56,7 @@ public class MainUIManager : MonoBehaviour
     }
     public void SettingBtn()
     {
-        Debug.Log(3);
+
     }
 
     public void SetMoney(int money)
@@ -65,7 +71,7 @@ public class MainUIManager : MonoBehaviour
         m = m * 10;
         timeTxt.text = string.Format("{0}일차 {1} : {2} {3}", GameManager.Instance.Day ,h, m == 0 ? "00" : m.ToString(), h > 12 ? "PM" : "AM");
 
-        if(h == 22 && m == 0)
+        if(h == 20 && m == 0)
         {
             nightEvent.Invoke();
             h = 1;
@@ -78,6 +84,8 @@ public class MainUIManager : MonoBehaviour
         }*/
     }
 
+    Coroutine coroutine;
+
     public IEnumerator TimeAdd()                                             
     {                                                                 
         while(time < 144)                                                
@@ -85,7 +93,7 @@ public class MainUIManager : MonoBehaviour
             yield return null;
             time++;                                                      
             SetTime(time);
-            yield return new WaitForSeconds(2f);                          
+            yield return new WaitForSeconds(2f);                    
         }
     }
 }

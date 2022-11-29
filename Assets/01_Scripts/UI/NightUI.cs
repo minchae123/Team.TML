@@ -17,6 +17,8 @@ public class NightUI : MonoBehaviour
     public GraphicRaycaster graphicRaycaster;
     private MainUIManager mainUIManager;
 
+    public DomaClear doma;
+
     public GameObject sunButton;
     public GameObject sunButton2;
 
@@ -39,6 +41,7 @@ public class NightUI : MonoBehaviour
         
         fadeImage.enabled = true;
         GameManager.Instance.Clear();
+        doma.Clear();
         fadeSequence.Append(fadeImage.DOFade(1f, 2f));
         
         fadeSequence.OnComplete(() => {
@@ -96,6 +99,7 @@ public class NightUI : MonoBehaviour
             sunButton.SetActive(false);
             sunButton2.SetActive(false);
             tpButtons.SetActive(false);
+            graphicRaycaster.enabled = false;
             GameManager.Instance.StartDay();
         });
 

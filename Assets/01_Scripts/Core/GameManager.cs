@@ -80,8 +80,8 @@ public class GameManager : MonoBehaviour
     public void StartDay()
     {
         toMoney = 0;
-        uiManager.time = 46;
-        Debug.Log("½Ã°£");
+        uiManager.time   = 46;
+        GameManager.Instance.uiManager.Init();
         NamBiPool.Instance.NewNamBi();
         CustomerManager.Instance.ShowCustomer();
     }
