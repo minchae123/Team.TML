@@ -23,7 +23,7 @@ public class GasrangeUpgrade : MonoBehaviour
     }
     public void Level2(){
 
-        if(GameManager.Instance.Money > gas_Level2UpgradePrice){
+        if(GameManager.Instance.Money >= gas_Level2UpgradePrice){
 
             Cooking.Instance.burnTime = 2;
             GameManager.Instance.Money -= gas_Level2UpgradePrice;
@@ -44,7 +44,7 @@ public class GasrangeUpgrade : MonoBehaviour
 
     public void Level3(){
         
-        if(GameManager.Instance.Money > gas_Level3UpgradePrice){
+        if(GameManager.Instance.Money >= gas_Level3UpgradePrice){
 
             Cooking.Instance.burnTime = 3;
             GameManager.Instance.Money -= gas_Level3UpgradePrice;

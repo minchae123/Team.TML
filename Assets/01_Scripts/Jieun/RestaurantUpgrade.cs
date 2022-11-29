@@ -36,9 +36,9 @@ public class RestaurantUpgrade : MonoBehaviour
 
     public void Level2(){
 
-        if(GameManager.Instance.Money > res_Level2UpgradePrice){
+        if(GameManager.Instance.Money >= res_Level2UpgradePrice){
 
-            _namBi.upLevel = 2;
+            _namBi.upLevel = 1500;
             GameManager.Instance.Money -= res_Level2UpgradePrice;
             res_level2Button.interactable = false;
             res_level3Button.interactable = true;
@@ -53,9 +53,9 @@ public class RestaurantUpgrade : MonoBehaviour
 
     public void Level3(){
         
-        if(GameManager.Instance.Money > res_Level3UpgradePrice){
+        if(GameManager.Instance.Money >= res_Level3UpgradePrice){
 
-            _namBi.upLevel = 3;
+            _namBi.upLevel = 2000;
             GameManager.Instance.Money -= res_Level3UpgradePrice;
             res_level3Button.interactable = false;
         }

@@ -6,6 +6,15 @@ using TMPro;
 
 public class NamBi : MonoBehaviour, IPoolable
 {
+    public string NAME { get => objName; set => objName = value; }
+
+    public void OnPool()
+    {
+
+    }
+
+    public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);
+
     public List<string> recipe;
     int index = 0;
     public int count = 0;
@@ -13,7 +22,6 @@ public class NamBi : MonoBehaviour, IPoolable
     public int price = 0;   
 
     private string objName;
-    public string NAME { get => objName; set => objName = value; }
 
     public AudioSource ef;
 
@@ -39,17 +47,26 @@ public class NamBi : MonoBehaviour, IPoolable
     {
         if (index > 0)
         {
-            price = 5000 + count * upLevel - index * 1500;
+            price = 5000 + (count * upLevel) - (index * 1500);
             GameManager.Instance.Money += price;
             GameManager.Instance.TOMoney += price;
+            Debug.Log(price);
+        }
+        else if(count < 0 )
+        {
+            price = -10000;
+            GameManager.Instance.Money += price;
+            GameManager.Instance.TOMoney += price;
+            Debug.Log(price);
         }
         else
         {
             price = 5000 + (upLevel * 1);
             GameManager.Instance.Money += price;
             GameManager.Instance.TOMoney += price;
+            Debug.Log(price);
         }
-        
+
         ef = GetComponent<AudioSource>();
         ef.Play();
         StartCoroutine(PopTxt());
@@ -67,12 +84,5 @@ public class NamBi : MonoBehaviour, IPoolable
         price = 0;
 
     }
-
-    public void OnPool()
-    {
-
-    }
-
-    public void PushObj() => PoolingManager.PushObject(NAME, this.gameObject);
 
 }

@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
 //    public Text timer;
     public TextMeshProUGUI timer;
     public float oritime;
-    public float time = 20f;
+    public float time;
 
     public GameObject store;
 
@@ -20,9 +20,12 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        if(this.gameObject)
-
         TimerGo();
+    }
+
+    public void TimeSet()
+    {
+        time = oritime;
     }
 
     public void TimerGo()
@@ -39,6 +42,5 @@ public class Timer : MonoBehaviour
         {
             time = oritime;
         }
-
     }
 }

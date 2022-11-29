@@ -18,7 +18,7 @@ public class NamBiPool : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && Input.GetKey(KeyCode.RightShift))
         {
             NewNamBi();
         }

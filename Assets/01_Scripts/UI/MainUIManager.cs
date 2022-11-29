@@ -17,6 +17,8 @@ public class MainUIManager : MonoBehaviour
     public int time = 48;
 
     public UnityEvent nightEvent;
+    public GameObject invenUI;
+
 
     private void Awake()
     {
@@ -31,6 +33,10 @@ public class MainUIManager : MonoBehaviour
 
     public void Init()
     {
+        if(invenUI.activeInHierarchy == false)
+        {
+            invenUI.SetActive(true);
+        }
         if (coroutine != null) StopCoroutine(coroutine);
         coroutine = StartCoroutine(TimeAdd());
         //StartCoroutine(TimeAdd());

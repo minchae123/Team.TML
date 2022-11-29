@@ -9,7 +9,7 @@ public class Debt : MonoBehaviour
 {   
     public static Debt Instance = null;
 
-    private int startDebt = 50000000;
+    private int startDebt = 10000000;
     private int currentDebt;
     public int inputMoney;
 

@@ -20,7 +20,7 @@ public class RefrigeratorUpgrade : MonoBehaviour
         priceText.text = $"{refUpgradePrice.ToString()} 원";
     }
     public void UpgradeButtonClick(){
-        if(GameManager.Instance.Money > refUpgradePrice){
+        if(GameManager.Instance.Money >= refUpgradePrice){
             inventory.AddSlot();
             GameManager.Instance.Money -= refUpgradePrice;
         }

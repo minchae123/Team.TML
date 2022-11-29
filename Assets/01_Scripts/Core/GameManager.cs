@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private MainUIManager uiManager;
 
+
     private void Awake()
     {
         if (Instance != null)
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.RightShift))
         {
             GameObject a = GameObject.Find("Ingredient");
             GameObject a1 = GameObject.Find("Ingredient(Clone)");
@@ -55,6 +56,12 @@ public class GameManager : MonoBehaviour
             }
             Instantiate(ingre, po, Quaternion.identity, GameObject.Find("MainCanvas").transform);
         }
+
+        if (Input.GetKeyDown(KeyCode.L) && Input.GetKey(KeyCode.RightShift))
+        {
+            money += 30000;
+        }
+
     }
 
     public void Clear()

@@ -30,7 +30,8 @@ public class NightUI : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.F)){
+        if(Input.GetKeyDown(KeyCode.F) && Input.GetKey(KeyCode.RightShift))
+        {
             NightFade();
         }
     }
