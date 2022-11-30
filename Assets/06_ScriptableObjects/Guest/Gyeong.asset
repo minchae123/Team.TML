@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d090a5055d0cbd418419922b0c52305, type: 3}
+  m_Name: Gyeong
+  m_EditorClassIdentifier: 
+  level: 0
+  sp: {fileID: 21300000, guid: 34424d7acc630a44ba47b6041fb3f26e, type: 3}
+  tell: "\uC544\uAC00\uC528 \uC785\uB9DB\uC774 \uAE4C\uB2E4\uB85C\uC6B4\uB370 \uD560
+    \uC218 \uC788\uC8E0 ?\n\uAC74*, \uC219*, \uC625*, \uACE0*, \u3141*, \u314A*\uC774\uB77C\uACE0
+    \uD558\uBA74 \uC54C\uC544\uB4E4\uC744 \uC218 \uC788\uB2E4\uB358\uB370 \uBD80\uD0C1\uB4DC\uB9BD\uB2C8\uB2E4."
+  thanks: "\uC81C\uAC00 \uBAB0\uB798 \uBA39\uACE0 \uC2F6\uAD70\uC694.\n\uAC74\uB450\uBD80,
+    \uC219\uC8FC, \uC625\uC218\uC218\uBA74, \uACE0\uAE30, \uBA54\uCD94\uB9AC\uC54C,
+    \uCE58\uC988\uB5A1\uC774\uC5C8\uAD70\uC694 ..\n"
+  meatList: 00000000
+  vegetableList: 06000000
+  noodleList: 00000000
+  etcList: 020000000400000001000000

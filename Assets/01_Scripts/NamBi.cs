@@ -18,6 +18,7 @@ public class NamBi : MonoBehaviour, IPoolable
     public List<string> recipe;
     int index = 0;
     public int count = 0;
+    private int startLevel = 1000;
     public int upLevel = 1000;
     public int price = 0;   
 
@@ -30,6 +31,12 @@ public class NamBi : MonoBehaviour, IPoolable
 
     public TextMeshProUGUI pop;
     public GameObject popp;
+
+    private void Start()
+    {
+        upLevel = startLevel;
+        price = 0;
+    }
 
     public void AddItem(string ingre)
     {
@@ -47,20 +54,23 @@ public class NamBi : MonoBehaviour, IPoolable
     {
         if (index > 0)
         {
+            Debug.Log(price);
             price = 5000 + (count * upLevel) - (index * 1500);
             GameManager.Instance.Money += price;
             GameManager.Instance.TOMoney += price;
             Debug.Log(price);
         }
-        else if(count < 0 )
+        else if(count <= 0 )
         {
-            price = -10000;
+            Debug.Log(price);
+            price -= 10000;
             GameManager.Instance.Money += price;
             GameManager.Instance.TOMoney += price;
             Debug.Log(price);
         }
-        else
+        else if(count > 0)
         {
+            Debug.Log(price);
             price = 5000 + (upLevel * 1);
             GameManager.Instance.Money += price;
             GameManager.Instance.TOMoney += price;
@@ -74,14 +84,19 @@ public class NamBi : MonoBehaviour, IPoolable
 
     IEnumerator PopTxt()
     {
+        string mark;
+        if (price >= 0) mark = "+ ";
+        else mark = "";
         pop = GameObject.Find("PopupMoney").GetComponent<TextMeshProUGUI>();
         popp = GameObject.Find("PopupMoney");
-        pop.text = $"+ {price}";
+       // pop.text = ("{0} {1}", price >= 0 ? "+" : "-", price).ToString();
+        pop.text = $"{mark}{price}";
         popp.transform.DOMove(new Vector3(-6.3f, 4.53f), 1).From();
+        price = 0;
+        Debug.Log(price);
 
         yield return new WaitForSeconds(1f);
         pop.text = "";
-        price = 0;
 
     }
 
