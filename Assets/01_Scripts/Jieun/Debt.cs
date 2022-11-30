@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
@@ -40,6 +41,12 @@ public class Debt : MonoBehaviour
     private void Update()
     {
         moneyTxt.text = $"돈 : {GameManager.Instance.Money}원";
+        //debtText.text = string.Format("{0:#,###}", currentDebt);
+
+        if (currentDebt <= 0)
+        {
+            SceneManager.LoadScene(2); 
+        }
     }
 
     public void DebtCheck(){
