@@ -4,8 +4,8 @@
 <img src="https://user-images.githubusercontent.com/98925762/219311304-49e7ab99-7fb6-4aaa-a3c7-0bd9c8103d76.png" width="250px">
 
 # 게임 소개
-제로부터 시작하는 마라탕 가게 운영하기 ! 
-최고의 마라탕 가게를 만들어 더 많이 팔고 업그레이드 하세요 !
+**제로부터 시작하는 마라탕 가게 운영하기 ! 
+최고의 마라탕 가게를 만들어 더 많이 팔고 업그레이드 하세요 !**
 
 <img src="https://user-images.githubusercontent.com/98925762/219312882-954aa849-9f1a-406f-9240-0d840b2083d2.png" width="400px">
 
